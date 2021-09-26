@@ -1,0 +1,174 @@
+body.noscroll {
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  background-color: #967100;
+  border: none;
+  border-radius: 2px;
+  padding: .5rem 2rem;
+  font-family: 'Monaco';
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a:visited {
+  color: #888;
+}
+
+.bf {
+  font-weight: bold;
+}
+
+.content-container {
+  max-width: 40rem;
+  padding: 0 1rem;
+  margin: 2rem auto;
+}
+
+.contribute-container {
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #967100;
+  font-family: 'Monaco', 'Courier New', Courier, monospace;
+  padding: 1rem;
+}
+
+.content-container > h2:first-child {
+  margin-top: 0;
+}
+
+.gallery {
+  max-width: 40rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gallery-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: .5rem;
+}
+
+.interactive {
+  cursor: pointer;
+}
+
+.headshot {
+  margin-bottom: .75rem;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 4.5rem;
+  object-fit: cover;
+}
+
+.gallery-item.interactive .headshot {
+  filter: grayscale(100%);
+  transition: .3s;
+}
+
+.gallery-item.interactive:hover .headshot {
+  filter: grayscale(0);
+}
+
+.gallery-item .name {
+  font-weight: bold;
+}
+
+.gallery-item .tagline {
+  font-size: 0.9rem;
+}
+
+#leaderboard .badge {
+  margin-bottom: .75rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 4rem;
+  object-fit: cover;
+}
+
+#leaderboard .name {
+  font-weight: normal;
+  font-style: italic;
+  font-size: .7rem;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+}
+
+.modal-container .modal {
+  max-width: 40rem;
+  max-height: 80vh;
+  overflow: auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: .5rem;
+  transition: .2s ease-out;
+  position: relative;
+}
+
+.modal-container.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+#content {
+  transition: .2s ease-out;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.x-button {
+  cursor: pointer;
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-weight: 100;
+  color: #aaa;
+}
+
+@media (max-width: 37rem), (max-height: 37rem) {
+  .modal-gallery {
+    display: none;
+  }
+}
