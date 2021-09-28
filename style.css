@@ -175,3 +175,6 @@ a:visited {
     display: none;
   }
 }
+.a.donate-with-crypto {
+  display: none;
+}
