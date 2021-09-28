@@ -36,12 +36,13 @@ a:visited {
   box-sizing: border-box;
   text-align: center;
   border: 1px solid #967100;
-  font-family: 'Monaco', 'Courier New', Courier, monospace;
+  /* font-family: 'Monaco', 'Courier New', Courier, monospace; */
+  font-size: 1.2rem;
   padding: 1rem;
 }
 
 .contribute-container button {
-  font-family: 'Monaco', 'Courier New', Courier, monospace;
+  font-family: 'Helvetica", ''Monaco', 'Courier New', Courier, monospace;
 }
 
 .content-container > h2:first-child {

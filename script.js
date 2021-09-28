@@ -128,10 +128,10 @@ const Leaderboard = props => (html`
 
 const kariko_weissman_desc = html`
   <p>
-    <b>Katalin Kariko</b> and <b>Drew Weissman</b> developed safe and stable messenger RNA technology in early 2000s by modifying the building blocks of mRNA known as nucleosides.
+    <b>Katalin Kariko</b> and <b>Drew Weissman</b> discovered how to make messenger RNA technology safe and stable in the early 2000s by modifying nucleosides, the building blocks of mRNA.
   </p>
   <p>
-    Because mRNA-based therapies are designed from genetic sequences, COVID-19 vaccines were quickly developed using the spike protein gene from SARS-CoV-2 as a blueprint.
+    mRNA-based therapies are designed from genetic sequences, allowing the COVID-19 vaccines to be quickly developed using the spike protein gene from SARS-CoV-2 as a blueprint.
   </p>
   <p>
     Read more about their work to modify mRNA in <a href="https://www.statnews.com/2020/11/10/the-story-of-mrna-how-a-once-dismissed-idea-became-a-leading-technology-in-the-covid-vaccine-race/">STAT News</a> and the <a href="https://www.nytimes.com/2021/04/08/health/coronavirus-mrna-kariko.html">New York Times.</a>
@@ -140,10 +140,10 @@ const kariko_weissman_desc = html`
 
 const zhang_holmes_desc = html`
   <p>
-    <b>Yong-Zhen Zhang</b>’s team determined the complete genome sequence of SARS-CoV-2 within 40 hours on January 5, 2020 and sent it to <b>Eddie Holmes</b>, who <a href="https://virological.org/t/novel-2019-coronavirus-genome/319">released it publicly</a> 52 minutes after receiving it.
+    <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of SARS-CoV-2 within 40 hours on January 5, 2020 and sent it to colleague <b>Eddie Holmes</b>, who <a href="https://virological.org/t/novel-2019-coronavirus-genome/319">released it publicly</a> 52 minutes after receiving it.
   </p>
   <p>
-    Their expediency and transparency enabled rapid global research into SARS-CoV-2, which allowed the sequence of the spike protein to be quickly used for designing the mRNA vaccines.
+    Their expediency and transparency led to rapid global research into SARS-CoV-2, including the analysis and design of the spike protein sequence used for the vaccines.
   </p>
   <p>
     Read more about their work on the SARS-CoV-2 genome in <a href="https://time.com/5882918/zhang-yongzhen-interview-china-coronavirus-genome/">Time Magazine</a> and <a href="https://www.bbc.com/news/science-environment-55565284">BBC</a>.
@@ -154,7 +154,7 @@ const spike_desc = html`
     <b>Kizzmekia Corbett</b>, <b>Barney Graham</b>, <b>Jason McClellan</b>, <b>Nianshuang Wang</b>, and <b>Daniel Wrapp</b> designed the SARS-CoV-2 spike protein in early 2020 to train the immune system to recognize the virus.
   </p>
   <p>
-    Based on past work with other viruses, the team modified the sequence of mRNA by replacing two amino acids to stabilize the SARS-CoV-2 spike protein and generate a stronger immune response.
+    Based on past work with other viruses, the team replaced two amino acids to help stabilize the SARS-CoV-2 spike protein, which generated a stronger immune response.
   </p>
   <p>
     Read more about their work on the spike protein design in <a href="https://www.nationalgeographic.com/science/article/these-scientists-spent-twelve-years-solving-puzzle-yielded-coronavirus-vaccines">National Geographic</a> and <a href="https://www.washingtonpost.com/health/2020/11/17/coronavirus-vaccine-manufacturing/">Washington Post.</a>
@@ -163,25 +163,25 @@ const spike_desc = html`
 
 const lipid_nanoparticles_desc = html`
   <p>
-    <b>Pieter Cullis</b> and <b>Ian MacLachlan</b> developed techniques to package fragile genetic material, such as messenger RNA, inside small envelopes of fat known as lipid nanoparticles. 
+    <b>Pieter Cullis</b> and <b>Ian MacLachlan</b> developed techniques in the 1990s and 2000s to package fragile genetic material, such as messenger RNA, inside small envelopes of fat known as lipid nanoparticles (LNPs). 
   </p>
   <p>
-    These LNPs ensure that the mRNA is protected and delivered properly into cells after injection.
+    These LNPs ensure that the mRNA is protected and delivered effectively into cells after injection.
   </p>
   <p>
-    Read more about their work on lipid nanoparticles in <a href="https://cen.acs.org/pharmaceuticals/drug-delivery/Without-lipid-shells-mRNA-vaccines/99/i8">Chemical & Engineering News</a> and <a href="https://www.forbes.com/sites/nathanvardi/2021/08/17/covids-forgotten-hero-the-untold-story-of-the-scientist-whose-breakthrough-made-the-vaccines-possible/">Forbes</a>.
+    Read more about their work on LNPs in <a href="https://cen.acs.org/pharmaceuticals/drug-delivery/Without-lipid-shells-mRNA-vaccines/99/i8">Chemical & Engineering News</a> and <a href="https://www.forbes.com/sites/nathanvardi/2021/08/17/covids-forgotten-hero-the-untold-story-of-the-scientist-whose-breakthrough-made-the-vaccines-possible/">Forbes</a>.
   </p>
 `
 
 const darpa_desc = html`
   <p>
-    <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA technology in the early 2010s. 
+    <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA vaccine technology in the early 2010s. 
   </p>
   <p>
-    This funding accelerated the development of mRNA-based vaccines so they would be ready in case of pandemics.
+    This funding accelerated the development of mRNA-based vaccines to prepare for pandemics where rapid response technologies would be necessary.
   </p>
   <p>
-    Read more about this effort to fund rapid mRNA-based vaccines in <a href="https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html">Washington Post</a>.
+    Read more about this effort to fund new vaccines in <a href="https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html">Washington Post</a>.
   </p>
 `
 
@@ -364,7 +364,7 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
             Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are recognizing the teams of scientists who pioneered these discoveries despite challenges with <a href="https://www.nber.org/papers/w28905">funding</a> and <a href="https://twitter.com/goodwish916/status/1329234124394041345">publishing</a> their research.
           </p>
           <p>
-            There is a distinguished history of collective science patronage. Over \$150,000 was raised in 1921 from <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">donations by American women for Marie Curie</a>. Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised over \$54 million from <a href="https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover">over 80 million people</a> in 1954.
+            There is a distinguished history of collective science patronage. Over \$150,000 was raised in 1921 from <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">donations by American women for Marie Curie</a>. Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised \$54 million from <a href="https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover">over 80 million people</a> in 1954.
           </p>
           <p>
             We hope to continue this legacy by funding and celebrating this scientific achievement together.
