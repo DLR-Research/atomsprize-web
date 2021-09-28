@@ -75,6 +75,22 @@ function ContributeButton({ set_modal_state }) {
   `
 }
 
+function MedalButton({ set_modal_state }) {
+  const on_click = () => {
+    set_modal_state({
+      open: true,
+      content: html`
+      <h2 class='center'>View medal</h2>
+      Launching soon
+      `
+    })
+  }
+
+  return html`
+    <button onClick=${on_click}>View medal</button>
+  `
+}
+
 function Badge(props) {
   const { name, img_url } = props
   return html`
@@ -147,13 +163,13 @@ const lipid_nanoparticles_desc = html`
 
 const darpa_desc = html`
   <p>
-    <b>Regina Dugan</b> and <b>Dan Watterdorf</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA technology in the early 2010s. 
+    <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA technology in the early 2010s. 
   </p>
   <p>
     This funding accelerated the development of mRNA-based vaccines so they would be ready in case of pandemics.
   </p>
   <p>
-    Read more about their work in <a href="https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html">Washington Post</a>.
+    Read more about this effort to fund rapid mRNA-based vaccines in <a href="https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html">Washington Post</a>.
   </p>
 `
 
@@ -262,14 +278,6 @@ const badges = [
     name: "Howard Hughes",
     img_url: "medals/img0008.jpg"
   },
-  {
-    name: "Paul Allen",
-    img_url: "medals/img0009.jpg"
-  },
-  {
-    name: "Melinda Gates",
-    img_url: "medals/img0010.jpg"
-  },
 ]
 
 function App({ scientists, total_raised, number_contributors, badges, project_descriptions }) {
@@ -356,7 +364,12 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
             Each contributor receives a unique medal as a token of appreciation.  
           </p>
           <p>
-            View and share your medal to help recognize and reward the scientists involved in developing the COVID-19 mRNA vaccine:
+            View and share your medal to help recognize and reward the scientists involved in developing the COVID-19 mRNA vaccine.
+          </p>
+          <p>
+            <div id="contribute" class="center">
+              <${MedalButton} set_modal_state=${set_modal_state} />
+            </div>
           </p>
           <div id="leaderboard">
             <${Leaderboard} badges=${badges} />
