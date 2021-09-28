@@ -4,11 +4,10 @@ body.noscroll {
 
 button {
   cursor: pointer;
-  background-color: #967100;
+  background: #967100;
   border: none;
   border-radius: 2px;
   padding: .5rem 2rem;
-  font-family: 'Monaco';
   font-size: 1rem;
   font-weight: 400;
   color: white;
@@ -39,6 +38,10 @@ a:visited {
   border: 1px solid #967100;
   font-family: 'Monaco', 'Courier New', Courier, monospace;
   padding: 1rem;
+}
+
+.contribute-container button {
+  font-family: 'Monaco', 'Courier New', Courier, monospace;
 }
 
 .content-container > h2:first-child {

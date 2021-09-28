@@ -60,12 +60,24 @@ const Scientists = ({ scientists, open_project_modal }) => (html`
 `)
 
 function ContributeButton({ set_modal_state }) {
+  const queryString = window.location.search
+  const urlParams = new URLSearchParams(queryString)
+  const referrer = urlParams.get("referrer")
+
   const on_click = () => {
     set_modal_state({
       open: true,
       content: html`
-      <h2 class='center'>Contribute</h2>
-      Launching soon
+        <h2 class='center'>Contribute</h2>
+        <div>
+          <a class="donate-with-crypto"
+            data-custom="NoblePrize|${referrer}"
+            href="https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7">
+            Coinbase Commerce
+          </a>
+          <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
+          </script>
+        </div>
       `
     })
   }
@@ -352,7 +364,7 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
             Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are recognizing the teams of scientists who pioneered these discoveries despite challenges with <a href="https://www.nber.org/papers/w28905">funding</a> and <a href="https://twitter.com/goodwish916/status/1329234124394041345">publishing</a> their research.
           </p>
           <p>
-            There is a distinguished history of collective science patronage. Over \$150,000 was raised in 1921 from <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">donations by American women for Marie Curie</a> to purchase a gram of radium. Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised over \$18 million from 80 million people in the 1940s.
+            There is a distinguished history of collective science patronage. Over \$150,000 was raised in 1921 from <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">donations by American women for Marie Curie</a>. Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised over \$54 million from <a href="https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover">over 80 million people</a> in 1954.
           </p>
           <p>
             We hope to continue this legacy by funding and celebrating this scientific achievement together.
