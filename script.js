@@ -83,7 +83,7 @@ function ContributeButton({ set_modal_state }) {
   }
 
   return html`
-    <button onClick=${on_click}>Contribute</button>
+    <button disabled onClick=${on_click}>Coming Soon</button>
   `
 }
 
@@ -346,12 +346,13 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
           <${Scientists} scientists=${scientists} open_project_modal=${open_project_modal} />
         </div>
         <div class="content-container contribute-container">
-          <p>
+          <h2>Contribute</h2>
+          ${null/*<p>
             We’ve raised <span class='bf'>\$${total_raised}</span> for these scientists. Prizes will be divided equally and awarded on October 31st, 2021.  
           </p>
           <p>
             Join the <span class='bf'>${number_contributors}</span> supporters today.
-          </p>
+          </p>*/}
           <p>
             <div id="contribute">
               <${ContributeButton} set_modal_state=${set_modal_state} />
