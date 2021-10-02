@@ -87,7 +87,7 @@ function ContributeButton({ set_modal_state }) {
   `
 }
 
-function MedalButton({ set_modal_state }) {
+function MedalSearch({ set_modal_state }) {
   const on_click = () => {
     set_modal_state({
       open: true,
@@ -98,8 +98,13 @@ function MedalButton({ set_modal_state }) {
     })
   }
 
+  const on_submit = e => e.preventDefault();
+  
   return html`
-    <button onClick=${on_click}>View medal</button>
+    <form class="medal-form" onSubmit=${on_submit}>
+      <input placeholder="Search by e-mail, Twitter, ENS, or wallet address..." />
+      <button onClick=${on_click}>View medal</button>
+    </form>
   `
 }
 
@@ -381,7 +386,7 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
           </p>
           <p>
             <div id="contribute" class="center">
-              <${MedalButton} set_modal_state=${set_modal_state} />
+              <${MedalSearch} set_modal_state=${set_modal_state} />
             </div>
           </p>
           <div id="leaderboard">

@@ -180,3 +180,22 @@ a:visited {
 a.donate-with-crypto {
   display: none;
 }
+
+.medal-form {
+  /* This bit sets up the horizontal layout */
+  display:flex;
+  flex-direction:row;
+  
+  /* This bit draws the box around it */
+  border:1px solid grey;
+
+  /* I've used padding so you can see the edges of the elements. */
+  padding:2px;
+}
+
+.medal-form input {
+  /* Tell the input to use all the available space */
+  flex-grow:2;
+  /* And hide the input's outline, so the form looks like the outline */
+  border:none;
+}
