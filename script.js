@@ -276,7 +276,7 @@ const badges = [
     img_url: "medals/img0003.jpg"
   },
   {
-    name: "Joseph Banks",
+    name: "Sir Joseph Banks",
     img_url: "medals/img0004.jpg"
   },
   {
@@ -367,13 +367,13 @@ function App({ scientists, total_raised, number_contributors, badges, project_de
         <div class="content-container">
           <h2>About</h2>
           <p>
-            Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are recognizing the teams of scientists who pioneered these discoveries despite challenges with <a href="https://www.nber.org/papers/w28905">funding</a> and <a href="https://twitter.com/goodwish916/status/1329234124394041345">publishing</a> their research.
+            Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are recognizing the teams of scientists who pioneered these foundational discoveries despite challenges with <a href="https://www.nber.org/papers/w28905">funding</a> and <a href="https://twitter.com/goodwish916/status/1329234124394041345">publishing</a> their research.
           </p>
           <p>
             There is a distinguished history of collective science patronage. Over \$150,000 was raised in 1921 from <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">donations by American women for Marie Curie</a>. Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised \$54 million from <a href="https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover">over 80 million people</a> in 1954.
           </p>
           <p>
-            We hope to continue this legacy by funding and celebrating this scientific achievement together.
+            We hope to continue this legacy by funding and celebrating these scientific achievements together.
           </p>
         </div>
         <div class="content-container">

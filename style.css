@@ -41,10 +41,6 @@ a:visited {
   padding: 1rem;
 }
 
-.contribute-container button {
-  font-family: 'Helvetica", ''Monaco', 'Courier New', Courier, monospace;
-}
-
 .content-container > h2:first-child {
   margin-top: 0;
 }
