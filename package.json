@@ -1,0 +1,22 @@
+{
+    "name": "nobleprize",
+    "private": true,
+    "version": "1.0.0",
+    "description": "a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines",
+    "main": "./dist/worker.js",
+    "scripts": {
+        "format": "prettier --write '**/*.{js,css,json,md}'",
+        "build": "webpack"
+    },
+    "author": "llllvvuu",
+    "license": "ISC",
+    "devDependencies": {
+        "prettier": "^1.17.0",
+        "webpack": "^5.57.1",
+        "webpack-cli": "^4.9.0"
+    },
+    "dependencies": {
+        "serverless-cloudflare-workers": "^1.2.0",
+        "stripe-workers": "^0.11.1-beta"
+    }
+}

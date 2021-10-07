@@ -1,0 +1,15 @@
+name = "nobleprize"
+type = "javascript"
+route = '*nobleprize.com/checkout'
+account_id = 'd3934b9b324240bf989664e018097273'
+zone_id = '25683f567ebb34c35d85566ca7580bb0'
+usage_model = 'unbound'
+compatibility_flags = []
+workers_dev = false
+compatibility_date = "2021-10-06"
+
+[build]
+command = "npm install && npm run build"
+
+[build.upload]
+format = "service-worker"
