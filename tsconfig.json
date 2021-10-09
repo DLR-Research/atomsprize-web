@@ -3,8 +3,8 @@
     "module": "commonjs",
     "baseUrl": ".",
     "paths": {
-        "*": ["src/*"],
-        "test/*": ["test/*"]
+      "*": ["src/*"],
+      "test/*": ["test/*"]
     },
     "strict": true,
     "jsx": "react-jsx",
@@ -14,11 +14,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "node",
-    "types": [
-        "@cloudflare/workers-types"
-    ]
+    "types": ["@cloudflare/workers-types"]
   },
-  "include": [
-    "src/**/*"
-  ]
+  "include": ["src/**/*"]
 }

@@ -1,41 +1,44 @@
 {
-    "name": "nobleprize",
-    "description": "a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines",
-    "version": "1.0.0",
-    "author": "DLR Research",
-    "license": "MIT",
-    "main": "dist/worker.js",
-    "scripts": {
-        "format": "prettier --write '**/*.{js,css,json,md}'",
-        "dev": "webpack-dev-server --mode development",
-        "build": "webpack --mode production",
-        "prerender": "ts-node scripts/prerender.tsx",
-        "start": "http-server dist"
-    },
-    "devDependencies": {
-        "@cloudflare/workers-types": "^2.2.2",
-        "@prefresh/webpack": "^3.3.2",
-        "@types/react": "^17.0.27",
-        "@types/react-dom": "^17.0.9",
-        "copy-webpack-plugin": "^9.0.1",
-        "html-webpack-plugin": "^5.3.2",
-        "prettier": "^1.17.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "ts-loader": "^9.2.6",
-        "ts-node": "^10.2.1",
-        "tsconfig-paths-webpack-plugin": "^3.5.1",
-        "typescript": "^4.4.3",
-        "webpack": "^5.58.1",
-        "webpack-cli": "^4.9.0",
-        "webpack-dev-server": "^4.3.1"
-    },
-    "dependencies": {
-        "http-server": "^13.0.2",
-        "itty-router": "^2.4.4",
-        "preact": "^10.5.14",
-        "preact-render-to-string": "^5.1.19",
-        "stripe-workers": "^0.11.1-beta",
-        "tslib": "^2.3.1"
-    }
+  "name": "nobleprize",
+  "description": "a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines",
+  "version": "1.0.0",
+  "author": "DLR Research",
+  "license": "MIT",
+  "main": "dist/worker.js",
+  "prettier": {
+    "semi": false
+  },
+  "scripts": {
+    "format": "prettier --write '**/*.{js,css,json,md}'",
+    "dev": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "prerender": "ts-node scripts/prerender.tsx",
+    "start": "http-server dist"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.2.2",
+    "@prefresh/webpack": "^3.3.2",
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "prettier": "^1.17.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-loader": "^9.2.6",
+    "ts-node": "^10.2.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "typescript": "^4.4.3",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "http-server": "^13.0.2",
+    "itty-router": "^2.4.4",
+    "preact": "^10.5.14",
+    "preact-render-to-string": "^5.1.19",
+    "stripe-workers": "^0.11.1-beta",
+    "tslib": "^2.3.1"
+  }
 }
