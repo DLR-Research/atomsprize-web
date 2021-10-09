@@ -1,3 +1,5 @@
 worker/
 dist/
 node_modules/
+.parcel-cache/
+*.log
