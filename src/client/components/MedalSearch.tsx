@@ -1,4 +1,4 @@
-import { ModalStateSetter } from './PersistentModal'
+import { ModalStateSetter } from "./PersistentModal"
 
 type MedalSearchProps = {
   set_modal_state: ModalStateSetter

@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'preact/hooks'
-import { Scientist, Badge } from './types'
-import { ProjectDescriptionMap } from './data'
-import PersistentModal, { ModalState } from './components/PersistentModal'
-import Scientists from './components/Scientists'
-import ScientistProfile from './components/ScientistProfile'
-import Leaderboard from './components/Leaderboard'
-import MedalSearch from './components/MedalSearch'
-import ContributeButton from './components/ContributeButton'
+import { useState, useEffect } from "preact/hooks"
+import { Scientist, Badge } from "./types"
+import { ProjectDescriptionMap } from "./data"
+import PersistentModal, { ModalState } from "./components/PersistentModal"
+import Scientists from "./components/Scientists"
+import ScientistProfile from "./components/ScientistProfile"
+import Leaderboard from "./components/Leaderboard"
+import MedalSearch from "./components/MedalSearch"
+import ContributeButton from "./components/ContributeButton"
 
 export type AppProps = {
   scientists: Scientist[]
@@ -24,11 +24,11 @@ export default function App({
   // number_contributors,
   badges,
   project_descriptions,
-  user_id,
+  user_id
 }: AppProps) {
   const [modal_state, set_modal_state] = useState<ModalState>({
     open: false,
-    content: ''
+    content: ""
   })
 
   const open_project_modal = (tagline: string) => {
@@ -63,9 +63,9 @@ export default function App({
   }
 
   useEffect(() => {
-    document.addEventListener('keydown', handle_esc, false)
+    document.addEventListener("keydown", handle_esc, false)
     return () => {
-      document.removeEventListener('keydown', handle_esc, false)
+      document.removeEventListener("keydown", handle_esc, false)
     }
   }, [])
 

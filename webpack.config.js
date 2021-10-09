@@ -23,14 +23,15 @@ module.exports = (_env, argv) => {
       ]
     },
     resolve: {
-      extensions: [".tsx", ".ts", ".js"],
+      extensions: [".tsx", ".ts", ".js"]
     },
     output: {
       path: path.resolve(__dirname, "dist/"),
       filename: "bundle.js"
     },
     plugins: [
-      !isProduction && new HtmlWebpackPlugin({ template: "src/client/index.html" }),
+      !isProduction &&
+        new HtmlWebpackPlugin({ template: "src/client/index.html" }),
       new CopyPlugin({ patterns: [{ from: "assets", to: "." }] }),
       new PreactRefreshPlugin()
     ].filter(Boolean),
@@ -41,5 +42,5 @@ module.exports = (_env, argv) => {
       compress: true,
       hot: true
     }
-  };
+  }
 }

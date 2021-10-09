@@ -1,9 +1,8 @@
-import { render, hydrate } from 'preact'
-import App from './App'
-import { scientists, badges, project_descriptions } from './data'
+import { render, hydrate } from "preact"
+import App from "./App"
+import { scientists, badges, project_descriptions } from "./data"
 
-if (process.env.NODE_ENV === 'production') {
-  console.log("prod")
+if (process.env.NODE_ENV === "production") {
   hydrate(
     <App
       scientists={scientists}
@@ -12,10 +11,9 @@ if (process.env.NODE_ENV === 'production') {
       badges={badges}
       project_descriptions={project_descriptions}
     />,
-    document.getElementById('app-root')!
+    document.getElementById("app-root")!
   )
 } else {
-  console.log("dev")
   render(
     <App
       scientists={scientists}
@@ -24,6 +22,6 @@ if (process.env.NODE_ENV === 'production') {
       badges={badges}
       project_descriptions={project_descriptions}
     />,
-    document.getElementById('app-root')!
+    document.getElementById("app-root")!
   )
 }

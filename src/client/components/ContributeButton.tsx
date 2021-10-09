@@ -1,13 +1,16 @@
-import { ModalStateSetter } from './PersistentModal'
+import { ModalStateSetter } from "./PersistentModal"
 
 type ContributeButtonProps = {
   set_modal_state: ModalStateSetter
 }
 
-export default function ContributeButton({ set_modal_state }: ContributeButtonProps) {
-  const query_string = typeof window === 'undefined' ? '' : window.location.search
+export default function ContributeButton({
+  set_modal_state
+}: ContributeButtonProps) {
+  const query_string =
+    typeof window === "undefined" ? "" : window.location.search
   const url_params = new URLSearchParams(query_string)
-  const referrer = url_params.get('referrer')
+  const referrer = url_params.get("referrer")
 
   const on_click = () => {
     set_modal_state({
@@ -17,22 +20,29 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
           <h2 className="center">Contribute</h2>
           <div>
             <form action="http://localhost:8787/checkout" method="POST">
-              <input type="number" min="0" step="0.01" id="amount" name="amount" placeholder="Enter Donation Amount..." />
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                id="amount"
+                name="amount"
+                placeholder="Enter Donation Amount..."
+              />
               <button>Donate</button>
             </form>
-            <a className="donate-with-crypto"
+            <a
+              className="donate-with-crypto"
               data-custom={`NoblePrize|${referrer}`}
-              href="https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7">
+              href="https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7"
+            >
               Coinbase Commerce
             </a>
-            <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
-            </script>
+            <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
           </div>
         </>
       )
     })
   }
 
-  return <button onClick={ on_click }>Coming Soon</button>
+  return <button onClick={on_click}>Coming Soon</button>
 }
-
