@@ -75,15 +75,16 @@
         text-rendering: optimizeLegibility !important;
       }
 
-      header {
-        flex: 0;
+      main {
+        padding-bottom: 1rem;
       }
 
-      .title-container {
+      header, footer {
         padding: .5rem;
         background: #967100;
         text-align: center;
         color: white;
+        flex: 0;
       }
 
       .bf {
@@ -93,7 +94,15 @@
       .content-container {
         max-width: 40rem;
         padding: 0 1rem;
-        margin: 2rem auto;
+        margin: 3rem auto;
+      }
+
+      .content-container > h2:first-child {
+        margin-top: 0;
+      }
+
+      .content-container > p:last-child {
+        margin-block-end: 0;
       }
 
       .contribute-container {
@@ -103,10 +112,6 @@
         /* font-family: "Monaco", "Courier New", Courier, monospace; */
         font-size: 1.2rem;
         padding: 1rem;
-      }
-
-      .content-container > h2:first-child {
-        margin-top: 0;
       }
 
       .gallery {
@@ -158,7 +163,7 @@
     </style>
   </head>
   <body>
-    <header class="title-container">
+    <header>
       <h1>noble prize</h1>
       <p style="font-size: 1.2em">
         a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines
