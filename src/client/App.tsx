@@ -12,7 +12,7 @@ export type AppProps = {
   scientists: Scientist[]
   badges: Badge[]
   project_descriptions: ProjectDescriptionMap
-  prepopulated_share?: number
+  user_id?: number
   // TODO change these two to numbers
   total_raised: string
   number_contributors: string
@@ -23,7 +23,8 @@ export default function App({
   // total_raised,
   // number_contributors,
   badges,
-  project_descriptions
+  project_descriptions,
+  user_id,
 }: AppProps) {
   const [modal_state, set_modal_state] = useState<ModalState>({
     open: false,
@@ -96,7 +97,7 @@ export default function App({
           <div className="content-container">
             <h2>About</h2>
             <p>
-              Decades of scientific research enabled the rapid development of
+              {user_id} Decades of scientific research enabled the rapid development of
               the COVID-19 mRNA vaccines. We are recognizing the teams of
               scientists who pioneered these foundational discoveries despite
               challenges with{" "}
