@@ -6,23 +6,27 @@ type ContributeButtonProps = {
 }
 
 export default function ContributeButton({ set_modal_state }: ContributeButtonProps) {
-  const queryString = window.location.search
-  const urlParams = new URLSearchParams(queryString)
-  const referrer = urlParams.get('referrer')
+  const query_string = window.location.search
+  const url_params = new URLSearchParams(query_string)
+  const referrer = url_params.get('referrer')
 
   const on_click = () => {
     set_modal_state({
       open: true,
       content: (
         <>
-          <h2 className='center'>Contribute</h2>
+          <h2 className="center">Contribute</h2>
           <div>
-            <a className='donate-with-crypto'
-              data-custom='NoblePrize|${referrer}'
-              href='https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7'>
+            <form action="http://127.0.0.1:8787/checkout" method="POST">
+              <input type="number" min="0" step="0.01" id="amount" name="amount" placeholder="Enter Donation Amount..." />
+              <button>Donate</button>
+            </form>
+            <a className="donate-with-crypto"
+              data-custom={`NoblePrize|${referrer}`}
+              href="https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7">
               Coinbase Commerce
             </a>
-            <script src='https://commerce.coinbase.com/v1/checkout.js?version=201807'>
+            <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807">
             </script>
           </div>
         </>
@@ -32,5 +36,4 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
 
   return <button disabled onClick={ on_click }>Coming Soon</button>
 }
-
 

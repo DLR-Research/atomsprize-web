@@ -13,5 +13,5 @@ export default function Leaderboard({ badges }: LeaderboardProps) {
       badge={ b } />
   )
 
-  return <div className='gallery'>{ badge_elements }</div>
+  return <div className="gallery">{ badge_elements }</div>
 }

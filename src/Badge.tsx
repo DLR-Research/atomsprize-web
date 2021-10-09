@@ -7,15 +7,15 @@ type BadgeProps = {
 
 export default function Badge({ badge: { name, img_url } }: BadgeProps) {
   return (
-    <div className='gallery-item'>
+    <div className="gallery-item">
       <img
         alt={name}
         src={img_url}
-        className='badge'
+        className="badge"
         width={ 400 }
         height={ 400 }
-        loading='lazy' />
-      <div className='name'>{name}</div>
+        loading="lazy" />
+      <div className="name">{name}</div>
     </div>
   )
 }

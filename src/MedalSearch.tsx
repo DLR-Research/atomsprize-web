@@ -11,7 +11,7 @@ export default function MedalSearch({ set_modal_state }: MedalSearchProps) {
       open: true,
       content: (
         <>
-          <h2 className='center'>View medal</h2>
+          <h2 className="center">View medal</h2>
           Launching soon
         </>
       )
@@ -21,8 +21,8 @@ export default function MedalSearch({ set_modal_state }: MedalSearchProps) {
   const on_submit = (e: SyntheticEvent) => e.preventDefault()
 
   return (
-    <form className='medal-form' onSubmit={on_submit}>
-      <input placeholder='Search by e-mail, Twitter, ENS, or wallet address...' />
+    <form className="medal-form" onSubmit={on_submit}>
+      <input placeholder="Search by e-mail, Twitter, ENS, or wallet address..." />
       <button onClick={on_click}>View medal</button>
     </form>
   )

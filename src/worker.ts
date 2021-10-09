@@ -7,6 +7,14 @@ addEventListener('fetch', event => {
 })
 
 async function handleRequest(request) {
+  let amount = 0
+  const formData = await request.formData()
+  for (const entry of formData.entries()) {
+    if (entry[0] === 'amount') {
+      amount = 100 * (Number(entry[1]) || 0)
+    }
+  }
+
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
@@ -14,9 +22,9 @@ async function handleRequest(request) {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'T-shirt',
+            name: 'Noble Prize',
           },
-          unit_amount: 2000,
+          unit_amount: amount,
         },
         quantity: 1,
       },

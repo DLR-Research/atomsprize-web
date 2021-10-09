@@ -1,4 +1,4 @@
-import React, { useEffect, useState, SyntheticEvent } from 'react'
+import React, { useEffect, SyntheticEvent } from 'react'
 
 export type PersistentModalProps = {
   state: ModalState

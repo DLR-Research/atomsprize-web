@@ -18,7 +18,7 @@ export default function Scientists ({ scientists, open_project_modal }: Scientis
   )
 
   return (
-    <div className='gallery'>{ scientists_list }</div>
+    <div className="gallery">{ scientists_list }</div>
   )
 }
 
