@@ -109,12 +109,12 @@ export default function App({
             </p>
             <p>
               There is a distinguished history of collective science patronage.
-              Over \$150,000 was raised in 1921 from{' '}
+              Over $150,000 was raised in 1921 from{' '}
               <a href='https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/'>
                 donations by American women for Marie Curie
               </a>
               . Jonas Salk’s polio vaccine research was funded by the March of
-              Dimes, which raised \$54 million from{' '}
+              Dimes, which raised $54 million from{' '}
               <a href='https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover'>
                 over 80 million people
               </a>{' '}
