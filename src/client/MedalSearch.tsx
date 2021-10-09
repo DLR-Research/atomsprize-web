@@ -1,4 +1,3 @@
-import React, { SyntheticEvent } from 'react'
 import { ModalStateSetter } from './PersistentModal'
 
 type MedalSearchProps = {
@@ -18,7 +17,7 @@ export default function MedalSearch({ set_modal_state }: MedalSearchProps) {
     })
   }
 
-  const on_submit = (e: SyntheticEvent) => e.preventDefault()
+  const on_submit = (e: Event) => e.preventDefault()
 
   return (
     <form className="medal-form" onSubmit={on_submit}>
@@ -27,4 +26,3 @@ export default function MedalSearch({ set_modal_state }: MedalSearchProps) {
     </form>
   )
 }
-

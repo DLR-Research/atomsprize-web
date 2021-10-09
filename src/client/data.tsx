@@ -1,102 +1,101 @@
-import React from 'react'
 import { Scientist, Badge } from './types'
 
 export const scientists: Scientist[] = [
   {
     name: 'Katalin Kariko',
     tagline: 'Modified mRNA',
-    headshot_url: new URL('../headshots/kariko.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/kariko.jpg'
   },
   {
     name: 'Drew Weissman',
     tagline: 'Modified mRNA',
-    headshot_url: new URL('../headshots/weissman.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/weissman.jpg'
   },
   {
     name: 'Yong-Zhen Zhang',
     tagline: 'SARS-CoV-2 genome',
-    headshot_url: new URL('../headshots/zhang.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/zhang.jpg'
   },
   {
     name: 'Eddie Holmes',
     tagline: 'SARS-CoV-2 genome',
-    headshot_url: new URL('../headshots/holmes.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/holmes.jpg'
   },
   {
     name: 'Barney Graham',
     tagline: 'Spike protein design',
-    headshot_url: new URL('../headshots/graham.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/graham.jpg'
   },
   {
     name: 'Kizzmekia Corbett',
     tagline: 'Spike protein design',
-    headshot_url: new URL('../headshots/corbett.jpg', import.meta.url) as unknown as string,
+    headshot_url: 'headshots/corbett.jpg',
     break: true
   },
   {
     name: 'Jason McClellan',
     tagline: 'Spike protein design',
-    headshot_url: new URL('../headshots/mcclellan.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/mcclellan.jpg'
   },
   {
     name: 'Nianshuang Wang',
     tagline: 'Spike protein design',
-    headshot_url: new URL('../headshots/wang.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/wang.jpg'
   },
   {
     name: 'Daniel Wrapp',
     tagline: 'Spike protein design',
-    headshot_url: new URL('../headshots/wrapp.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/wrapp.jpg'
   },
   {
     name: 'Pieter Cullis',
     tagline: 'Lipid nanoparticles',
-    headshot_url: new URL('../headshots/cullis.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/cullis.jpg'
   },
   {
     name: 'Ian MacLachlan',
     tagline: 'Lipid nanoparticles',
-    headshot_url: new URL('../headshots/maclachlan.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/maclachlan.jpg'
   },
   {
     name: 'Regina Dugan',
     tagline: 'DARPA director',
-    headshot_url: new URL('../headshots/dugan.jpg', import.meta.url) as unknown as string
+    headshot_url: 'headshots/dugan.jpg'
   }
 ]
 
 export const badges: Badge[] = [
   {
     name: 'Ja\'far ibn Yahya',
-    img_url: new URL('../medals/img0001.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0001.jpg'
   },
   {
     name: 'Rudolph II',
-    img_url: new URL('../medals/img0002.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0002.jpg'
   },
   {
     name: 'Cosimo II de Medici',
-    img_url: new URL('../medals/img0003.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0003.jpg'
   },
   {
     name: 'Sir Joseph Banks',
-    img_url: new URL('../medals/img0004.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0004.jpg'
   },
   {
     name: 'Marie Meloney',
-    img_url: new URL('../medals/img0005.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0005.jpg'
   },
   {
     name: 'Henry Wellcome',
-    img_url: new URL('../medals/img0006.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0006.jpg'
   },
   {
     name: 'Mary Lasker',
-    img_url: new URL('../medals/img0007.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0007.jpg'
   },
   {
     name: 'Howard Hughes',
-    img_url: new URL('../medals/img0008.jpg', import.meta.url) as unknown as string
+    img_url: 'medals/img0008.jpg'
   },
 ]
 

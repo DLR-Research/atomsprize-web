@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Scientist, Badge } from './types'
 import { ProjectDescriptionMap } from './data'
 import PersistentModal, { ModalState } from './PersistentModal'
@@ -19,8 +19,8 @@ type AppProps = {
 
 export default function App({
   scientists,
-  total_raised,
-  number_contributors,
+  // total_raised,
+  // number_contributors,
   badges,
   project_descriptions
 }: AppProps) {

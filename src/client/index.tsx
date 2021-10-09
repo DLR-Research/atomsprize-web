@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from 'react-dom'
 import App from './App'
 import { scientists, badges, project_descriptions } from './data'
@@ -10,6 +9,6 @@ render(
     number_contributors="6,535"
     badges={badges}
     project_descriptions={project_descriptions}
-  />,
+  /> as any,
   document.getElementById('app-root')
 )

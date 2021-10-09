@@ -1,4 +1,3 @@
-import React from 'react'
 import { ModalStateSetter } from './PersistentModal'
 
 type ContributeButtonProps = {
@@ -17,7 +16,7 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
         <>
           <h2 className="center">Contribute</h2>
           <div>
-            <form action="https://nobleprize.com/checkout" method="POST">
+            <form action="http://localhost:8787/checkout" method="POST">
               <input type="number" min="0" step="0.01" id="amount" name="amount" placeholder="Enter Donation Amount..." />
               <button>Donate</button>
             </form>
@@ -34,6 +33,6 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
     })
   }
 
-  return <button disabled onClick={ on_click }>Coming Soon</button>
+  return <button onClick={ on_click }>Coming Soon</button>
 }
 

@@ -1,11 +1,10 @@
-import React from 'react'
 import { Badge } from './types'
 
 type BadgeProps = {
   badge: Badge
 }
 
-export default function Badge({ badge: { name, img_url } }: BadgeProps) {
+export default function BadgeComponent({ badge: { name, img_url } }: BadgeProps) {
   return (
     <div className="gallery-item">
       <img

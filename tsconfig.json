@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "paths": {
+        "*": ["src/*"],
+        "test/*": ["test/*"]
+    },
     "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
@@ -8,7 +13,10 @@
     "importHelpers": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "types": [
+        "@cloudflare/workers-types"
+    ]
   },
   "include": [
     "src/**/*"

@@ -1,4 +1,3 @@
-import React from 'react'
 import { Scientist } from './types'
 import ScientistProfile from './ScientistProfile'
 

@@ -1,4 +1,4 @@
-import React, { useEffect, SyntheticEvent } from 'react'
+import React, { useEffect } from 'react'
 
 export type PersistentModalProps = {
   state: ModalState
@@ -13,7 +13,7 @@ export type ModalState = {
 export type ModalStateSetter = React.Dispatch<React.SetStateAction<ModalState>>
 
 export default function PersistentModal({ state: { open, content }, set_modal_state }: PersistentModalProps) {
-  const on_close = (e: SyntheticEvent) => {
+  const on_close = (e: MouseEvent) => {
     set_modal_state({ open: false, content })
     e.stopPropagation()
   }
