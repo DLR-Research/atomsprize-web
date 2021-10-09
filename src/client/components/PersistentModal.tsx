@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect, StateUpdater } from 'preact/hooks';
 
 export type PersistentModalProps = {
   state: ModalState
@@ -7,10 +7,10 @@ export type PersistentModalProps = {
 
 export type ModalState = {
   open: boolean
-  content: JSX.Element | string
+  content: preact.JSX.Element | string
 }
 
-export type ModalStateSetter = React.Dispatch<React.SetStateAction<ModalState>>
+export type ModalStateSetter = StateUpdater<ModalState>
 
 export default function PersistentModal({ state: { open, content }, set_modal_state }: PersistentModalProps) {
   const on_close = (e: MouseEvent) => {

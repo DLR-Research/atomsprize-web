@@ -1,4 +1,4 @@
-import { Scientist } from './types'
+import { Scientist } from '../types'
 
 type ScientstProfileProps = {
   scientist: Scientist

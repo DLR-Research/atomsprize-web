@@ -170,7 +170,7 @@ const darpa_desc = () => (
 )
 
 export type ProjectDescriptionMap = {
-  [k: string]: () => JSX.Element
+  [k: string]: () => preact.JSX.Element
 }
 
 export const project_descriptions = {

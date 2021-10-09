@@ -1,17 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'preact/hooks'
 import { Scientist, Badge } from './types'
 import { ProjectDescriptionMap } from './data'
-import PersistentModal, { ModalState } from './PersistentModal'
-import Scientists from './Scientists'
-import ScientistProfile from './ScientistProfile'
-import Leaderboard from './Leaderboard'
-import MedalSearch from './MedalSearch'
-import ContributeButton from './ContributeButton'
+import PersistentModal, { ModalState } from './components/PersistentModal'
+import Scientists from './components/Scientists'
+import ScientistProfile from './components/ScientistProfile'
+import Leaderboard from './components/Leaderboard'
+import MedalSearch from './components/MedalSearch'
+import ContributeButton from './components/ContributeButton'
 
-type AppProps = {
+export type AppProps = {
   scientists: Scientist[]
   badges: Badge[]
   project_descriptions: ProjectDescriptionMap
+  prepopulated_share?: number
   // TODO change these two to numbers
   total_raised: string
   number_contributors: string

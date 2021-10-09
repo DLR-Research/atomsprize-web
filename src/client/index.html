@@ -81,20 +81,74 @@ content='a collective prize to recognize the scientists who contributed to the C
         color: white;
       }
 
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+      .bf {
+        font-weight: bold;
       }
 
-      #app-root:empty {
-          margin: 0 auto;
-          margin-top: 4rem;
-          border: 4px solid #f3f3f3;
-          border-top: 4px solid #967100;
-          border-radius: 50%;
-          width: 3rem;
-          height: 3rem;
-          animation: spin 2s linear infinite;
+      .content-container {
+        max-width: 40rem;
+        padding: 0 1rem;
+        margin: 2rem auto;
+      }
+
+      .contribute-container {
+        box-sizing: border-box;
+        text-align: center;
+        border: 1px solid #967100;
+        /* font-family: 'Monaco', 'Courier New', Courier, monospace; */
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+
+      .content-container > h2:first-child {
+        margin-top: 0;
+      }
+
+      .gallery {
+        max-width: 40rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .gallery-item {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.5rem;
+      }
+
+      .headshot {
+        margin-bottom: 0.75rem;
+        width: 9rem;
+        height: 9rem;
+        border-radius: 4.5rem;
+        object-fit: cover;
+      }
+
+      .gallery-item.interactive .headshot {
+        filter: grayscale(100%);
+        transition: 0.3s;
+      }
+
+      .gallery-item .name {
+        font-weight: bold;
+      }
+
+      .gallery-item .tagline {
+        font-size: 0.9rem;
+      }
+
+      button {
+        cursor: pointer;
+        background: #967100;
+        border: none;
+        border-radius: 2px;
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        font-weight: 400;
+        color: white;
       }
     </style>
   </head>
@@ -106,5 +160,6 @@ content='a collective prize to recognize the scientists who contributed to the C
       </p>
     </header>
     <div id='app-root'></div>
+    <script type="module" src="bundle.js" defer></script>
   </body>
 </html>

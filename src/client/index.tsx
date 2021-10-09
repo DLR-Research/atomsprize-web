@@ -1,14 +1,29 @@
-import { render } from 'react-dom'
+import { render, hydrate } from 'preact'
 import App from './App'
 import { scientists, badges, project_descriptions } from './data'
 
-render(
-  <App
-    scientists={scientists}
-    total_raised="3,141,592"
-    number_contributors="6,535"
-    badges={badges}
-    project_descriptions={project_descriptions}
-  /> as any,
-  document.getElementById('app-root')
-)
+if (process.env.NODE_ENV === 'production') {
+  console.log("prod")
+  hydrate(
+    <App
+      scientists={scientists}
+      total_raised="3,141,592"
+      number_contributors="6,535"
+      badges={badges}
+      project_descriptions={project_descriptions}
+    />,
+    document.getElementById('app-root')!
+  )
+} else {
+  console.log("dev")
+  render(
+    <App
+      scientists={scientists}
+      total_raised="3,141,592"
+      number_contributors="6,535"
+      badges={badges}
+      project_descriptions={project_descriptions}
+    />,
+    document.getElementById('app-root')!
+  )
+}

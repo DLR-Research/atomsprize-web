@@ -1,4 +1,4 @@
-import { Badge } from './types'
+import { Badge } from '../types'
 
 type BadgeProps = {
   badge: Badge
