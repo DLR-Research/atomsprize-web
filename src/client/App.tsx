@@ -27,8 +27,8 @@ export default function App({
   user_id
 }: AppProps) {
   const [modal_state, set_modal_state] = useState<ModalState>({
-    open: false,
-    content: ""
+    open: !!user_id,
+    content: user_id ? <h1>Hello User {user_id}</h1> : ""
   })
 
   const open_project_modal = (tagline: string) => {
@@ -72,7 +72,6 @@ export default function App({
   return (
     <>
       <PersistentModal state={modal_state} set_modal_state={set_modal_state} />
-      {user_id && <h1>Hello User {user_id}</h1>}
       <div id="content">
         <main>
           <div id="scientists" className="content-container">
