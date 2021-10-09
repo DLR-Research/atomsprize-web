@@ -1,6 +1,6 @@
 import { Stripe } from 'stripe-workers'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+const stripe = new Stripe(STRIPE_SECRET_KEY)
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
