@@ -14,7 +14,7 @@ const handleShare = async ({
     user_id,
     total_raised: "3,141,592",
     number_contributors: "6,535"
-  }).replaceAll("social.jpg", `badge/${user_id}`)
+  }).replaceAll("social.jpg", `badge/${user_id}.png`)
 
   return new Response(prerenderedHtml, {
     headers: {
