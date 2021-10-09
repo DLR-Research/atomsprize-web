@@ -17,7 +17,7 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
         <>
           <h2 className="center">Contribute</h2>
           <div>
-            <form action="http://127.0.0.1:8787/checkout" method="POST">
+            <form action="https://nobleprize.com/checkout" method="POST">
               <input type="number" min="0" step="0.01" id="amount" name="amount" placeholder="Enter Donation Amount..." />
               <button>Donate</button>
             </form>
