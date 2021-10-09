@@ -4,98 +4,98 @@ export const scientists: Scientist[] = [
   {
     name: 'Katalin Kariko',
     tagline: 'Modified mRNA',
-    headshot_url: 'headshots/kariko.jpg'
+    headshot_url: '/headshots/kariko.jpg'
   },
   {
     name: 'Drew Weissman',
     tagline: 'Modified mRNA',
-    headshot_url: 'headshots/weissman.jpg'
+    headshot_url: '/headshots/weissman.jpg'
   },
   {
     name: 'Yong-Zhen Zhang',
     tagline: 'SARS-CoV-2 genome',
-    headshot_url: 'headshots/zhang.jpg'
+    headshot_url: '/headshots/zhang.jpg'
   },
   {
     name: 'Eddie Holmes',
     tagline: 'SARS-CoV-2 genome',
-    headshot_url: 'headshots/holmes.jpg'
+    headshot_url: '/headshots/holmes.jpg'
   },
   {
     name: 'Barney Graham',
     tagline: 'Spike protein design',
-    headshot_url: 'headshots/graham.jpg'
+    headshot_url: '/headshots/graham.jpg'
   },
   {
     name: 'Kizzmekia Corbett',
     tagline: 'Spike protein design',
-    headshot_url: 'headshots/corbett.jpg',
+    headshot_url: '/headshots/corbett.jpg',
     break: true
   },
   {
     name: 'Jason McClellan',
     tagline: 'Spike protein design',
-    headshot_url: 'headshots/mcclellan.jpg'
+    headshot_url: '/headshots/mcclellan.jpg'
   },
   {
     name: 'Nianshuang Wang',
     tagline: 'Spike protein design',
-    headshot_url: 'headshots/wang.jpg'
+    headshot_url: '/headshots/wang.jpg'
   },
   {
     name: 'Daniel Wrapp',
     tagline: 'Spike protein design',
-    headshot_url: 'headshots/wrapp.jpg'
+    headshot_url: '/headshots/wrapp.jpg'
   },
   {
     name: 'Pieter Cullis',
     tagline: 'Lipid nanoparticles',
-    headshot_url: 'headshots/cullis.jpg'
+    headshot_url: '/headshots/cullis.jpg'
   },
   {
     name: 'Ian MacLachlan',
     tagline: 'Lipid nanoparticles',
-    headshot_url: 'headshots/maclachlan.jpg'
+    headshot_url: '/headshots/maclachlan.jpg'
   },
   {
     name: 'Regina Dugan',
     tagline: 'DARPA director',
-    headshot_url: 'headshots/dugan.jpg'
+    headshot_url: '/headshots/dugan.jpg'
   }
 ]
 
 export const badges: Badge[] = [
   {
     name: 'Ja\'far ibn Yahya',
-    img_url: 'medals/img0001.jpg'
+    img_url: '/medals/img0001.jpg'
   },
   {
     name: 'Rudolph II',
-    img_url: 'medals/img0002.jpg'
+    img_url: '/medals/img0002.jpg'
   },
   {
     name: 'Cosimo II de Medici',
-    img_url: 'medals/img0003.jpg'
+    img_url: '/medals/img0003.jpg'
   },
   {
     name: 'Sir Joseph Banks',
-    img_url: 'medals/img0004.jpg'
+    img_url: '/medals/img0004.jpg'
   },
   {
     name: 'Marie Meloney',
-    img_url: 'medals/img0005.jpg'
+    img_url: '/medals/img0005.jpg'
   },
   {
     name: 'Henry Wellcome',
-    img_url: 'medals/img0006.jpg'
+    img_url: '/medals/img0006.jpg'
   },
   {
     name: 'Mary Lasker',
-    img_url: 'medals/img0007.jpg'
+    img_url: '/medals/img0007.jpg'
   },
   {
     name: 'Howard Hughes',
-    img_url: 'medals/img0008.jpg'
+    img_url: '/medals/img0008.jpg'
   },
 ]
 

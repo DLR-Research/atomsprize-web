@@ -10,6 +10,13 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".html"],
+    fallback: {
+      "path": false,
+      "http": false,
+      "https": false,
+      "fs": false,
+      "os": false
+    },
   },
   module: {
     rules: [

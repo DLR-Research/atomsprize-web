@@ -12,7 +12,8 @@
     "format": "prettier --write '**/*.{ts,tsx,js,css,json,md}'",
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production && yarn prerender",
-    "build-worker": "webpack --mode production --config webpack.config.worker.js",
+    "build-worker": "yarn minify-html && webpack --mode production --config webpack.config.worker.js",
+    "minify-html": "html-minifier src/client/index.html -o src/client/index.min.html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true",
     "prerender": "ts-node scripts/prerender.tsx",
     "start": "http-server dist"
   },

@@ -72,6 +72,7 @@ export default function App({
   return (
     <>
       <PersistentModal state={modal_state} set_modal_state={set_modal_state} />
+      {user_id && <h1>Hello User {user_id}</h1>}
       <div id="content">
         <main>
           <div id="scientists" className="content-container">
@@ -97,7 +98,7 @@ export default function App({
           <div className="content-container">
             <h2>About</h2>
             <p>
-              {user_id} Decades of scientific research enabled the rapid development of
+              Decades of scientific research enabled the rapid development of
               the COVID-19 mRNA vaccines. We are recognizing the teams of
               scientists who pioneered these foundational discoveries despite
               challenges with{" "}
