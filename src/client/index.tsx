@@ -2,6 +2,13 @@ import { render, hydrate } from "preact"
 import App from "./App"
 import { scientists, badges, project_descriptions } from "./data"
 
+const user_id =
+  typeof window === "undefined"
+    ? undefined
+    : window.location.pathname.startsWith("/share/")
+    ? Number(window.location.pathname.replace("/share/", "")) || undefined
+    : undefined
+
 if (process.env.NODE_ENV === "production") {
   hydrate(
     <App
@@ -10,6 +17,7 @@ if (process.env.NODE_ENV === "production") {
       number_contributors="6,535"
       badges={badges}
       project_descriptions={project_descriptions}
+      user_id={user_id}
     />,
     document.getElementById("app-root")!
   )
@@ -21,6 +29,7 @@ if (process.env.NODE_ENV === "production") {
       number_contributors="6,535"
       badges={badges}
       project_descriptions={project_descriptions}
+      user_id={user_id}
     />,
     document.getElementById("app-root")!
   )
