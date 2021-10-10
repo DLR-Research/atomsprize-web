@@ -1,12 +1,12 @@
-import { useState, useEffect } from "preact/hooks"
-import PersistentModal, { ModalState } from "./components/PersistentModal"
-import Scientists from "./components/Scientists"
-import ScientistProfile from "./components/ScientistProfile"
-import Leaderboard from "./components/Leaderboard"
-import MedalSearch from "./components/MedalSearch"
-import ContributeButton from "./components/ContributeButton"
-import { scientists, badges, project_descriptions } from "./data"
-import { Donor } from "./types"
+import { useState, useEffect } from 'preact/hooks'
+import PersistentModal, { ModalState } from './components/PersistentModal'
+import Scientists from './components/Scientists'
+import ScientistProfile from './components/ScientistProfile'
+import Leaderboard from './components/Leaderboard'
+import MedalSearch from './components/MedalSearch'
+import ContributeButton from './components/ContributeButton'
+import { scientists, badges, project_descriptions } from './data'
+import { Donor } from './types'
 
 export type AppProps = {
   donor?: Donor
@@ -15,7 +15,7 @@ export type AppProps = {
 export default function App({ donor }: AppProps) {
   const [modal_state, set_modal_state] = useState<ModalState>({
     open: !!donor,
-    content: donor ? <h1>gm {donor.name || donor.user_id}!</h1> : ""
+    content: donor ? <h1>gm {donor.name || donor.user_id}!</h1> : ''
   })
 
   const open_project_modal = (tagline: string) => {
@@ -35,8 +35,8 @@ export default function App({ donor }: AppProps) {
       open: true,
       content: (
         <>
-          <h2 className="center">{tagline}</h2>
-          <div className="center modal-gallery">{scientist_elements}</div>
+          <h2 className='center'>{tagline}</h2>
+          <div className='center modal-gallery'>{scientist_elements}</div>
           <div>{project_descriptions[tagline]()}</div>
         </>
       )
@@ -44,30 +44,27 @@ export default function App({ donor }: AppProps) {
   }
 
   const handle_esc = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
+    if (event.key === 'Escape') {
       set_modal_state(s => ({ ...s, open: false }))
     }
   }
 
   useEffect(() => {
-    document.addEventListener("keydown", handle_esc, false)
+    document.addEventListener('keydown', handle_esc, false)
     return () => {
-      document.removeEventListener("keydown", handle_esc, false)
+      document.removeEventListener('keydown', handle_esc, false)
     }
   }, [])
 
   return (
     <>
       <PersistentModal state={modal_state} set_modal_state={set_modal_state} />
-      <div id="content">
+      <div id='content'>
         <main>
-          <div id="scientists" className="content-container">
-            <Scientists
-              scientists={scientists}
-              open_project_modal={open_project_modal}
-            />
+          <div id='scientists' className='content-container'>
+            <Scientists scientists={scientists} open_project_modal={open_project_modal} />
           </div>
-          <div className="content-container contribute-container">
+          <div className='content-container contribute-container'>
             <h2>Contribute</h2>
             {
               null /*<p>
@@ -77,55 +74,42 @@ export default function App({ donor }: AppProps) {
               Join the <span class="bf">6,535</span> supporters today.
             </p>*/
             }
-            <div id="contribute">
+            <div id='contribute'>
               <ContributeButton set_modal_state={set_modal_state} />
             </div>
           </div>
-          <div className="content-container">
+          <div className='content-container'>
             <h2>About</h2>
             <p>
-              Decades of scientific research enabled the rapid development of
-              the COVID-19 mRNA vaccines. We are recognizing the teams of
-              scientists who pioneered these foundational discoveries despite
-              challenges with{" "}
-              <a href="https://www.nber.org/papers/w28905">funding</a> and{" "}
-              <a href="https://twitter.com/goodwish916/status/1329234124394041345">
-                publishing
-              </a>{" "}
-              their research.
+              Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are
+              recognizing the teams of scientists who pioneered these foundational discoveries despite challenges with{' '}
+              <a href='https://www.nber.org/papers/w28905'>funding</a> and{' '}
+              <a href='https://twitter.com/goodwish916/status/1329234124394041345'>publishing</a> their research.
             </p>
             <p>
-              There is a distinguished history of collective science patronage.
-              Over $150,000 was raised in 1921 from{" "}
-              <a href="https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/">
+              There is a distinguished history of collective science patronage. Over $150,000 was raised in 1921 from{' '}
+              <a href='https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/'>
                 donations by American women for Marie Curie
               </a>
-              . Jonas Salk’s polio vaccine research was funded by the March of
-              Dimes, which raised $54 million from{" "}
-              <a href="https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover">
+              . Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised $54 million from{' '}
+              <a href='https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover'>
                 over 80 million people
-              </a>{" "}
+              </a>{' '}
               in 1954.
             </p>
-            <p>
-              We hope to continue this legacy by funding and celebrating these
-              scientific achievements together.
-            </p>
+            <p>We hope to continue this legacy by funding and celebrating these scientific achievements together.</p>
           </div>
-          <div className="content-container">
+          <div className='content-container'>
             <h2>Contributor Gallery</h2>
+            <p>Each contributor receives a unique medal as a token of appreciation.</p>
             <p>
-              Each contributor receives a unique medal as a token of
-              appreciation.
+              View and share your medal to help recognize and reward the scientists involved in developing the COVID-19
+              mRNA vaccine.
             </p>
-            <p>
-              View and share your medal to help recognize and reward the
-              scientists involved in developing the COVID-19 mRNA vaccine.
-            </p>
-            <div id="contribute" className="center">
+            <div id='contribute' className='center'>
               <MedalSearch set_modal_state={set_modal_state} />
             </div>
-            <div id="leaderboard">
+            <div id='leaderboard'>
               <Leaderboard badges={badges} />
             </div>
           </div>

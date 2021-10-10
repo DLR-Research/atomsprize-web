@@ -1,15 +1,12 @@
-import { Scientist } from "../types"
-import ScientistProfile from "./ScientistProfile"
+import { Scientist } from '../types'
+import ScientistProfile from './ScientistProfile'
 
 type ScientistsProps = {
   scientists: Scientist[]
   open_project_modal: (tagline: string) => void
 }
 
-export default function Scientists({
-  scientists,
-  open_project_modal
-}: ScientistsProps) {
+export default function Scientists({ scientists, open_project_modal }: ScientistsProps) {
   const scientists_list = scientists.map(s => (
     <ScientistProfile
       key={s.name}
@@ -19,5 +16,5 @@ export default function Scientists({
     />
   ))
 
-  return <div className="gallery">{scientists_list}</div>
+  return <div className='gallery'>{scientists_list}</div>
 }
