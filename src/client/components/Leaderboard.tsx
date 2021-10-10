@@ -1,29 +1,31 @@
 import { JSX } from 'preact'
 import { useState } from 'preact/hooks'
-import { Badge } from '../types'
+import { Donor } from '../types'
 import { ModalStateSetter } from './PersistentModal'
-import BadgeComponent from './Badge'
+import Badge from './Badge'
+import Sketch from 'react-p5'
+import create_renderer, { BadgeInputs } from '../../badge/render'
 
 type LeaderboardProps = {
-  badges: Badge[]
+  donors: Donor[]
   set_modal_state: ModalStateSetter
 }
 
-export default function Leaderboard({ badges, set_modal_state }: LeaderboardProps) {
-  const [filtered_badges, set_filtered_badges] = useState(badges)
-  const [active_badge, set_active_badge] = useState<Badge | null>(null)
+export default function Leaderboard({ donors, set_modal_state }: LeaderboardProps) {
+  const [filtered_donors, set_filtered_donors] = useState(donors)
+  const [active_donor, set_active_donor] = useState<Donor | null>(null)
 
-  const badge_elements = filtered_badges.map(b => (
-    <BadgeComponent
-      key={b.name}
-      badge={b}
-      active={b === active_badge}
+  const badge_elements = filtered_donors.map(d => (
+    <Badge
+      key={d.user_id}
+      donor={d}
+      active={d === active_donor}
       onClick={() => {
-        set_active_badge(b)
+        set_active_donor(d)
         set_modal_state({
           open: true,
-          content: <LeaderboardModal badge={b} />,
-          onClose: () => set_active_badge(null)
+          content: <LeaderboardModal donor={d} />,
+          onClose: () => set_active_donor(null)
         })
       }}
     />
@@ -36,7 +38,10 @@ export default function Leaderboard({ badges, set_modal_state }: LeaderboardProp
     set_search_string(s)
 
     const t = simplify(s)
-    set_filtered_badges(badges.filter(b => simplify(b.name).includes(t)))
+    set_filtered_donors(donors.filter(d =>
+      d.name && simplify(d.name).includes(t) ||
+      d.email && simplify(d.email).includes(t) // TODO check all fields
+    ))
   }
 
   return (
@@ -54,14 +59,16 @@ export default function Leaderboard({ badges, set_modal_state }: LeaderboardProp
 }
 
 type LeaderboardModalProps = {
-  badge: Badge
+  donor: Donor
 }
 
-function LeaderboardModal({ badge }: LeaderboardModalProps) {
+function LeaderboardModal({ donor }: LeaderboardModalProps) {
+  const renderer = create_renderer(donor as BadgeInputs)
+
   return (
     <div class='leaderboard-modal'>
-      <img src={badge.img_url} loading='lazy' />
-      <div class='name mt-1'>{badge.name}</div>
+      <Sketch key={donor.user_id} setup={renderer.setup} draw={renderer.draw} />
+      <div class='name mt-1'>{donor.name}</div>
     </div>
   )
 }

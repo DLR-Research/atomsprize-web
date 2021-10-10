@@ -1,17 +1,21 @@
 import { JSX } from 'preact'
-import { Badge } from '../types'
+import { Donor } from '../types'
+import Sketch from 'react-p5'
+import create_renderer, { BadgeInputs } from '../../badge/render'
 
 type BadgeProps = {
-  badge: Badge
+  donor: Donor
   active?: boolean
   onClick?: JSX.MouseEventHandler<HTMLDivElement>
 }
 
-export default function BadgeComponent({ badge: { name, img_url }, active, onClick }: BadgeProps) {
+export default function Badge({ donor, active, onClick }: BadgeProps) {
+  const renderer = create_renderer(donor as BadgeInputs)
+
   return (
     <div className={`gallery-item interactive${ active ? ' active' : ''}`} onClick={onClick}>
-      <img alt={name} src={img_url} className='badge' width={400} height={400} loading='lazy' />
-      <div className='name'>{name}</div>
+      <Sketch setup={renderer.setup} draw={renderer.draw} />
+      <div className='name'>{donor.name}</div>
     </div>
   )
 }

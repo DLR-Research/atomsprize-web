@@ -1,4 +1,4 @@
-import { Scientist, Badge, Donor } from './types'
+import { Scientist, Donor } from './types'
 
 export const scientists: Scientist[] = [
   {
@@ -61,41 +61,6 @@ export const scientists: Scientist[] = [
     name: 'Regina Dugan',
     tagline: 'DARPA director',
     headshot_url: '/headshots/dugan.jpg'
-  }
-]
-
-export const badges: Badge[] = [
-  {
-    name: "Ja'far ibn Yahya",
-    img_url: '/medals/img0001.jpg'
-  },
-  {
-    name: 'Rudolph II',
-    img_url: '/medals/img0002.jpg'
-  },
-  {
-    name: 'Cosimo II de Medici',
-    img_url: '/medals/img0003.jpg'
-  },
-  {
-    name: 'Sir Joseph Banks',
-    img_url: '/medals/img0004.jpg'
-  },
-  {
-    name: 'Marie Meloney',
-    img_url: '/medals/img0005.jpg'
-  },
-  {
-    name: 'Henry Wellcome',
-    img_url: '/medals/img0006.jpg'
-  },
-  {
-    name: 'Mary Lasker',
-    img_url: '/medals/img0007.jpg'
-  },
-  {
-    name: 'Howard Hughes',
-    img_url: '/medals/img0008.jpg'
   }
 ]
 
@@ -218,38 +183,43 @@ type UserMap = {
   [k: number]: Donor
 }
 
-const MOCK_USERS = {
+const MOCK_USERS: UserMap = {
   [0]: {
     user_id: 0,
-    total_donated: 608,
+    total_donated: 99,
     total_referred: 33,
     name: 'Lawrence Wu',
     email: 'lawrence@dlr',
     ens_address: 'lawrence.eth',
-    eth_address: '0xlawrence'
+    eth_address: '0x1a35e7ce'
   },
   [1]: {
     user_id: 1,
-    total_donated: 895,
+    total_donated: 999,
     total_referred: 603,
     name: 'Raphael Mu',
     email: 'raphael@dlr',
     ens_address: 'raphael.eth',
-    eth_address: '0xraphael'
+    eth_address: '0x5a94ae1'
   },
   [2]: {
     user_id: 2,
-    total_donated: 140,
+    total_donated: 9999,
     total_referred: 286,
     name: 'Darren Zhu',
     email: 'darren@dlr',
     ens_address: 'darren.eth',
-    eth_address: '0xdarren'
+    eth_address: '0xda55e7'
   }
-} as UserMap
+}
 
 export const get_mock_user = (user_id?: number) => {
   const users = Object.values(MOCK_USERS)
   const randomUser = users[Math.floor(Math.random() * users.length)]
   return user_id ? MOCK_USERS[user_id] || randomUser : undefined
 }
+
+export function get_all_donors() {
+  return MOCK_USERS
+}
+

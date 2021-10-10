@@ -5,11 +5,6 @@ export type Scientist = {
   break?: boolean
 }
 
-export type Badge = {
-  name: string
-  img_url: string
-}
-
 export type Donor = {
   user_id: number
   total_donated: number
@@ -19,3 +14,4 @@ export type Donor = {
   ens_address?: string
   eth_address?: string
 }
+
