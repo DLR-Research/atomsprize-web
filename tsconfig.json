@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
+    "module": "es6",
+    "target": "es6",
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
@@ -11,7 +12,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "moduleResolution": "node",
-    "lib": ["esnext"],
+    "sourceMap": true,
     "types": ["node", "@cloudflare/workers-types"]
   },
   "include": ["src/**/*"]

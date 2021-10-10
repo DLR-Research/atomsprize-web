@@ -10,8 +10,8 @@
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production && yarn minify-template && yarn prerender",
     "build-worker": "yarn minify-template && webpack --mode production --config webpack.config.worker.js",
-    "prerender": "ts-node scripts/prerenderFromTemplate.ts",
-    "minify-template": "ts-node scripts/minifyTemplate.ts",
+    "prerender": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node scripts/prerenderFromTemplate.ts",
+    "minify-template": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node scripts/minifyTemplate.ts",
     "start": "http-server dist"
   },
   "devDependencies": {
