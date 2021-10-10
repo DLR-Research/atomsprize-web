@@ -276,6 +276,10 @@ input::-webkit-inner-spin-button {
   filter: grayscale(20%);
 }
 
+#leaderboard .gallery {
+  min-height: 22rem;
+}
+
 .headshot {
   border-radius: 4.5rem;
   height: 9rem;

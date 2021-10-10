@@ -107,9 +107,6 @@ export default function App({ donor }: AppProps) {
               View and share your medal to help recognize and reward the scientists involved in developing the COVID-19
               mRNA vaccine.
             </p>
-            <div id='contribute' className='center medal-form'>
-              <input placeholder='Search by e-mail, Twitter, ENS, or wallet address...' />
-            </div>
             <div id='leaderboard'>
               <Leaderboard badges={badges} />
             </div>
