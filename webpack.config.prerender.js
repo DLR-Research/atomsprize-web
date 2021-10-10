@@ -1,15 +1,15 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/worker/index.ts',
-  target: 'webworker',
-  mode: 'production',
+  entry: './scripts/prerenderFromTemplate.ts',
+  target: 'node',
   output: {
-    filename: 'worker.js',
+    filename: 'prerender.js',
     path: path.join(__dirname, 'dist')
   },
+  mode: 'development',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.html'],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
       react: 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
@@ -24,10 +24,6 @@ module.exports = {
         loader: 'ts-loader',
         exclude: /node_modules/
       },
-      {
-        test: /\.html/,
-        type: 'asset/source'
-      }
     ]
   }
 }

@@ -8,10 +8,10 @@
   "scripts": {
     "format": "prettier --write '**/*.{ts,tsx,js,css,json,md,html}'",
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production && yarn minify-template && yarn prerender",
+    "build": "webpack --mode production && yarn minify-template && yarn build-prerenderer && node dist/prerender.js",
     "build-worker": "yarn minify-template && webpack --mode production --config webpack.config.worker.js",
     "build-worker-dev": "yarn minify-template && webpack --config webpack.config.worker.dev.js",
-    "prerender": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node scripts/prerenderFromTemplate.ts",
+    "build-prerenderer": "webpack --config webpack.config.prerender.js",
     "minify-template": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node scripts/minifyTemplate.ts",
     "start": "http-server dist"
   },
