@@ -1,6 +1,11 @@
 name = "nobleprize"
 type = "javascript"
-routes = ['*nobleprize.com/checkout', '*nobleprize.com/share/*', '*nobleprize.com/badge/*']
+routes = [
+  '*nobleprize.com/checkout',
+  '*nobleprize.com/share/*',
+  '*nobleprize.com/stats*',
+  '*nobleprize.com/badge/*'
+]
 account_id = 'd3934b9b324240bf989664e018097273'
 zone_id = '25683f567ebb34c35d85566ca7580bb0'
 usage_model = 'unbound'

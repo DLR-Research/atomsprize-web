@@ -5,9 +5,9 @@ import { get_mock_user } from "../client/data"
 const handleShare = async ({
   params: { id: user_id }
 }: {
-  params: { id: number }
+  params: { id: string }
 }) => {
-  const donor = get_mock_user(user_id)
+  const donor = get_mock_user(Number(user_id) || 99999)
   const prerenderedHtml = prerender(template, { donor })
   const finalHtml = donor ? prerenderedHtml.replaceAll("social.jpg", `badge/${donor.user_id}.png`) : prerenderedHtml
 
