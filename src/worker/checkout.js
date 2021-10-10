@@ -7,7 +7,8 @@ const handleRequest = async request => {
   const formData = await request.formData()
   for (const entry of formData.entries()) {
     if (entry[0] === 'amount') {
-      amount = 100 * (Number(entry[1]) || 0)
+      const amount_string = (entry[1] || '').replaceAll(',', '')
+      amount = 100 * Number(amount_string)
     }
   }
 

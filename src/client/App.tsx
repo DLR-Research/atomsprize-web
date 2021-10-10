@@ -3,7 +3,6 @@ import PersistentModal, { ModalState } from './components/PersistentModal'
 import Scientists from './components/Scientists'
 import ScientistProfile from './components/ScientistProfile'
 import Leaderboard from './components/Leaderboard'
-import MedalSearch from './components/MedalSearch'
 import ContributeButton from './components/ContributeButton'
 import { scientists, badges, project_descriptions } from './data'
 import { Donor } from './types'
@@ -83,8 +82,10 @@ export default function App({ donor }: AppProps) {
             <p>
               Decades of scientific research enabled the rapid development of the COVID-19 mRNA vaccines. We are
               recognizing the teams of scientists who pioneered these foundational discoveries despite challenges with{' '}
-              <a href='https://www.nber.org/papers/w28905'>funding</a> and{' '}
-              <a href='https://twitter.com/goodwish916/status/1329234124394041345'>publishing</a> their research.
+              <a href='https://www.nber.org/papers/w28905' class='no-kerning'>
+                funding
+              </a>{' '}
+              and <a href='https://twitter.com/goodwish916/status/1329234124394041345'>publishing</a> their research.
             </p>
             <p>
               There is a distinguished history of collective science patronage. Over $150,000 was raised in 1921 from{' '}
@@ -106,8 +107,8 @@ export default function App({ donor }: AppProps) {
               View and share your medal to help recognize and reward the scientists involved in developing the COVID-19
               mRNA vaccine.
             </p>
-            <div id='contribute' className='center'>
-              <MedalSearch set_modal_state={set_modal_state} />
+            <div id='contribute' className='center medal-form'>
+              <input placeholder='Search by e-mail, Twitter, ENS, or wallet address...' />
             </div>
             <div id='leaderboard'>
               <Leaderboard badges={badges} />
