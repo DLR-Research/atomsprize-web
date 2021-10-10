@@ -16,7 +16,6 @@
     <meta property="og:image" content="http://nobleprize.com/social.jpg" />
     <meta property="og:description" content="A collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines" />
     <link rel="shortcut icon" type="image/jpeg" href="/social.jpg">
-    <link rel="preload" href="/style.css" as="style" type="text/css" onload="this.rel='stylesheet'">
     <link rel="preload" href="/fonts/TimesNewerRoman-Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/fonts/TimesNewerRoman-Bold.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="/headshots/corbett.jpg" as="image" type="image/jpeg">
@@ -32,130 +31,7 @@
     <link rel="preload" href="/headshots/wrapp.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="/headshots/zhang.jpg" as="image" type="image/jpeg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-      @supports (font: -apple-system-body) {
-        :root {
-          font: -apple-system-body;
-        }
-      }
-
-      @font-face {
-        font-family: "Times Newer Roman";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url("/fonts/TimesNewerRoman-Regular.otf") format("opentype");
-      }
-
-      @font-face {
-        font-family: "Times Newer Roman";
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url("/fonts/TimesNewerRoman-Bold.otf") format("opentype");
-      }
-
-      @font-face {
-        font-family: "Monaco";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local("Monaco"), url("fonts/Monaco.ttf") format("truetype");
-      }
-
-      body, html {
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        font-family: "Times Newer Roman", "Times New Roman", Times, serif;
-        line-height: 1.4;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased !important;
-        -moz-font-smoothing: antialiased !important;
-        text-rendering: optimizeLegibility !important;
-      }
-
-      header {
-        flex: 0;
-      }
-
-      .title-container {
-        padding: .5rem;
-        background: #967100;
-        text-align: center;
-        color: white;
-      }
-
-      .bf {
-        font-weight: bold;
-      }
-
-      .content-container {
-        max-width: 40rem;
-        padding: 0 1rem;
-        margin: 2rem auto;
-      }
-
-      .contribute-container {
-        box-sizing: border-box;
-        text-align: center;
-        border: 1px solid #967100;
-        /* font-family: "Monaco", "Courier New", Courier, monospace; */
-        font-size: 1.2rem;
-        padding: 1rem;
-      }
-
-      .content-container > h2:first-child {
-        margin-top: 0;
-      }
-
-      .gallery {
-        max-width: 40rem;
-        margin: 0 auto;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        text-align: center;
-      }
-
-      .gallery-item {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0.5rem;
-      }
-
-      .headshot {
-        margin-bottom: 0.75rem;
-        width: 9rem;
-        height: 9rem;
-        border-radius: 4.5rem;
-        object-fit: cover;
-      }
-
-      .gallery-item.interactive .headshot {
-        filter: grayscale(100%);
-        transition: 0.3s;
-      }
-
-      .gallery-item .name {
-        font-weight: bold;
-      }
-
-      .gallery-item .tagline {
-        font-size: 0.9rem;
-      }
-
-      button {
-        cursor: pointer;
-        background: #967100;
-        border: none;
-        border-radius: 2px;
-        padding: 0.5rem 2rem;
-        font-size: 1rem;
-        font-weight: 400;
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
     <header class="title-container">
@@ -165,6 +41,5 @@
       </p>
     </header>
     <div id="app-root"></div>
-    <script type="module" src="/bundle.js" defer></script>
   </body>
 </html>

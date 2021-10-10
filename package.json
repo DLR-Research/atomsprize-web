@@ -11,10 +11,10 @@
   "scripts": {
     "format": "prettier --write '**/*.{ts,tsx,js,css,json,md}'",
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production && yarn prerender",
-    "build-worker": "yarn minify-html && webpack --mode production --config webpack.config.worker.js",
-    "minify-html": "html-minifier src/client/index.html -o src/client/index.min.html --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true",
-    "prerender": "ts-node scripts/prerender.tsx",
+    "build": "webpack --mode production && yarn minify-template && yarn prerender",
+    "build-worker": "yarn minify-template && webpack --mode production --config webpack.config.worker.js",
+    "prerender": "ts-node scripts/prerenderFromTemplate.ts",
+    "minify-template": "ts-node scripts/minifyTemplate.ts",
     "start": "http-server dist"
   },
   "devDependencies": {

@@ -1,34 +1,21 @@
 import { useState, useEffect } from "preact/hooks"
-import { Scientist, Badge } from "./types"
-import { ProjectDescriptionMap } from "./data"
 import PersistentModal, { ModalState } from "./components/PersistentModal"
 import Scientists from "./components/Scientists"
 import ScientistProfile from "./components/ScientistProfile"
 import Leaderboard from "./components/Leaderboard"
 import MedalSearch from "./components/MedalSearch"
 import ContributeButton from "./components/ContributeButton"
+import { scientists, badges, project_descriptions } from "./data"
+import { Donor } from "./types"
 
 export type AppProps = {
-  scientists: Scientist[]
-  badges: Badge[]
-  project_descriptions: ProjectDescriptionMap
-  user_id?: number
-  // TODO change these two to numbers
-  total_raised: string
-  number_contributors: string
+  donor?: Donor
 }
 
-export default function App({
-  scientists,
-  // total_raised,
-  // number_contributors,
-  badges,
-  project_descriptions,
-  user_id
-}: AppProps) {
+export default function App({ donor }: AppProps) {
   const [modal_state, set_modal_state] = useState<ModalState>({
-    open: !!user_id,
-    content: user_id ? <h1>Hello User {user_id}</h1> : ""
+    open: !!donor,
+    content: donor ? <h1>gm {donor.name || donor.user_id}!</h1> : ""
   })
 
   const open_project_modal = (tagline: string) => {
@@ -57,7 +44,7 @@ export default function App({
   }
 
   const handle_esc = (event: KeyboardEvent) => {
-    if (event.keyCode === 27) {
+    if (event.key === "Escape") {
       set_modal_state(s => ({ ...s, open: false }))
     }
   }
@@ -84,10 +71,10 @@ export default function App({
             <h2>Contribute</h2>
             {
               null /*<p>
-              We’ve raised <span class="bf">\$${total_raised}</span> for these scientists. Prizes will be divided equally and awarded on October 31st, 2021.
+              We’ve raised <span class="bf">3,141,592</span> for these scientists. Prizes will be divided equally and awarded on October 31st, 2021.
             </p>
             <p>
-              Join the <span class="bf">${number_contributors}</span> supporters today.
+              Join the <span class="bf">6,535</span> supporters today.
             </p>*/
             }
             <div id="contribute">

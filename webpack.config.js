@@ -30,10 +30,10 @@ module.exports = (_env, argv) => {
       filename: "bundle.js"
     },
     plugins: [
+      !isProduction && new PreactRefreshPlugin(),
       !isProduction &&
         new HtmlWebpackPlugin({ template: "src/client/index.html" }),
       new CopyPlugin({ patterns: [{ from: "assets", to: "." }] }),
-      new PreactRefreshPlugin()
     ].filter(Boolean),
     devServer: {
       static: {

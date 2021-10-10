@@ -1,4 +1,4 @@
-import { Scientist, Badge } from "./types"
+import { Scientist, Badge, Donor } from "./types"
 
 export const scientists: Scientist[] = [
   {
@@ -233,4 +233,44 @@ export const project_descriptions = {
   "Spike protein design": spike_desc,
   "Lipid nanoparticles": lipid_nanoparticles_desc,
   "DARPA director": darpa_desc
+} as ProjectDescriptionMap
+
+type UserMap = {
+  [k: number]: Donor
+}
+
+const MOCK_USERS = {
+  [0]: {
+    user_id: 0,
+    total_donated: 608,
+    total_referred: 33,
+    name: "Lawrence Wu",
+    email: "lawrence@dlr",
+    ens_address: "lawrence.eth",
+    eth_address: "0xlawrence",
+  },
+  [1]: {
+    user_id: 1,
+    total_donated: 895,
+    total_referred: 603,
+    name: "Raphael Mu",
+    email: "raphael@dlr",
+    ens_address: "raphael.eth",
+    eth_address: "0xraphael",
+  },
+  [2]: {
+    user_id: 2,
+    total_donated: 140,
+    total_referred: 286,
+    name: "Darren Zhu",
+    email: "darren@dlr",
+    ens_address: "darren.eth",
+    eth_address: "0xdarren",
+  },
+} as UserMap
+
+export const get_mock_user = (user_id?: number) => {
+  const users = Object.values(MOCK_USERS)
+  const randomUser = users[Math.floor(Math.random() * users.length)]
+  return user_id ? (MOCK_USERS[user_id] || randomUser) : undefined
 }

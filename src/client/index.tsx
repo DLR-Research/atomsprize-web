@@ -1,36 +1,22 @@
 import { render, hydrate } from "preact"
 import App from "./App"
-import { scientists, badges, project_descriptions } from "./data"
+import { get_mock_user } from "./data"
 
-const user_id =
-  typeof window === "undefined"
-    ? undefined
-    : window.location.pathname.startsWith("/share/")
-    ? Number(window.location.pathname.replace("/share/", "")) || undefined
-    : undefined
+const main = async () => {
+  const user_id =
+    typeof window === "undefined"
+      ? undefined
+      : window.location.pathname.startsWith("/share/")
+      ? Number(window.location.pathname.replace("/share/", "")) || undefined
+      : undefined
 
-if (process.env.NODE_ENV === "production") {
-  hydrate(
-    <App
-      scientists={scientists}
-      total_raised="3,141,592"
-      number_contributors="6,535"
-      badges={badges}
-      project_descriptions={project_descriptions}
-      user_id={user_id}
-    />,
-    document.getElementById("app-root")!
-  )
-} else {
-  render(
-    <App
-      scientists={scientists}
-      total_raised="3,141,592"
-      number_contributors="6,535"
-      badges={badges}
-      project_descriptions={project_descriptions}
-      user_id={user_id}
-    />,
-    document.getElementById("app-root")!
-  )
+  const donor = get_mock_user(user_id)
+
+  if (process.env.NODE_ENV === "production") {
+    hydrate(<App donor={donor} />, document.getElementById("app-root")!)
+  } else {
+    render(<App donor={donor} />, document.getElementById("app-root")!)
+  }
 }
+
+main();
