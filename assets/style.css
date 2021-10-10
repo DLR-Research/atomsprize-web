@@ -6,26 +6,38 @@
 
 @font-face {
     font-display: swap;
-    font-family: "Times Newer Roman";
+    font-family: 'Garamond';
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/TimesNewerRoman-Regular.otf) format("opentype")
+    src: url('./fonts/Garamond Regular.woff2') format('woff2'),
+      url('./fonts/Garamond Regular.woff') format('woff');
 }
 
 @font-face {
     font-display: swap;
-    font-family: "Times Newer Roman";
+    font-family: 'Garamond';
     font-style: normal;
     font-weight: 700;
-    src: url(/fonts/TimesNewerRoman-Bold.otf) format("opentype")
+    src: url('./fonts/Garamond Bold.woff2') format('woff2'),
+      url('./fonts/Garamond Bold.woff') format('woff');
 }
 
 @font-face {
     font-display: swap;
-    font-family: "Monaco";
-    font-style: normal;
+    font-family: 'Garamond';
+    font-style: italic;
     font-weight: 400;
-    src: local(Monaco), url(fonts/Monaco.ttf) format("truetype")
+    src: url('./fonts/Garamond Regular Italic.woff2') format('woff2'),
+      url('./fonts/Garamond Regular Italic.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Garamond';
+    font-style: italic;
+    font-weight: 700;
+    src: url('./fonts/Garamond Bold Italic.woff2') format('woff2'),
+      url('./fonts/Garamond Bold Italic.woff') format('woff');
 }
 
 #content {
@@ -191,15 +203,15 @@ a:visited {
 
 body,
 html {
-    -moz-font-smoothing: antialiased!important;
+    -moz-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased!important;
-    font-family: "Times Newer Roman", "Times New Roman", Times, serif;
+    -webkit-font-smoothing: antialiased !important;
+    font-family: 'Garamond', serif;
     height: 100vh;
     line-height: 1.4;
     margin: 0;
     padding: 0;
-    text-rendering: optimizeLegibility!important
+    text-rendering: optimizeLegibility !important
 }
 
 body.noscroll {
