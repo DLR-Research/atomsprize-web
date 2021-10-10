@@ -204,7 +204,7 @@ html {
   -moz-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased !important;
-  font-family: 'Garamond', serif;
+  font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
   height: 100vh;
   line-height: 1.4;
   margin: 0;
