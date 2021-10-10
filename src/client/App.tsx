@@ -36,7 +36,7 @@ export default function App({ donor }: AppProps) {
         <>
           <h2 className='center'>{tagline}</h2>
           <div className='center modal-gallery'>{scientist_elements}</div>
-          <div>{project_descriptions[tagline]()}</div>
+          <div className='project-description'>{project_descriptions[tagline]()}</div>
         </>
       )
     })

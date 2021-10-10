@@ -10,7 +10,13 @@ module.exports = {
     path: path.join(__dirname, 'dist')
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.html']
+    extensions: ['.tsx', '.ts', '.js', '.html'],
+    alias: {
+      react: 'preact/compat',
+      'react-dom/test-utils': 'preact/test-utils',
+      'react-dom': 'preact/compat',
+      'react/jsx-runtime': 'preact/jsx-runtime'
+    }
   },
   module: {
     rules: [

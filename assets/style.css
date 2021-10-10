@@ -215,6 +215,7 @@ input::placeholder {
   font-size: 1.1rem;
   max-width: 40rem;
   padding: 0 1rem;
+  text-align: justify;
 }
 
 .content-container > h2:first-child {
@@ -267,12 +268,12 @@ input::-webkit-inner-spin-button {
 }
 
 .gallery-item.interactive .headshot {
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   transition: 0.3s;
 }
 
 .gallery-item.interactive:hover .headshot {
-  filter: grayscale(0);
+  filter: grayscale(20%);
 }
 
 .headshot {
@@ -281,6 +282,7 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0.75rem;
   object-fit: cover;
   width: 9rem;
+  filter: grayscale(20%);
 }
 
 .interactive {
@@ -308,13 +310,13 @@ input::-webkit-inner-spin-button {
   z-index: 999;
 }
 
-.modal-container .modal {
+.modal {
   background: #fff;
   border-radius: 0.5rem;
   max-height: 80vh;
   max-width: 40rem;
   overflow: auto;
-  padding: 2rem;
+  padding: 3rem;
   position: relative;
   transition: 0.2s ease-out;
 }
@@ -346,10 +348,18 @@ input::-webkit-inner-spin-button {
   top: 0.5rem;
 }
 
-@media (max-width: 37rem), (max-height: 37rem) {
+@media (max-width: 38rem), (max-height: 38rem) {
   .modal-gallery {
     display: none;
   }
+
+  .modal {
+    padding: 2rem;
+  }
+}
+
+.project-description {
+  text-align: justify;
 }
 
 .medal-form {
