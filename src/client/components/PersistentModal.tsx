@@ -1,4 +1,4 @@
-import { useEffect, StateUpdater } from "preact/hooks"
+import { useEffect, StateUpdater } from 'preact/hooks'
 
 export type PersistentModalProps = {
   state: ModalState
@@ -23,16 +23,16 @@ export default function PersistentModal({
 
   useEffect(() => {
     if (open) {
-      document.body.classList.add("noscroll")
+      document.body.classList.add('noscroll')
     } else {
-      document.body.classList.remove("noscroll")
+      document.body.classList.remove('noscroll')
     }
   }, [open])
 
   return (
-    <div className={`modal-container ${open ? "open" : ""}`} onClick={on_close}>
-      <div className="modal" onClick={e => e.stopPropagation()}>
-        <a className="x-button" onClick={on_close}>
+    <div className={`modal-container ${open ? 'open' : ''}`} onClick={on_close}>
+      <div className='modal' onClick={e => e.stopPropagation()}>
+        <a className='x-button' onClick={on_close}>
           ×
         </a>
         {content}

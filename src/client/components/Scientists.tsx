@@ -1,5 +1,5 @@
-import { Scientist } from "../types"
-import ScientistProfile from "./ScientistProfile"
+import { Scientist } from '../types'
+import ScientistProfile from './ScientistProfile'
 
 type ScientistsProps = {
   scientists: Scientist[]
@@ -19,5 +19,5 @@ export default function Scientists({
     />
   ))
 
-  return <div className="gallery">{scientists_list}</div>
+  return <div className='gallery'>{scientists_list}</div>
 }

@@ -1,101 +1,101 @@
-import { Scientist, Badge, Donor } from "./types"
+import { Scientist, Badge, Donor } from './types'
 
 export const scientists: Scientist[] = [
   {
-    name: "Katalin Kariko",
-    tagline: "Modified mRNA",
-    headshot_url: "/headshots/kariko.jpg"
+    name: 'Katalin Kariko',
+    tagline: 'Modified mRNA',
+    headshot_url: '/headshots/kariko.jpg'
   },
   {
-    name: "Drew Weissman",
-    tagline: "Modified mRNA",
-    headshot_url: "/headshots/weissman.jpg"
+    name: 'Drew Weissman',
+    tagline: 'Modified mRNA',
+    headshot_url: '/headshots/weissman.jpg'
   },
   {
-    name: "Yong-Zhen Zhang",
-    tagline: "SARS-CoV-2 genome",
-    headshot_url: "/headshots/zhang.jpg"
+    name: 'Yong-Zhen Zhang',
+    tagline: 'SARS-CoV-2 genome',
+    headshot_url: '/headshots/zhang.jpg'
   },
   {
-    name: "Eddie Holmes",
-    tagline: "SARS-CoV-2 genome",
-    headshot_url: "/headshots/holmes.jpg"
+    name: 'Eddie Holmes',
+    tagline: 'SARS-CoV-2 genome',
+    headshot_url: '/headshots/holmes.jpg'
   },
   {
-    name: "Barney Graham",
-    tagline: "Spike protein design",
-    headshot_url: "/headshots/graham.jpg"
+    name: 'Barney Graham',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/graham.jpg'
   },
   {
-    name: "Kizzmekia Corbett",
-    tagline: "Spike protein design",
-    headshot_url: "/headshots/corbett.jpg",
+    name: 'Kizzmekia Corbett',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/corbett.jpg',
     break: true
   },
   {
-    name: "Jason McClellan",
-    tagline: "Spike protein design",
-    headshot_url: "/headshots/mcclellan.jpg"
+    name: 'Jason McClellan',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/mcclellan.jpg'
   },
   {
-    name: "Nianshuang Wang",
-    tagline: "Spike protein design",
-    headshot_url: "/headshots/wang.jpg"
+    name: 'Nianshuang Wang',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/wang.jpg'
   },
   {
-    name: "Daniel Wrapp",
-    tagline: "Spike protein design",
-    headshot_url: "/headshots/wrapp.jpg"
+    name: 'Daniel Wrapp',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/wrapp.jpg'
   },
   {
-    name: "Pieter Cullis",
-    tagline: "Lipid nanoparticles",
-    headshot_url: "/headshots/cullis.jpg"
+    name: 'Pieter Cullis',
+    tagline: 'Lipid nanoparticles',
+    headshot_url: '/headshots/cullis.jpg'
   },
   {
-    name: "Ian MacLachlan",
-    tagline: "Lipid nanoparticles",
-    headshot_url: "/headshots/maclachlan.jpg"
+    name: 'Ian MacLachlan',
+    tagline: 'Lipid nanoparticles',
+    headshot_url: '/headshots/maclachlan.jpg'
   },
   {
-    name: "Regina Dugan",
-    tagline: "DARPA director",
-    headshot_url: "/headshots/dugan.jpg"
+    name: 'Regina Dugan',
+    tagline: 'DARPA director',
+    headshot_url: '/headshots/dugan.jpg'
   }
 ]
 
 export const badges: Badge[] = [
   {
     name: "Ja'far ibn Yahya",
-    img_url: "/medals/img0001.jpg"
+    img_url: '/medals/img0001.jpg'
   },
   {
-    name: "Rudolph II",
-    img_url: "/medals/img0002.jpg"
+    name: 'Rudolph II',
+    img_url: '/medals/img0002.jpg'
   },
   {
-    name: "Cosimo II de Medici",
-    img_url: "/medals/img0003.jpg"
+    name: 'Cosimo II de Medici',
+    img_url: '/medals/img0003.jpg'
   },
   {
-    name: "Sir Joseph Banks",
-    img_url: "/medals/img0004.jpg"
+    name: 'Sir Joseph Banks',
+    img_url: '/medals/img0004.jpg'
   },
   {
-    name: "Marie Meloney",
-    img_url: "/medals/img0005.jpg"
+    name: 'Marie Meloney',
+    img_url: '/medals/img0005.jpg'
   },
   {
-    name: "Henry Wellcome",
-    img_url: "/medals/img0006.jpg"
+    name: 'Henry Wellcome',
+    img_url: '/medals/img0006.jpg'
   },
   {
-    name: "Mary Lasker",
-    img_url: "/medals/img0007.jpg"
+    name: 'Mary Lasker',
+    img_url: '/medals/img0007.jpg'
   },
   {
-    name: "Howard Hughes",
-    img_url: "/medals/img0008.jpg"
+    name: 'Howard Hughes',
+    img_url: '/medals/img0008.jpg'
   }
 ]
 
@@ -112,12 +112,12 @@ const kariko_weissman_desc = () => (
       from SARS-CoV-2 as a blueprint.
     </p>
     <p>
-      Read more about their work to modify mRNA in{" "}
-      <a href="https://www.statnews.com/2020/11/10/the-story-of-mrna-how-a-once-dismissed-idea-became-a-leading-technology-in-the-covid-vaccine-race/">
+      Read more about their work to modify mRNA in{' '}
+      <a href='https://www.statnews.com/2020/11/10/the-story-of-mrna-how-a-once-dismissed-idea-became-a-leading-technology-in-the-covid-vaccine-race/'>
         STAT News
-      </a>{" "}
-      and the{" "}
-      <a href="https://www.nytimes.com/2021/04/08/health/coronavirus-mrna-kariko.html">
+      </a>{' '}
+      and the{' '}
+      <a href='https://www.nytimes.com/2021/04/08/health/coronavirus-mrna-kariko.html'>
         New York Times.
       </a>
     </p>
@@ -128,11 +128,11 @@ const zhang_holmes_desc = () => (
   <>
     <p>
       <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of SARS-CoV-2
-      within 40 hours on January 5, 2020 and sent it to colleague{" "}
-      <b>Eddie Holmes</b>, who{" "}
-      <a href="https://virological.org/t/novel-2019-coronavirus-genome/319">
+      within 40 hours on January 5, 2020 and sent it to colleague{' '}
+      <b>Eddie Holmes</b>, who{' '}
+      <a href='https://virological.org/t/novel-2019-coronavirus-genome/319'>
         released it publicly
-      </a>{" "}
+      </a>{' '}
       52 minutes after receiving it.
     </p>
     <p>
@@ -141,12 +141,12 @@ const zhang_holmes_desc = () => (
       sequence used for the vaccines.
     </p>
     <p>
-      Read more about their work on the SARS-CoV-2 genome in{" "}
-      <a href="https://time.com/5882918/zhang-yongzhen-interview-china-coronavirus-genome/">
+      Read more about their work on the SARS-CoV-2 genome in{' '}
+      <a href='https://time.com/5882918/zhang-yongzhen-interview-china-coronavirus-genome/'>
         Time Magazine
-      </a>{" "}
-      and{" "}
-      <a href="https://www.bbc.com/news/science-environment-55565284">BBC</a>.
+      </a>{' '}
+      and{' '}
+      <a href='https://www.bbc.com/news/science-environment-55565284'>BBC</a>.
     </p>
   </>
 )
@@ -154,7 +154,7 @@ const zhang_holmes_desc = () => (
 const spike_desc = () => (
   <>
     <p>
-      <b>Kizzmekia Corbett</b>, <b>Barney Graham</b>, <b>Jason McClellan</b>,{" "}
+      <b>Kizzmekia Corbett</b>, <b>Barney Graham</b>, <b>Jason McClellan</b>,{' '}
       <b>Nianshuang Wang</b>, and <b>Daniel Wrapp</b> designed the SARS-CoV-2
       spike protein in early 2020 to train the immune system to recognize the
       virus.
@@ -165,12 +165,12 @@ const spike_desc = () => (
       immune response.
     </p>
     <p>
-      Read more about their work on the spike protein design in{" "}
-      <a href="https://www.nationalgeographic.com/science/article/these-scientists-spent-twelve-years-solving-puzzle-yielded-coronavirus-vaccines">
+      Read more about their work on the spike protein design in{' '}
+      <a href='https://www.nationalgeographic.com/science/article/these-scientists-spent-twelve-years-solving-puzzle-yielded-coronavirus-vaccines'>
         National Geographic
-      </a>{" "}
-      and{" "}
-      <a href="https://www.washingtonpost.com/health/2020/11/17/coronavirus-vaccine-manufacturing/">
+      </a>{' '}
+      and{' '}
+      <a href='https://www.washingtonpost.com/health/2020/11/17/coronavirus-vaccine-manufacturing/'>
         Washington Post.
       </a>
     </p>
@@ -189,12 +189,12 @@ const lipid_nanoparticles_desc = () => (
       into cells after injection.
     </p>
     <p>
-      Read more about their work on LNPs in{" "}
-      <a href="https://cen.acs.org/pharmaceuticals/drug-delivery/Without-lipid-shells-mRNA-vaccines/99/i8">
+      Read more about their work on LNPs in{' '}
+      <a href='https://cen.acs.org/pharmaceuticals/drug-delivery/Without-lipid-shells-mRNA-vaccines/99/i8'>
         Chemical & Engineering News
-      </a>{" "}
-      and{" "}
-      <a href="https://www.forbes.com/sites/nathanvardi/2021/08/17/covids-forgotten-hero-the-untold-story-of-the-scientist-whose-breakthrough-made-the-vaccines-possible/">
+      </a>{' '}
+      and{' '}
+      <a href='https://www.forbes.com/sites/nathanvardi/2021/08/17/covids-forgotten-hero-the-untold-story-of-the-scientist-whose-breakthrough-made-the-vaccines-possible/'>
         Forbes
       </a>
       .
@@ -214,8 +214,8 @@ const darpa_desc = () => (
       for pandemics where rapid response technologies would be necessary.
     </p>
     <p>
-      Read more about this effort to fund new vaccines in{" "}
-      <a href="https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html">
+      Read more about this effort to fund new vaccines in{' '}
+      <a href='https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html'>
         Washington Post
       </a>
       .
@@ -228,11 +228,11 @@ export type ProjectDescriptionMap = {
 }
 
 export const project_descriptions = {
-  "Modified mRNA": kariko_weissman_desc,
-  "SARS-CoV-2 genome": zhang_holmes_desc,
-  "Spike protein design": spike_desc,
-  "Lipid nanoparticles": lipid_nanoparticles_desc,
-  "DARPA director": darpa_desc
+  'Modified mRNA': kariko_weissman_desc,
+  'SARS-CoV-2 genome': zhang_holmes_desc,
+  'Spike protein design': spike_desc,
+  'Lipid nanoparticles': lipid_nanoparticles_desc,
+  'DARPA director': darpa_desc
 } as ProjectDescriptionMap
 
 type UserMap = {
@@ -244,33 +244,33 @@ const MOCK_USERS = {
     user_id: 0,
     total_donated: 608,
     total_referred: 33,
-    name: "Lawrence Wu",
-    email: "lawrence@dlr",
-    ens_address: "lawrence.eth",
-    eth_address: "0xlawrence",
+    name: 'Lawrence Wu',
+    email: 'lawrence@dlr',
+    ens_address: 'lawrence.eth',
+    eth_address: '0xlawrence'
   },
   [1]: {
     user_id: 1,
     total_donated: 895,
     total_referred: 603,
-    name: "Raphael Mu",
-    email: "raphael@dlr",
-    ens_address: "raphael.eth",
-    eth_address: "0xraphael",
+    name: 'Raphael Mu',
+    email: 'raphael@dlr',
+    ens_address: 'raphael.eth',
+    eth_address: '0xraphael'
   },
   [2]: {
     user_id: 2,
     total_donated: 140,
     total_referred: 286,
-    name: "Darren Zhu",
-    email: "darren@dlr",
-    ens_address: "darren.eth",
-    eth_address: "0xdarren",
-  },
+    name: 'Darren Zhu',
+    email: 'darren@dlr',
+    ens_address: 'darren.eth',
+    eth_address: '0xdarren'
+  }
 } as UserMap
 
 export const get_mock_user = (user_id?: number) => {
   const users = Object.values(MOCK_USERS)
   const randomUser = users[Math.floor(Math.random() * users.length)]
-  return user_id ? (MOCK_USERS[user_id] || randomUser) : undefined
+  return user_id ? MOCK_USERS[user_id] || randomUser : undefined
 }
