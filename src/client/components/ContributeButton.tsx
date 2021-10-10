@@ -4,11 +4,8 @@ type ContributeButtonProps = {
   set_modal_state: ModalStateSetter
 }
 
-export default function ContributeButton({
-  set_modal_state
-}: ContributeButtonProps) {
-  const query_string =
-    typeof window === 'undefined' ? '' : window.location.search
+export default function ContributeButton({ set_modal_state }: ContributeButtonProps) {
+  const query_string = typeof window === 'undefined' ? '' : window.location.search
   const url_params = new URLSearchParams(query_string)
   const referrer = url_params.get('referrer')
 

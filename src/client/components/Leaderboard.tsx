@@ -6,9 +6,7 @@ type LeaderboardProps = {
 }
 
 export default function Leaderboard({ badges }: LeaderboardProps) {
-  const badge_elements = badges.map(b => (
-    <BadgeComponent key={b.name} badge={b} />
-  ))
+  const badge_elements = badges.map(b => <BadgeComponent key={b.name} badge={b} />)
 
   return <div className='gallery'>{badge_elements}</div>
 }

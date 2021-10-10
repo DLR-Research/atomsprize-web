@@ -12,10 +12,7 @@ export type ModalState = {
 
 export type ModalStateSetter = StateUpdater<ModalState>
 
-export default function PersistentModal({
-  state: { open, content },
-  set_modal_state
-}: PersistentModalProps) {
+export default function PersistentModal({ state: { open, content }, set_modal_state }: PersistentModalProps) {
   const on_close = (e: MouseEvent) => {
     set_modal_state({ open: false, content })
     e.stopPropagation()

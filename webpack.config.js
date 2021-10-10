@@ -31,8 +31,7 @@ module.exports = (_env, argv) => {
     },
     plugins: [
       !isProduction && new PreactRefreshPlugin(),
-      !isProduction &&
-        new HtmlWebpackPlugin({ template: 'src/client/index.html' }),
+      !isProduction && new HtmlWebpackPlugin({ template: 'src/client/index.html' }),
       new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] })
     ].filter(Boolean),
     devServer: {

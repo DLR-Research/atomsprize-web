@@ -9,8 +9,7 @@
   font-family: 'Garamond';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/Garamond Regular.woff2') format('woff2'),
-    url('./fonts/Garamond Regular.woff') format('woff');
+  src: url('./fonts/Garamond Regular.woff2') format('woff2'), url('./fonts/Garamond Regular.woff') format('woff');
 }
 
 @font-face {
@@ -18,8 +17,7 @@
   font-family: 'Garamond';
   font-style: normal;
   font-weight: 700;
-  src: url('./fonts/Garamond Bold.woff2') format('woff2'),
-    url('./fonts/Garamond Bold.woff') format('woff');
+  src: url('./fonts/Garamond Bold.woff2') format('woff2'), url('./fonts/Garamond Bold.woff') format('woff');
 }
 
 @font-face {
