@@ -60,13 +60,17 @@
 }
 
 .content-container {
-    margin: 2rem auto;
+    margin: 3rem auto;
     max-width: 40rem;
     padding: 0 1rem
 }
 
 .content-container>h2:first-child {
     margin-top: 0
+}
+
+.content-container>p:last-child {
+    margin-block-end: 0
 }
 
 .contribute-container {
@@ -213,8 +217,17 @@ button {
     padding: .5rem 2rem
 }
 
-header {
-    flex: 0
+header,
+footer {
+    background: #967100;
+    color: #fff;
+    flex: 0;
+    padding: .5rem;
+    text-align: center
+}
+
+main {
+    padding-bottom: 1rem
 }
 
 @media (max-width: 37rem),
