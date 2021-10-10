@@ -189,12 +189,33 @@ input::placeholder {
   margin-bottom: 0.75rem;
   object-fit: cover;
   width: 8rem;
+
+  transition: .2s;
+}
+
+#leaderboard .gallery-item:hover .badge, #leaderboard .gallery-item.active .badge {
+  box-shadow: 0 0 15px #967100;
 }
 
 #leaderboard .name {
   font-size: 0.7rem;
   font-style: italic;
   font-weight: 400;
+}
+
+.leaderboard-modal {
+  max-width: 40rem;
+  padding: 2rem;
+}
+
+.leaderboard-modal img {
+  width: 20rem;
+  height: 20rem;
+}
+
+.leaderboard-modal .name {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .align-center {

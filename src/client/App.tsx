@@ -108,7 +108,7 @@ export default function App({ donor }: AppProps) {
               mRNA vaccine.
             </p>
             <div id='leaderboard'>
-              <Leaderboard badges={badges} />
+              <Leaderboard badges={badges} set_modal_state={set_modal_state} />
             </div>
           </div>
         </main>

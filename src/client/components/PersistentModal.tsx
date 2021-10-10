@@ -8,14 +8,17 @@ export type PersistentModalProps = {
 export type ModalState = {
   open: boolean
   content: preact.JSX.Element | string
+  onClose?: () => void
 }
 
 export type ModalStateSetter = StateUpdater<ModalState>
 
-export default function PersistentModal({ state: { open, content }, set_modal_state }: PersistentModalProps) {
+export default function PersistentModal({ state: { open, content, onClose }, set_modal_state }: PersistentModalProps) {
   const on_close = (e: MouseEvent) => {
     set_modal_state({ open: false, content })
     e.stopPropagation()
+
+    if (onClose != null) onClose()
   }
 
   useEffect(() => {
