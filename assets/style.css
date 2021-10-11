@@ -275,6 +275,8 @@ input::-webkit-inner-spin-button {
   margin-top: 1rem;
   max-width: 40rem;
   text-align: center;
+
+  transition: .2s;
 }
 
 .gallery-item {

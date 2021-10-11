@@ -13,7 +13,7 @@ type LeaderboardProps = {
 export default function Leaderboard({ donors, set_modal_state }: LeaderboardProps) {
   const [filtered_donors, set_filtered_donors] = useState(donors)
   const [active_donor, set_active_donor] = useState<Donor | null>(null)
-  const [is_searching, set_is_searching] = useState(false)
+  const [search_timeout, set_search_timeout] = useState<number | null>(null)
 
   const badge_elements = filtered_donors.map(d => (
     <Badge
@@ -35,17 +35,23 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
 
   const on_input = (e: JSX.TargetedEvent<HTMLInputElement, Event>) => {
     const s = (e.target as HTMLInputElement).value
-    set_is_searching(true)
     set_search_string(s)
 
     const t = simplify(s)
-    setTimeout(() => {
-      set_filtered_donors(donors.filter(d =>
-        d.name && simplify(d.name).includes(t) ||
-        d.email && simplify(d.email).includes(t) // TODO check all fields
-      ))
-      set_is_searching(false)
-    }, 1000)
+
+    if (window) { // TODO do this with webpack e.g. if (BROWSER)
+      const timeout_id = setTimeout(() => {
+        clearTimeout(timeout_id)
+        set_search_timeout(null)
+        set_filtered_donors(donors.filter(d =>
+          d.name && simplify(d.name).includes(t) ||
+          d.email && simplify(d.email).includes(t) // TODO check all fields
+        ))
+      }, 1000) as unknown as number
+
+      if (search_timeout != null) clearTimeout(search_timeout)
+      set_search_timeout(timeout_id)
+    }
   }
 
   return (
@@ -57,7 +63,7 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
           onInput={on_input}
         />
       </div>
-      <div class={`gallery${is_searching ? ' searching': ''}`}>{badge_elements}</div>
+      <div class={`gallery${search_timeout != null ? ' searching': ''}`}>{badge_elements}</div>
     </>
   )
 }
