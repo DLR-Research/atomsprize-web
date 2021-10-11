@@ -58,6 +58,7 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
     <>
       <div class='center medal-form'>
         <input
+          class='w-1'
           placeholder='Search by name, e-mail, ENS, or wallet address...'
           value={search_string}
           onInput={on_input}
