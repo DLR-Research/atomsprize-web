@@ -14,7 +14,7 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
   const on_click = () => {
     set_modal_state({
       open: true,
-      content: <ContributeModal referrer={referrer} />
+      content: <ContributeModal referrer={referrer} set_modal_state={set_modal_state} />
     })
   }
 
@@ -23,15 +23,32 @@ export default function ContributeButton({ set_modal_state }: ContributeButtonPr
 
 type ContributeModalProps = {
   referrer: string | null
+  set_modal_state: ModalStateSetter
 }
 
-function ContributeModal({ referrer }: ContributeModalProps) {
+function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
   const [amount, set_amount] = useState<number | null>(null)
 
   const on_change = (value: number) => {
     const p = value
 
     set_amount(p)
+  }
+
+  const handle_uniswap = () => {
+    set_modal_state({
+      open: true,
+      content: (
+        <div className="uniswap">
+          <iframe
+            src="https://app.uniswap.org/#/swap?outputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&recipient=0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979"
+            width="100%"
+            height="100%"
+            style="border: 0"
+          />
+        </div>
+      ),
+    })
   }
 
   return (
@@ -64,6 +81,7 @@ function ContributeModal({ referrer }: ContributeModalProps) {
           Coinbase Commerce
         </a>
         <script src='https://commerce.coinbase.com/v1/checkout.js?version=201807'></script>
+        <button onClick={handle_uniswap}>Uniswap</button>
       </div>
     </>
   )

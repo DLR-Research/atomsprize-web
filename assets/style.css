@@ -364,6 +364,9 @@ input::-webkit-inner-spin-button {
 }
 
 .x-button {
+  background: rgba(255,255,255,0.8);
+  border-radius: 2px;
+  z-index: 9;
   color: #aaa;
   cursor: pointer;
   font-size: 2rem;
@@ -373,6 +376,15 @@ input::-webkit-inner-spin-button {
   top: 0.5rem;
 }
 
+.uniswap {
+    width: 80vw;
+    max-width: 40rem;
+    min-width: 20rem;
+    height: 80vh;
+    min-height: 40rem;
+    margin: -3rem;
+}
+
 @media (max-width: 38rem), (max-height: 38rem) {
   .modal-gallery {
     display: none;
@@ -380,6 +392,10 @@ input::-webkit-inner-spin-button {
 
   .modal {
     padding: 2rem;
+  }
+
+  .uniswap {
+    margin: -2rem;
   }
 }
 
