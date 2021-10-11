@@ -14,4 +14,3 @@ export type Donor = {
   ens_address?: string
   eth_address?: string
 }
-

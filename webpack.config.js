@@ -40,7 +40,7 @@ module.exports = (_env, argv) => {
       !isProduction && new PreactRefreshPlugin(),
       !isProduction && new HtmlWebpackPlugin({ template: 'src/client/index.html' }),
       new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] }),
-      process.env.ANALYZE_BUNDLE && new WebpackBundleAnalyzer
+      process.env.ANALYZE_BUNDLE && new WebpackBundleAnalyzer()
     ].filter(Boolean),
     devServer: {
       static: {

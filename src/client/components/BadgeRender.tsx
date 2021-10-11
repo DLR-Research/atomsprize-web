@@ -8,15 +8,19 @@ const SILVER_PALETTE = ['#a8a9ad', '#b5b7bb', '#cccccc', '#d8d8d8']
 const BRONZE_PALETTE = ['#6C3907', '#804A01', '#A56118', '#CE8235']
 
 function lerpColor(a: string, b: string, amount: number) {
-    var ah = +a.replace('#', '0x'),
-        ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
-        bh = +b.replace('#', '0x'),
-        br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff,
-        rr = ar + amount * (br - ar),
-        rg = ag + amount * (bg - ag),
-        rb = ab + amount * (bb - ab);
+  var ah = +a.replace('#', '0x'),
+    ar = ah >> 16,
+    ag = (ah >> 8) & 0xff,
+    ab = ah & 0xff,
+    bh = +b.replace('#', '0x'),
+    br = bh >> 16,
+    bg = (bh >> 8) & 0xff,
+    bb = bh & 0xff,
+    rr = ar + amount * (br - ar),
+    rg = ag + amount * (bg - ag),
+    rb = ab + amount * (bb - ab)
 
-    return '#' + ((1 << 24) + (rr << 16) + (rg << 8) + rb | 0).toString(16).slice(1);
+  return '#' + (((1 << 24) + (rr << 16) + (rg << 8) + rb) | 0).toString(16).slice(1)
 }
 
 type BadgeRenderProps = {
@@ -39,7 +43,7 @@ function create_random(seed: string) {
   const r = random_seed.create(seed)
 
   function bool() {
-    return r.random() <= .5
+    return r.random() <= 0.5
   }
 
   function normalish() {
@@ -67,7 +71,17 @@ function discrete_gradient(rng: RNG, p: string[]) {
   }
 }
 
-function tile(rng: RNG, random_color: () => string, context: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, n = 0, d = 2) {
+function tile(
+  rng: RNG,
+  random_color: () => string,
+  context: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  n = 0,
+  d = 2
+) {
   if (n === 0) {
     context.strokeStyle = random_color()
 
@@ -95,22 +109,21 @@ function tile(rng: RNG, random_color: () => string, context: CanvasRenderingCont
 }
 
 const render = (donor: Donor, context: CanvasRenderingContext2D) => {
-  const palette = donor.total_donated < 100 ? BRONZE_PALETTE
-    : donor.total_donated < 1000 ? SILVER_PALETTE
-      : GOLD_PALETTE
+  const palette =
+    donor.total_donated < 100 ? BRONZE_PALETTE : donor.total_donated < 1000 ? SILVER_PALETTE : GOLD_PALETTE
 
   const rng = create_random(donor.user_id.toString())
   const random_color = discrete_gradient(rng, palette.slice(1))
   context.clearRect(0, 0, context.canvas.width, context.canvas.height)
-  context.beginPath();
-  context.arc(context.canvas.width / 2, context.canvas.height / 2, context.canvas.height / 2, 0, Math.PI * 2, true);
-  context.clip();
+  context.beginPath()
+  context.arc(context.canvas.width / 2, context.canvas.height / 2, context.canvas.height / 2, 0, Math.PI * 2, true)
+  context.clip()
   context.lineWidth = context.canvas.width / 32
   context.lineCap = 'square'
   tile(rng, random_color, context, 0, 0, context.canvas.width, context.canvas.height, 4)
 }
 
-export default function BadgeRender({ donor, width = 128, height = 128 } : BadgeRenderProps) {
+export default function BadgeRender({ donor, width = 128, height = 128 }: BadgeRenderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {

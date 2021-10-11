@@ -35,23 +35,21 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     set_amount(p)
   }
 
-  const handle_coinbase = () => {
-
-  }
+  const handle_coinbase = () => {}
 
   const handle_uniswap = () => {
     set_modal_state({
       open: true,
       content: (
-        <div className="uniswap">
+        <div className='uniswap'>
           <iframe
-            src="https://app.uniswap.org/#/swap?outputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&recipient=0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979"
-            width="100%"
-            height="100%"
-            style="border: 0"
+            src='https://app.uniswap.org/#/swap?outputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&recipient=0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979'
+            width='100%'
+            height='100%'
+            style='border: 0'
           />
         </div>
-      ),
+      )
     })
   }
 
@@ -84,21 +82,23 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
             thousandsSeparator=','
             radix='.'
             placeholder='50.00'
-            value={ amount }
-            onAccept={ on_change } />
+            value={amount}
+            onAccept={on_change}
+          />
         </div>
         <button>Donate</button>
       </form>
       <div class='donate-divider my-1'>
         <div class='donate-divider-line' />
-          Or
+        Or
         <div class='donate-divider-line' />
       </div>
       <div class='col'>
-        <button class='mb-h' onClick={handle_coinbase}>Donate with Coinbase</button>
+        <button class='mb-h' onClick={handle_coinbase}>
+          Donate with Coinbase
+        </button>
         <button onClick={handle_uniswap}>Donate with Uniswap</button>
       </div>
     </div>
   )
 }
-

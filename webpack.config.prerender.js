@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: 'prerender.js',
     path: path.join(__dirname, 'dist'),
-    globalObject: 'this',
+    globalObject: 'this'
   },
   mode: 'development',
   resolve: {
@@ -24,7 +24,7 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
-      },
+      }
     ]
   }
 }
