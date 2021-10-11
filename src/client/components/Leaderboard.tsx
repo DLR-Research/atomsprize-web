@@ -3,8 +3,7 @@ import { useState } from 'preact/hooks'
 import { Donor } from '../types'
 import { ModalStateSetter } from './PersistentModal'
 import Badge from './Badge'
-import Sketch from 'react-p5'
-import create_renderer, { BadgeInputs } from '../../badge/render'
+import BadgeRender from './BadgeRender'
 
 type LeaderboardProps = {
   donors: Donor[]
@@ -63,11 +62,9 @@ type LeaderboardModalProps = {
 }
 
 function LeaderboardModal({ donor }: LeaderboardModalProps) {
-  const renderer = create_renderer(donor as BadgeInputs)
-
   return (
     <div class='leaderboard-modal'>
-      <Sketch key={donor.user_id} setup={renderer.setup} draw={renderer.draw} />
+      <BadgeRender donor={donor} width={256} height={256} />
       <div class='name mt-1'>{donor.name}</div>
     </div>
   )

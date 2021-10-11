@@ -5,7 +5,8 @@ module.exports = {
   target: 'node',
   output: {
     filename: 'prerender.js',
-    path: path.join(__dirname, 'dist')
+    path: path.join(__dirname, 'dist'),
+    globalObject: 'this',
   },
   mode: 'development',
   resolve: {

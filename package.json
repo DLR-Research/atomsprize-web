@@ -40,7 +40,6 @@
     "preact-render-to-string": "^5.1.19",
     "random-seed": "^0.3.0",
     "react-imask": "^6.2.2",
-    "react-p5": "^1.3.21",
     "stripe-workers": "^0.11.1-beta",
     "tslib": "^2.3.1"
   }

@@ -1,7 +1,7 @@
 import { JSX } from 'preact'
 import { Donor } from '../types'
-import Sketch from 'react-p5'
-import create_renderer, { BadgeInputs } from '../../badge/render'
+
+import BadgeRender from './BadgeRender'
 
 type BadgeProps = {
   donor: Donor
@@ -10,11 +10,9 @@ type BadgeProps = {
 }
 
 export default function Badge({ donor, active, onClick }: BadgeProps) {
-  const renderer = create_renderer(donor as BadgeInputs)
-
   return (
     <div className={`gallery-item interactive${ active ? ' active' : ''}`} onClick={onClick}>
-      <Sketch setup={renderer.setup} draw={renderer.draw} />
+      <BadgeRender donor={donor} />
       <div className='name'>{donor.name}</div>
     </div>
   )
