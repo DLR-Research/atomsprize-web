@@ -38,7 +38,7 @@ function ContributeModal({ referrer }: ContributeModalProps) {
     <>
       <h2 class='center'>Contribute</h2>
       <div>
-        <form class='contribute-form' action='/checkout' method='POST'>
+        <form class='contribute-form' action='https://nobleprize.com/checkout' method='POST'>
           <div class='composite-input mr-h'>
             <span class='label'>USD</span>
             <IMaskInput
