@@ -52,7 +52,7 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
     <>
       <div class='center medal-form'>
         <input
-          placeholder='Search by e-mail, Twitter, ENS, or wallet address...'
+          placeholder='Search by name, e-mail, ENS, or wallet address...'
           value={search_string}
           onInput={on_input}
         />
