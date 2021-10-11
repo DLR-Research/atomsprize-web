@@ -188,29 +188,92 @@ const MOCK_USERS: UserMap = {
     user_id: 0,
     total_donated: 99,
     total_referred: 33,
-    name: 'Lawrence Wu',
-    email: 'lawrence@dlr',
-    ens_address: 'lawrence.eth',
-    eth_address: '0x1a35e7ce'
+    name: "Ja'far ibn Yahya",
+    email: 'jafar@dlr',
+    ens_address: 'jafar.eth',
+    eth_address: '0xjafar'
   },
   [1]: {
     user_id: 1,
     total_donated: 999,
     total_referred: 603,
-    name: 'Raphael Mu',
-    email: 'raphael@dlr',
-    ens_address: 'raphael.eth',
-    eth_address: '0x5a94ae1'
+    name: 'Rudolph II',
+    email: 'rudolph@dlr',
+    ens_address: 'rudolph.eth',
+    eth_address: '0xrudolph'
   },
   [2]: {
     user_id: 2,
     total_donated: 9999,
     total_referred: 286,
-    name: 'Darren Zhu',
-    email: 'darren@dlr',
-    ens_address: 'darren.eth',
-    eth_address: '0xda55e7'
-  }
+    name: 'Cosimo II de Medici',
+    email: 'cosimo@dlr',
+    ens_address: 'cosimo.eth',
+    eth_address: '0xcosimo'
+  },
+  [3]: {
+    user_id: 3,
+    total_donated: 999,
+    total_referred: 286,
+    name: 'Joseph Banks',
+    email: 'joseph@dlr',
+    ens_address: 'joseph.eth',
+    eth_address: '0xjoseph'
+  },
+  [4]: {
+    user_id: 4,
+    total_donated: 9999,
+    total_referred: 286,
+    name: 'Marie Meloney',
+    email: 'marie@dlr',
+    ens_address: 'marie.eth',
+    eth_address: '0xmarie'
+  },
+  [5]: {
+    user_id: 5,
+    total_donated: 9,
+    total_referred: 286,
+    name: 'Henry Wellcome',
+    email: 'henry@dlr',
+    ens_address: 'henry.eth',
+    eth_address: '0xhenry'
+  },
+  [6]: {
+    user_id: 6,
+    total_donated: 9999,
+    total_referred: 286,
+    name: 'Mary Lasker',
+    email: 'mary@dlr',
+    ens_address: 'mary.eth',
+    eth_address: '0xmary'
+  },
+  [7]: {
+    user_id: 7,
+    total_donated: 999,
+    total_referred: 286,
+    name: 'Howard Hughes',
+    email: 'howard@dlr',
+    ens_address: 'howard.eth',
+    eth_address: '0xhoward'
+  },
+  [8]: {
+    user_id: 8,
+    total_donated: 99,
+    total_referred: 286,
+    name: 'Paul Allen',
+    email: 'paul@dlr',
+    ens_address: 'paul.eth',
+    eth_address: '0xpaul'
+  },
+  [9]: {
+    user_id: 9,
+    total_donated: 99,
+    total_referred: 286,
+    name: 'Melinda Gates',
+    email: 'melinda@dlr',
+    ens_address: 'melinda.eth',
+    eth_address: '0xmelinda'
+  },
 }
 
 export const get_mock_user = (user_id?: number) => {
