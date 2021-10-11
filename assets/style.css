@@ -395,3 +395,7 @@ input::-webkit-inner-spin-button {
 a.donate-with-crypto {
   display: none;
 }
+
+.searching {
+  opacity: 50%;
+}
