@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const PreactRefreshPlugin = require('@prefresh/webpack')
+const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = (_env, argv) => {
   const mode = argv.mode
@@ -38,7 +39,8 @@ module.exports = (_env, argv) => {
     plugins: [
       !isProduction && new PreactRefreshPlugin(),
       !isProduction && new HtmlWebpackPlugin({ template: 'src/client/index.html' }),
-      new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] })
+      new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] }),
+      process.env.ANALYZE_BUNDLE && new WebpackBundleAnalyzer
     ].filter(Boolean),
     devServer: {
       static: {
