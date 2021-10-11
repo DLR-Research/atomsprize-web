@@ -35,6 +35,10 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     set_amount(p)
   }
 
+  const handle_coinbase = () => {
+
+  }
+
   const handle_uniswap = () => {
     set_modal_state({
       open: true,
@@ -51,39 +55,50 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     })
   }
 
+  // TODO implement Coinbase modal
+  referrer
+
+  /*
+    <a
+      data-custom={`NoblePrize|${referrer}`}
+      href='https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7'
+    >
+      Coinbase Commerce
+    </a>
+    <script src='https://commerce.coinbase.com/v1/checkout.js?version=201807'></script>
+  */
+
   return (
-    <>
-      <h2 class='center'>Contribute</h2>
-      <div>
-        <form class='contribute-form' action='https://nobleprize.com/checkout' method='POST'>
-          <div class='composite-input mr-h'>
-            <span class='label'>USD</span>
-            <IMaskInput
-              id='amount'
-              name='amount'
-              mask={Number}
-              unmask='typed'
-              signed={false}
-              thousandsSeparator=','
-              radix='.'
-              placeholder='50.00'
-              value={ amount }
-              onAccept={ on_change } />
-          </div>
-          <button>Donate</button>
-        </form>
-        <br />
-        <a
-          class='donate-with-crypto'
-          data-custom={`NoblePrize|${referrer}`}
-          href='https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7'
-        >
-          Coinbase Commerce
-        </a>
-        <script src='https://commerce.coinbase.com/v1/checkout.js?version=201807'></script>
-        <button onClick={handle_uniswap}>Uniswap</button>
+    <div class='contribute-modal'>
+      <h1 class='center'>Contribute</h1>
+      <br />
+      <form class='contribute-form' action='https://nobleprize.com/checkout' method='POST'>
+        <div class='composite-input mr-h'>
+          <span class='label'>USD</span>
+          <IMaskInput
+            id='amount'
+            name='amount'
+            mask={Number}
+            unmask='typed'
+            signed={false}
+            thousandsSeparator=','
+            radix='.'
+            placeholder='50.00'
+            value={ amount }
+            onAccept={ on_change } />
+        </div>
+        <button>Donate</button>
+      </form>
+      <div class='donate-divider my-1'>
+        <div class='donate-divider-line' />
+          Or
+        <div class='donate-divider-line' />
       </div>
-    </>
+      <div class='col'>
+        <button class='mb-h' onClick={handle_coinbase}>Donate with Coinbase</button>
+        <button onClick={handle_uniswap}>Donate with Uniswap</button>
+      </div>
+    </div>
   )
 }
 

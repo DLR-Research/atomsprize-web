@@ -30,12 +30,16 @@ export default function PersistentModal({ state: { open, content, onClose }, set
   }, [open])
 
   return (
-    <div className={`modal-container ${open ? 'open' : ''}`} onClick={on_close}>
-      <div className='modal' onClick={e => e.stopPropagation()}>
-        <a className='x-button' onClick={on_close}>
-          ×
+    <div className={`modal-overlay ${open ? 'open' : ''}`} onClick={on_close}>
+      <div class='modal-container'>
+        <div className='modal' onClick={e => e.stopPropagation()}>
+          {content}
+        </div>
+        <a className='back-button' onClick={on_close}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
         </a>
-        {content}
       </div>
     </div>
   )
