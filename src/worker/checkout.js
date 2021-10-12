@@ -31,7 +31,7 @@ const handleRequest = async request => {
     cancel_url: 'https://fastprize.org/'
   })
 
-  return Response.redirect('https://google.com', 301)
+  return Response.redirect(session.url, 301)
 }
 
 export default handleRequest
