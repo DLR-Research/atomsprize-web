@@ -60,7 +60,7 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
 
   /*
     <a
-      data-custom={`NoblePrize|${referrer}`}
+      data-custom={`${referrer}`}
       href='https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7'
     >
       Coinbase Commerce
@@ -72,7 +72,7 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     <div class='contribute-modal'>
       <h1 class='center'>Contribute</h1>
       <br />
-      <form class='contribute-form' action='https://nobleprize.com/checkout' method='POST'>
+      <form class='contribute-form' action='/checkout' method='POST'>
         <div class='composite-input mr-h'>
           <span class='label'>USD</span>
           <IMaskInput

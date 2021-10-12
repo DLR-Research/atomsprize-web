@@ -1,13 +1,13 @@
-name = "nobleprize"
+name = "fastprize"
 type = "javascript"
 routes = [
-  '*nobleprize.com/checkout',
-  '*nobleprize.com/share/*',
-  '*nobleprize.com/stats*',
-  '*nobleprize.com/badge/*'
+  '*fastprize.org/checkout',
+  '*fastprize.org/share/*',
+  '*fastprize.org/stats*',
+  '*fastprize.org/badge/*'
 ]
 account_id = 'd3934b9b324240bf989664e018097273'
-zone_id = '25683f567ebb34c35d85566ca7580bb0'
+zone_id = '0e53dedb5a5794ef894d3d652149caab'
 usage_model = 'unbound'
 compatibility_flags = []
 workers_dev = false

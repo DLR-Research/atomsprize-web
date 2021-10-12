@@ -22,7 +22,7 @@ if (typeof require !== 'undefined' && require.main === module) {
   const css = fs.readFileSync('assets/style.css', 'utf8')
   const subbedTemplate = template
     .replace('<link rel="stylesheet" href="/style.css">', `<style>${css}</style>`)
-    .replace('</body>', '<script type="module" src="/bundle.js" defer></script></body>')
+    .replace('</head>', '<script type="module" src="/bundle.js" defer></script></head>')
   const html = minify(subbedTemplate, MINIFY_OPTIONS)
   fs.writeFileSync('src/client/index.min.html', html)
 }
