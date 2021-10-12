@@ -1,0 +1,3 @@
+[submodule "campaigns-worker"]
+	path = campaigns-worker
+	url = https://github.com/DLR-Research/campaigns-worker.git
