@@ -4,7 +4,7 @@ import Scientists from './components/Scientists'
 import ScientistProfile from './components/ScientistProfile'
 import Leaderboard from './components/Leaderboard'
 import ContributeButton from './components/ContributeButton'
-import { scientists, get_all_donors, project_descriptions } from './data'
+import { scientists, project_descriptions } from './data'
 import { Donor } from './types'
 
 export type AppProps = {
@@ -16,8 +16,6 @@ export default function App({ donor }: AppProps) {
     open: !!donor,
     content: donor ? <h1>gm {donor.name || donor.user_id}!</h1> : ''
   })
-
-  const donors = Array.from(Object.values(get_all_donors()))
 
   const open_project_modal = (tagline: string) => {
     const project_scientists = scientists.filter(s => s.tagline === tagline)
@@ -110,7 +108,7 @@ export default function App({ donor }: AppProps) {
               mRNA vaccine.
             </p>
             <div id='leaderboard'>
-              <Leaderboard donors={donors} set_modal_state={set_modal_state} />
+              <Leaderboard set_modal_state={set_modal_state} />
             </div>
           </div>
         </main>

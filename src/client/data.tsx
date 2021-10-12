@@ -276,12 +276,20 @@ const MOCK_USERS: UserMap = {
   }
 }
 
+const MOCK_USER_LIST = Object.values(MOCK_USERS)
+
 export const get_mock_user = (user_id?: number) => {
-  const users = Object.values(MOCK_USERS)
+  const users = MOCK_USER_LIST
   const randomUser = users[Math.floor(Math.random() * users.length)]
   return user_id ? MOCK_USERS[user_id] || randomUser : undefined
 }
 
-export function get_all_donors() {
-  return MOCK_USERS
+function simplify(s: string) {
+  return s.replace(/[^A-Za-z]/g, '').toLowerCase()
+}
+
+export function mock_index_stats(t = '') {
+  return MOCK_USER_LIST.filter(
+    (d: Donor) => (d.name && simplify(d.name).includes(t)) || (d.email && simplify(d.email).includes(t))
+  )
 }

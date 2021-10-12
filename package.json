@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-rds-data": "^3.36.0",
+    "axios": "^0.22.0",
     "http-server": "^13.0.2",
     "itty-router": "^2.4.4",
     "preact": "^10.5.14",
