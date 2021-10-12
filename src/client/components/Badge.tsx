@@ -11,7 +11,7 @@ type BadgeProps = {
 
 export default function Badge({ donor, active, onClick }: BadgeProps) {
   return (
-    <div className={`gallery-item interactive${ active ? ' active' : ''}`} onClick={onClick}>
+    <div className={`gallery-item interactive${active ? ' active' : ''}`} onClick={onClick}>
       <BadgeRender donor={donor} />
       <div className='name'>{donor.name}</div>
     </div>

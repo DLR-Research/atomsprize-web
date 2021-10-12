@@ -207,10 +207,11 @@ input::placeholder {
   object-fit: cover;
   width: 8rem;
 
-  transition: .2s;
+  transition: 0.2s;
 }
 
-#leaderboard .gallery-item:hover .badge, #leaderboard .gallery-item.active .badge {
+#leaderboard .gallery-item:hover .badge,
+#leaderboard .gallery-item.active .badge {
   box-shadow: 0 0 15px #967100;
 }
 
@@ -293,7 +294,7 @@ input::-webkit-inner-spin-button {
   max-width: 40rem;
   text-align: center;
 
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .gallery-item {
@@ -394,7 +395,7 @@ input::-webkit-inner-spin-button {
 }
 
 .donate-divider-line {
-  margin: .5rem;
+  margin: 0.5rem;
   flex: 1;
   height: 1px;
   background: rgba(150, 113, 0, 0.3);
@@ -407,17 +408,17 @@ input::-webkit-inner-spin-button {
   height: 1.5rem;
   position: absolute;
   left: -2.5rem;
-  top: .5rem;
+  top: 0.5rem;
   line-height: 1;
 }
 
 .uniswap {
-    width: 80vw;
-    max-width: 40rem;
-    min-width: 20rem;
-    height: 80vh;
-    min-height: 40rem;
-    margin: -3rem;
+  width: 80vw;
+  max-width: 40rem;
+  min-width: 20rem;
+  height: 80vh;
+  min-height: 40rem;
+  margin: -3rem;
 }
 
 @media (max-width: 38rem), (max-height: 38rem) {
@@ -446,4 +447,3 @@ input::-webkit-inner-spin-button {
 .searching {
   opacity: 50%;
 }
-

@@ -39,15 +39,17 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
 
     const t = simplify(s)
 
-    if (window) { // TODO do this with webpack e.g. if (BROWSER)
-      const timeout_id = setTimeout(() => {
+    if (window) {
+      // TODO do this with webpack e.g. if (BROWSER)
+      const timeout_id = (setTimeout(() => {
         clearTimeout(timeout_id)
         set_search_timeout(null)
-        set_filtered_donors(donors.filter(d =>
-          d.name && simplify(d.name).includes(t) ||
-          d.email && simplify(d.email).includes(t) // TODO check all fields
-        ))
-      }, 1000) as unknown as number
+        set_filtered_donors(
+          donors.filter(
+            d => (d.name && simplify(d.name).includes(t)) || (d.email && simplify(d.email).includes(t)) // TODO check all fields
+          )
+        )
+      }, 1000) as unknown) as number
 
       if (search_timeout != null) clearTimeout(search_timeout)
       set_search_timeout(timeout_id)
@@ -64,7 +66,7 @@ export default function Leaderboard({ donors, set_modal_state }: LeaderboardProp
           onInput={on_input}
         />
       </div>
-      <div class={`gallery${search_timeout != null ? ' searching': ''}`}>{badge_elements}</div>
+      <div class={`gallery${search_timeout != null ? ' searching' : ''}`}>{badge_elements}</div>
     </>
   )
 }

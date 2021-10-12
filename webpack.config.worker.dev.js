@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   entry: './src/worker/index.ts',
   mode: 'development',
-  devtool: "cheap-module-source-map", // avoid "eval": Workers environment doesn’t allow it
+  devtool: 'cheap-module-source-map', // avoid "eval": Workers environment doesn’t allow it
   target: 'webworker',
   output: {
     filename: 'worker.js',

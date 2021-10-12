@@ -273,7 +273,7 @@ const MOCK_USERS: UserMap = {
     email: 'melinda@dlr',
     ens_address: 'melinda.eth',
     eth_address: '0xmelinda'
-  },
+  }
 }
 
 export const get_mock_user = (user_id?: number) => {
@@ -285,4 +285,3 @@ export const get_mock_user = (user_id?: number) => {
 export function get_all_donors() {
   return MOCK_USERS
 }
-
