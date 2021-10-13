@@ -16,8 +16,9 @@ const get_badge = async ({ params: { id: user_id } }: { params: { id: number } }
     const encoder = new TextEncoder()
     const decoder = new TextDecoder()
     const cmd = new InvokeCommand({
-      FunctionName: 'fastprize-img',
-      Payload: encoder.encode(user_id.toString())
+      // @ts-ignore
+      FunctionName: LAMBDA_NAME,
+      Payload: encoder.encode(JSON.stringify({ user_id, campaign_id: 1 }))
     })
     const res = await client.send(cmd)
     const decodedRes = decoder.decode(res.Payload)

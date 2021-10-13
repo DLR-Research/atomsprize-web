@@ -9,7 +9,7 @@ const router = Router()
 
 router.post('/checkout', handle_checkout)
 router.get('/share/:id', get_share)
-router.get('/badge/:id', get_badge)
+router.get('/badge/:id.png', get_badge)
 router.get('/stats', ({ url }) => indexStats({
   url,
   params: { campaignId: '1' },

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const PreactRefreshPlugin = require('@prefresh/webpack')
 const WebpackBundleAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const svgToMiniDataURI = require('mini-svg-data-uri')
 
 module.exports = (_env, argv) => {
   const mode = argv.mode
@@ -20,6 +21,16 @@ module.exports = (_env, argv) => {
           test: /\.tsx?$/,
           loader: 'ts-loader',
           exclude: /node_modules/
+        },
+        {
+          test: /\.svg/,
+          type: 'asset/inline',
+          generator: {
+            dataUrl: content => {
+              content = content.toString();
+              return svgToMiniDataURI(content);
+            }
+          }
         }
       ]
     },
