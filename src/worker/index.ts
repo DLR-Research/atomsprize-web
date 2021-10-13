@@ -1,13 +1,15 @@
 import { Router } from 'itty-router'
 
-import handleCheckout from './checkout'
-import handleShare from './share'
+import handle_checkout from './checkout'
+import get_share from './share'
+import get_badge from './badge'
 import { getStats, indexStats } from '../../campaigns-worker/src/stats'
 
 const router = Router()
 
-router.post('/checkout', handleCheckout)
-router.get('/share/:id', handleShare)
+router.post('/checkout', handle_checkout)
+router.get('/share/:id', get_share)
+router.get('/badge/:id', get_badge)
 router.get('/stats', ({ url }) => indexStats({
   url,
   params: { campaignId: '1' },
