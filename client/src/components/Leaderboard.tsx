@@ -5,8 +5,6 @@ import axios from 'axios'
 import { Donor } from '../types'
 import { ModalStateSetter } from './PersistentModal'
 import Badge from './Badge'
-import BadgeRender from './BadgeRender'
-import { mock_index_stats } from '../data'
 
 type LeaderboardProps = {
   set_modal_state: ModalStateSetter
@@ -14,7 +12,6 @@ type LeaderboardProps = {
 
 export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
   const [filtered_donors, set_filtered_donors] = useState<Donor[]>([])
-  const [active_donor, set_active_donor] = useState<Donor | null>(null)
   const [is_searching, set_is_searching] = useState(true)
   const [search_timeout, set_search_timeout] = useState<ReturnType<typeof setTimeout>>(null as any)
   const latest_promise = useRef<Promise<any>>()
@@ -23,13 +20,10 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
     <Badge
       key={d.user_id}
       donor={d}
-      active={d === active_donor}
       onClick={() => {
-        set_active_donor(d)
         set_modal_state({
           open: true,
-          content: <LeaderboardModal donor={d} />,
-          onClose: () => set_active_donor(null)
+          content: <LeaderboardModal donor={d} />
         })
       }}
     />
@@ -37,20 +31,12 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
 
   const search = async (s: string) => {
     set_is_searching(true)
-    if (process.env.NODE_ENV === 'production') {
-      setTimeout(() => {
-        set_is_searching(false)
-        set_filtered_donors(mock_index_stats(s))
-      }, 1000)
-    } else {
-      const fetch_promise = axios.get('/stats', { params: { filter: s } })
-      latest_promise.current = fetch_promise
-      const res = await fetch_promise
-      if (latest_promise.current === fetch_promise) {
-        set_is_searching(false)
-        console.log(res.data)
-        set_filtered_donors(res.data)
-      }
+    const fetch_promise = axios.get('/stats', { params: { filter: s } })
+    latest_promise.current = fetch_promise
+    const res = await fetch_promise
+    if (latest_promise.current === fetch_promise) {
+      set_is_searching(false)
+      set_filtered_donors(res.data)
     }
   }
   useEffect(() => {
@@ -82,7 +68,7 @@ type LeaderboardModalProps = {
 function LeaderboardModal({ donor }: LeaderboardModalProps) {
   return (
     <div class='leaderboard-modal'>
-      <BadgeRender donor={donor} width={256} height={256} />
+      <img src={`/badge/${donor.user_id}.png`} width={256} height={256} />
       <div class='name mt-1'>{donor.name}</div>
     </div>
   )

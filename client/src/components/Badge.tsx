@@ -1,18 +1,15 @@
 import { JSX } from 'preact'
 import { Donor } from '../types'
 
-import BadgeRender from './BadgeRender'
-
 type BadgeProps = {
   donor: Donor
-  active?: boolean
   onClick?: JSX.MouseEventHandler<HTMLDivElement>
 }
 
-export default function Badge({ donor, active, onClick }: BadgeProps) {
+export default function Badge({ donor, onClick }: BadgeProps) {
   return (
-    <div className={`gallery-item interactive${active ? ' active' : ''}`} onClick={onClick}>
-      <BadgeRender donor={donor} />
+    <div className={`gallery-item interactive`} onClick={onClick}>
+      <img width={128} height={128} src={`/badge/${donor.user_id}.png`} />
       <div className='name'>{donor.name}</div>
     </div>
   )
