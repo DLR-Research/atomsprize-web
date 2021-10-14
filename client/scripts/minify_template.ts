@@ -24,7 +24,7 @@ const minify_template = async () => {
   const template = await p1
   const css = await p2
   const subbedTemplate = template
-    .replace('<link rel="stylesheet" href="/style.css">', `<style>${css}</style>`)
+    .replace('<link rel="stylesheet" href="/style.css" />', `<style>${css}</style>`)
     .replace('</head>', '<script type="module" src="/bundle.js" defer></script></head>')
   const html = minify(subbedTemplate, MINIFY_OPTIONS)
   fs.mkdir(path.resolve(__dirname, '../dist'), { recursive: true }, _ => {

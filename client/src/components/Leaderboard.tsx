@@ -43,7 +43,7 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
         set_filtered_donors(mock_index_stats(s))
       }, 1000)
     } else {
-      const fetch_promise = axios.get('http://localhost:8787/stats', { params: { filter: s } })
+      const fetch_promise = axios.get('/stats', { params: { filter: s } })
       latest_promise.current = fetch_promise
       const res = await fetch_promise
       if (latest_promise.current === fetch_promise) {

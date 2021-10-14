@@ -57,6 +57,12 @@ module.exports = (_env, argv) => {
       static: {
         directory: path.join(__dirname, 'dist')
       },
+      proxy: [
+        {
+          context: ['/badge', '/share', '/stats', '/checkout'],
+          target: `http://localhost:${process.env.FASTPRIZE_WORKER_PORT || 8787}`
+        }
+      ],
       compress: true,
       hot: true
     }

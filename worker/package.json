@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "dist/worker.js",
   "scripts": {
+    "dev": "wrangler dev --port ${FASTPRIZE_WORKER_PORT:-8787}",
     "build": "webpack",
     "deploy": "wrangler publish"
   },
