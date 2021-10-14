@@ -21,7 +21,6 @@
   "dependencies": {
     "@aws-sdk/client-lambda": "^3.36.1",
     "@aws-sdk/client-rds-data": "^3.36.1",
-    "fastprize-client": "file:../client",
     "itty-router": "^2.4.4",
     "stripe-workers": "^0.11.1-beta",
     "tslib": "^2.3.1"

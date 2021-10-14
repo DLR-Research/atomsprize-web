@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production && yarn minify-template && yarn build-prerenderer && node scripts/prerender.js",
+    "build": "webpack --mode production && yarn minify-template && yarn build-prerenderer && node scripts/prerender.js && cp src/prerender.d.ts dist",
     "build-prerenderer": "webpack --config webpack.config.prerender.js",
     "minify-template": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' ts-node scripts/minify_template.ts",
     "start": "http-server dist"

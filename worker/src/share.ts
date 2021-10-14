@@ -1,4 +1,4 @@
-import template from '../node_modules/fastprize-client/dist/template.html'
+import template from 'fastprize-client/dist/template.html'
 import { prerender } from 'fastprize-client/dist/prerender'
 
 const MOCK_DONOR = {
