@@ -4,7 +4,7 @@ import random_seed from 'random-seed'
 import { Donor } from '../types'
 
 const GOLD_PALETTE = [38, 45, 47, 54, 40, 65, 65, 100]
-const SILVER_PALETTE =[247, 254, 256, 263, 0, 10, 10, 20]
+const SILVER_PALETTE = [247, 254, 256, 263, 0, 10, 10, 20]
 const BRONZE_PALETTE = [29, 36, 36, 43, 0, 36, 36, 72]
 
 type BadgeRenderProps = {
@@ -21,12 +21,12 @@ function create_random(seed: string) {
   }
 
   function gaussian() {
-    var u = 0, v = 0;
-    while(u === 0) u = r.random();
-    while(v === 0) v = r.random();
-    return Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v );
+    var u = 0,
+      v = 0
+    while (u === 0) u = r.random()
+    while (v === 0) v = r.random()
+    return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v)
   }
-
 
   return { range, gaussian }
 }
@@ -36,21 +36,25 @@ export const render = (donor: Donor, context: CanvasRenderingContext2D) => {
   const rx = context.canvas.width / 2
   const ry = context.canvas.height / 2
 
-  const palette = donor.total_donated < 100 ? BRONZE_PALETTE : donor.total_donated < 1000 ? SILVER_PALETTE : GOLD_PALETTE
+  const palette =
+    donor.total_donated < 100 ? BRONZE_PALETTE : donor.total_donated < 1000 ? SILVER_PALETTE : GOLD_PALETTE
   const rng = create_random(donor.user_id.toString())
   const hue1 = rng.range(palette[0], palette[1])
   const hue2 = rng.range(palette[2], palette[3])
   const sat1 = rng.range(palette[4], palette[5])
   const sat2 = rng.range(palette[6], palette[7])
   const n_lines = rng.range(1000, 10000)
-  let v1 = 0, v2 = 0, angle1 = 0, angle2 = 0
-  context.lineWidth = context.canvas.width / 9000.
+  let v1 = 0,
+    v2 = 0,
+    angle1 = 0,
+    angle2 = 0
+  context.lineWidth = context.canvas.width / 9000
 
   for (let i = 0; i < n_lines; i++) {
     const hue = rng.range(hue1, hue2)
     const sat = rng.range(sat1, sat2)
     const val = rng.range(30, 100)
-    const alpha = rng.range(.5, 1)
+    const alpha = rng.range(0.5, 1)
     v1 = v1 * 0.995 + rng.gaussian() * 0.0005
     v2 = v2 * 0.995 + rng.gaussian() * 0.0005
     angle1 += v1

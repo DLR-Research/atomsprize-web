@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "types": ["node", "@cloudflare/workers-types"]
+  },
+  "include": ["src/**/*"]
+}

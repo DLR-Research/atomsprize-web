@@ -1,6 +1,5 @@
-/worker/
+worker/script.js
 dist/
 node_modules/
-.parcel-cache/
 *.log
-index.min.html
+.DS_Store

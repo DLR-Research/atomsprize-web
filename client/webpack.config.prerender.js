@@ -1,16 +1,17 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/worker/index.ts',
-  mode: 'development',
-  devtool: 'cheap-module-source-map', // avoid "eval": Workers environment doesn’t allow it
-  target: 'webworker',
+  entry: './src/prerender.tsx',
   output: {
-    filename: 'worker.js',
-    path: path.join(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'prerender.js',
+    globalObject: 'this',
+    library: 'prerender_fastprize',
+    libraryTarget: 'umd'
   },
+  mode: 'production',
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.html'],
+    extensions: ['.tsx', '.ts', '.js'],
     alias: {
       react: 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
@@ -24,10 +25,6 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.html/,
-        type: 'asset/source'
       }
     ]
   }

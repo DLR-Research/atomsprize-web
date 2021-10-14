@@ -43,10 +43,7 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
         set_filtered_donors(mock_index_stats(s))
       }, 1000)
     } else {
-      const fetch_promise = axios.get(
-        'http://localhost:8787/stats',
-        { params: { filter: s } }
-      )
+      const fetch_promise = axios.get('http://localhost:8787/stats', { params: { filter: s } })
       latest_promise.current = fetch_promise
       const res = await fetch_promise
       if (latest_promise.current === fetch_promise) {
@@ -56,7 +53,9 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
       }
     }
   }
-  useEffect(() => { search('') }, [])
+  useEffect(() => {
+    search('')
+  }, [])
 
   const debouncedSearch = (s: string) => {
     clearTimeout(search_timeout)
@@ -69,11 +68,7 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
   return (
     <>
       <div class='center medal-form'>
-        <input
-          class='w-1'
-          placeholder='Search by name, e-mail, ENS, or wallet address...'
-          onInput={on_input}
-        />
+        <input class='w-1' placeholder='Search by name, e-mail, ENS, or wallet address...' onInput={on_input} />
       </div>
       <div class={`gallery${is_searching ? ' searching' : ''}`}>{badge_elements}</div>
     </>

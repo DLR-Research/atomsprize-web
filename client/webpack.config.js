@@ -11,7 +11,7 @@ module.exports = (_env, argv) => {
   const devtool = isProduction ? false : 'inline-source-map'
 
   return {
-    entry: './src/client/index.tsx',
+    entry: path.resolve(__dirname, 'src/index.tsx'),
     target: 'web',
     mode,
     devtool,
@@ -27,8 +27,8 @@ module.exports = (_env, argv) => {
           type: 'asset/inline',
           generator: {
             dataUrl: content => {
-              content = content.toString();
-              return svgToMiniDataURI(content);
+              content = content.toString()
+              return svgToMiniDataURI(content)
             }
           }
         }
@@ -49,7 +49,7 @@ module.exports = (_env, argv) => {
     },
     plugins: [
       !isProduction && new PreactRefreshPlugin(),
-      !isProduction && new HtmlWebpackPlugin({ template: 'src/client/index.html' }),
+      !isProduction && new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') }),
       new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] }),
       process.env.ANALYZE_BUNDLE && new WebpackBundleAnalyzer()
     ].filter(Boolean),

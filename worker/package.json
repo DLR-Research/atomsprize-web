@@ -1,0 +1,28 @@
+{
+  "name": "fastprize-worker",
+  "description": "Cloudflare worker for https://fastprize.org",
+  "version": "1.0.0",
+  "author": "DLR Research",
+  "license": "MIT",
+  "main": "dist/worker.js",
+  "scripts": {
+    "build": "webpack",
+    "deploy": "wrangler publish"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.2.2",
+    "@types/node": "^16.10.3",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.36.1",
+    "@aws-sdk/client-rds-data": "^3.36.1",
+    "fastprize-client": "file:../client",
+    "itty-router": "^2.4.4",
+    "stripe-workers": "^0.11.1-beta",
+    "tslib": "^2.3.1"
+  }
+}

@@ -22,22 +22,22 @@ const get_badge = async ({ params: { id: user_id } }: { params: { id: number } }
     })
     const res = await client.send(cmd)
     const decodedRes = decoder.decode(res.Payload)
-    const b64 = JSON.parse(decodedRes).body.replace(/[\s"]/g, "")
+    const b64 = JSON.parse(decodedRes).body.replace(/[\s"]/g, '')
     const byteString = atob(b64)
     const arrayBuffer = new ArrayBuffer(byteString.length)
-    intArray = new Uint8Array(arrayBuffer);
+    intArray = new Uint8Array(arrayBuffer)
     for (var i = 0; i < byteString.length; i++) {
-        intArray[i] = byteString.charCodeAt(i);
+      intArray[i] = byteString.charCodeAt(i)
     }
-  } catch(e) {
+  } catch (e) {
     return new Response((e as any).toString(), { status: 500 })
   }
   return new Response(intArray!, {
     status: 200,
-    statusText: "OK",
+    statusText: 'OK',
     headers: {
-      "Content-Type": "image/png",
-    },
+      'Content-Type': 'image/png'
+    }
   })
 }
 
