@@ -1,3 +1,2 @@
 dist/
-/campaigns-worker
-*.min.html
+submodules/
