@@ -224,16 +224,21 @@ input::placeholder {
 .leaderboard-modal {
   max-width: 40rem;
   padding: 2rem;
+  text-align: center;
 }
 
-.leaderboard-modal img {
+.modal-badge {
   width: 20rem;
   height: 20rem;
 }
 
 .leaderboard-modal .name {
   font-size: 1.5rem;
-  text-align: center;
+}
+
+.leaderboard-modal .contribution {
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .align-center {
@@ -446,4 +451,66 @@ input::-webkit-inner-spin-button {
 
 .searching {
   opacity: 50%;
+}
+
+.copylink-section {
+  display: inline-flex;
+  margin: 0.5rem;
+}
+
+.copylink-section input {
+  font-family: monospace;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.copylink-section button {
+  padding: 0 1rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: flex;
+  position: relative;
+}
+
+.copylink-section button img {
+  margin: auto auto;
+}
+
+.clicked::before {
+  content: "Copied!";
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:100%;
+  margin-bottom:15px;
+
+  padding: .5rem;
+  border-radius:4px;
+  background:#000;
+  color: #fff;
+  text-align:center;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+
+.clicked::after {
+  content: "";
+  position:absolute;
+
+  bottom:100%;
+  margin-bottom:0;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  /* the arrow */
+  border:10px solid #000;
+  border-color: black transparent transparent transparent;
+}
+
+.copylink-section button:hover {
+  background: rgba(150, 113, 0, 0.1);
 }

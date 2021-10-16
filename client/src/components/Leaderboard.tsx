@@ -5,6 +5,10 @@ import axios from 'axios'
 import { Donor } from '../types'
 import { ModalStateSetter } from './PersistentModal'
 import Badge from './Badge'
+import Twitter from '../icons/twitter.svg'
+import Facebook from '../icons/facebook.svg'
+import CopyLink from '../icons/copylink.svg'
+import GreenCheck from '../icons/greencheck.svg'
 
 type LeaderboardProps = {
   set_modal_state: ModalStateSetter
@@ -78,10 +82,40 @@ type LeaderboardModalProps = {
 }
 
 function LeaderboardModal({ donor }: LeaderboardModalProps) {
+  const shareUrl = `https://fastprize.org/share/${donor.user_id}`
   return (
     <div class='leaderboard-modal'>
-      <img src={`/badge/${donor.user_id}.png`} width={256} height={256} />
+      <img class='modal-badge' src={`/badge/${donor.user_id}.png`} width={256} height={256} />
       <div class='name mt-1'>{donor.name}</div>
+      <div class='contribution'>{`Contribution: $${donor.total_donated / 100.}`}</div>
+      <div class="copylink-section">
+        <input size={shareUrl.length} type="url" readOnly value={shareUrl}>{shareUrl}</input>
+        <CopyButton url={shareUrl} />
+      </div>
+      <div>
+        <a href={`https://twitter.com/intent/tweet?url=${shareUrl}`} target='_blank'>
+          <img width={32} height={32} src={Twitter} />
+        </a>
+        <a href={`https://www.facebook.com/dialog/share?app_id=969850220278930&display=popup&href=${shareUrl}`} target='_blank'>
+          <img width={32} height={32} src={Facebook} />
+        </a>
+      </div>
     </div>
+  )
+}
+
+function CopyButton({ url }: { url: string }) {
+  const [clicked, set_clicked] = useState(false)
+  const [click_timeout, set_click_timeout] = useState<ReturnType<typeof setTimeout>>(null as any)
+  const handle_click = async () => {
+    await navigator.clipboard.writeText(url)
+    set_clicked(true)
+    clearTimeout(click_timeout)
+    set_click_timeout(setTimeout(() => set_clicked(false), 2000))
+  }
+  return (
+    <button className={clicked ? 'clicked' : ''} onClick={handle_click}>
+      <img width={24} height={24} src={clicked ? GreenCheck : CopyLink} />
+    </button>
   )
 }
