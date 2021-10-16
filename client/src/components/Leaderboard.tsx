@@ -13,6 +13,7 @@ type LeaderboardProps = {
 export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
   const [filtered_donors, set_filtered_donors] = useState<Donor[]>([])
   const [is_searching, set_is_searching] = useState(true)
+  const [error, set_error] = useState(false)
   const [search_timeout, set_search_timeout] = useState<ReturnType<typeof setTimeout>>(null as any)
   const latest_promise = useRef<Promise<any>>()
 
@@ -33,10 +34,18 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
     set_is_searching(true)
     const fetch_promise = axios.get('/stats', { params: { filter: s } })
     latest_promise.current = fetch_promise
-    const res = await fetch_promise
-    if (latest_promise.current === fetch_promise) {
+    try {
+      const res = await fetch_promise
+      if (latest_promise.current === fetch_promise) {
+        set_is_searching(false)
+        set_error(false)
+        set_filtered_donors(res.data)
+      }
+    } catch (e) {
+      console.log('Error searching users:')
+      console.log(e)
       set_is_searching(false)
-      set_filtered_donors(res.data)
+      set_error(true)
     }
   }
   useEffect(() => {
@@ -56,7 +65,10 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
       <div class='center medal-form'>
         <input class='w-1' placeholder='Search by name, e-mail, ENS, or wallet address...' onInput={on_input} />
       </div>
-      <div class={`gallery${is_searching ? ' searching' : ''}`}>{badge_elements}</div>
+      <div class={`gallery${is_searching ? ' searching' : ''}`}>{error
+        ? <div>Error searching users</div>
+        : badge_elements
+      }</div>
     </>
   )
 }
