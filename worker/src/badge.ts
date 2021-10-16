@@ -6,19 +6,19 @@ const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Oct', '
 const pad2 = (x: number) => (x < 10 ? `0${x}` : x)
 
 const resp_if_changed = async (headers: Headers, resp: Response, last_modified: string) => {
-    const digestArray = await crypto.subtle.digest({ name: 'SHA-1' }, await resp.clone().arrayBuffer())
-    const digest = btoa(String.fromCharCode(...new Uint8Array(digestArray)))
-    const if_none_match = headers.get('If-None-Match')
-    if (if_none_match === digest) {
-      return new Response(null, { status: 304 })
-    }
-    const etagged_resp = new Response(resp.body, resp)
-    etagged_resp.headers.set('Etag', digest)
-    etagged_resp.headers.set('Last-Modified', last_modified)
-    return etagged_resp
+  const digestArray = await crypto.subtle.digest({ name: 'SHA-1' }, await resp.clone().arrayBuffer())
+  const digest = btoa(String.fromCharCode(...new Uint8Array(digestArray)))
+  const if_none_match = headers.get('If-None-Match')
+  if (if_none_match === digest) {
+    return new Response(null, { status: 304 })
+  }
+  const etagged_resp = new Response(resp.body, resp)
+  etagged_resp.headers.set('Etag', digest)
+  etagged_resp.headers.set('Last-Modified', last_modified)
+  return etagged_resp
 }
 
-const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: number }, headers: Headers }) => {
+const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: number }; headers: Headers }) => {
   const client = db_client()
   const call = sql(`
     SELECT total_donated, pg_xact_commit_timestamp(xmin)
@@ -37,7 +37,9 @@ const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: n
   if (if_modified_since && new Date(if_modified_since) > lm) {
     return new Response(null, { status: 304 })
   }
-  const lmh = `${DAYS[lm.getUTCDay()]}, ${pad2(lm.getUTCDate())}, ${MONTHS[lm.getUTCMonth()]} ${lm.getUTCFullYear()} ${pad2(lm.getUTCHours())}:${pad2(lm.getUTCMinutes())}:${pad2(lm.getUTCSeconds())} GMT`
+  const lmh = `${DAYS[lm.getUTCDay()]}, ${pad2(lm.getUTCDate())}, ${
+    MONTHS[lm.getUTCMonth()]
+  } ${lm.getUTCFullYear()} ${pad2(lm.getUTCHours())}:${pad2(lm.getUTCMinutes())}:${pad2(lm.getUTCSeconds())} GMT`
   const cache = await caches.open('campaign_badges')
   const cache_hit = await cache.match(`https://fastprize.org/badge/${user_id}/${total_donated}`)
   if (cache_hit) {
@@ -61,7 +63,7 @@ const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: n
     const cmd = new InvokeCommand({
       // @ts-ignore
       FunctionName: LAMBDA_NAME,
-      Payload: encoder.encode(JSON.stringify({ user_id, total_donated ,campaign_id: 1 }))
+      Payload: encoder.encode(JSON.stringify({ user_id, total_donated, campaign_id: 1 }))
     })
     const res = await client.send(cmd)
     const decoded_res = decoder.decode(res.Payload)

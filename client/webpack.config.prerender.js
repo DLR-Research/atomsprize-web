@@ -1,4 +1,5 @@
 const path = require('path')
+const svgToMiniDataURI = require('mini-svg-data-uri')
 
 module.exports = {
   entry: './src/prerender.tsx',
@@ -25,6 +26,16 @@ module.exports = {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline',
+        generator: {
+          dataUrl: content => {
+            content = content.toString()
+            return svgToMiniDataURI(content)
+          }
+        }
       }
     ]
   }

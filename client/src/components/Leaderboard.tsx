@@ -69,10 +69,9 @@ export default function Leaderboard({ set_modal_state }: LeaderboardProps) {
       <div class='center medal-form'>
         <input class='w-1' placeholder='Search by name, e-mail, ENS, or wallet address...' onInput={on_input} />
       </div>
-      <div class={`gallery${is_searching ? ' searching' : ''}`}>{error
-        ? <div>Error searching users</div>
-        : badge_elements
-      }</div>
+      <div class={`gallery${is_searching ? ' searching' : ''}`}>
+        {error ? <div>Error searching users</div> : badge_elements}
+      </div>
     </>
   )
 }
@@ -87,16 +86,21 @@ function LeaderboardModal({ donor }: LeaderboardModalProps) {
     <div class='leaderboard-modal'>
       <img class='modal-badge' src={`/badge/${donor.user_id}.png`} width={256} height={256} />
       <div class='name mt-1'>{donor.name}</div>
-      <div class='contribution'>{`Contribution: $${donor.total_donated / 100.}`}</div>
-      <div class="copylink-section">
-        <input size={shareUrl.length} type="url" readOnly value={shareUrl}>{shareUrl}</input>
+      <div class='contribution'>{`Contribution: $${donor.total_donated / 100}`}</div>
+      <div class='copylink-section'>
+        <input size={shareUrl.length} type='url' readOnly value={shareUrl}>
+          {shareUrl}
+        </input>
         <CopyButton url={shareUrl} />
       </div>
       <div>
         <a href={`https://twitter.com/intent/tweet?url=${shareUrl}`} target='_blank'>
           <img width={32} height={32} src={Twitter} />
         </a>
-        <a href={`https://www.facebook.com/dialog/share?app_id=969850220278930&display=popup&href=${shareUrl}`} target='_blank'>
+        <a
+          href={`https://www.facebook.com/dialog/share?app_id=969850220278930&display=popup&href=${shareUrl}`}
+          target='_blank'
+        >
           <img width={32} height={32} src={Facebook} />
         </a>
       </div>
