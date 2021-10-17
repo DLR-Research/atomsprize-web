@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const PreactRefreshPlugin = require('@prefresh/webpack')
@@ -48,6 +49,7 @@ module.exports = (_env, argv) => {
       filename: 'bundle.js'
     },
     plugins: [
+      !isProduction && new webpack.HotModuleReplacementPlugin(),
       !isProduction && new PreactRefreshPlugin(),
       !isProduction && new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') }),
       new CopyPlugin({ patterns: [{ from: 'assets', to: '.' }] }),

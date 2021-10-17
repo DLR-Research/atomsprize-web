@@ -44,14 +44,33 @@ export default function App({ donor }: AppProps) {
 
   const handle_esc = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      set_modal_state(s => ({ ...s, open: false }))
+      set_modal_state({ content: '', open: false })
+    }
+  }
+
+  const handle_coinbase_close = (event: MessageEvent) => {
+    if (
+      (function (names: string) {
+        if (/^[a-zA-Z0-9:\/.-]+$/.test(names)) {
+          return (
+            /^https?:\/\//i.test(names) || (names = 'https://' + names),
+            /:\d+$/.test(names) || (names = names + (/^https:/i.test(names) ? ':443' : ':80')),
+            names.toLowerCase()
+          )
+        }
+      })(event.origin) === 'https://commerce.coinbase.com:443' &&
+      event.data.event === 'checkout_modal_closed'
+    ) {
+      set_modal_state({ content: '', open: false })
     }
   }
 
   useEffect(() => {
     document.addEventListener('keydown', handle_esc, false)
+    typeof window !== 'undefined' && window.addEventListener('message', handle_coinbase_close, false)
     return () => {
       document.removeEventListener('keydown', handle_esc, false)
+      typeof window !== 'undefined' && window.removeEventListener('message', handle_coinbase_close, false)
     }
   }, [])
 

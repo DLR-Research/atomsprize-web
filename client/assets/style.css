@@ -426,6 +426,17 @@ input::-webkit-inner-spin-button {
   margin: -3rem;
 }
 
+.coinbase-commerce {
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 @media (max-width: 38rem), (max-height: 38rem) {
   .modal-gallery {
     display: none;

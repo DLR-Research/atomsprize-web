@@ -35,36 +35,29 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     set_amount(p)
   }
 
-  const handle_coinbase = () => {}
-
-  const handle_uniswap = () => {
+  const open_iframe = (url: string, class_name: string) =>
     set_modal_state({
       open: true,
       content: (
-        <div className='uniswap'>
-          <iframe
-            src='https://app.uniswap.org/#/swap?outputCurrency=0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48&recipient=0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979'
-            width='100%'
-            height='100%'
-            style='border: 0'
-          />
+        <div className={class_name}>
+          <iframe src={url} width='100%' height='100%' style='border: 0' allowTransparency frameBorder='no' />
         </div>
       )
     })
+
+  const handle_coinbase = () => {
+    let url = 'https://commerce.coinbase.com/embed/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7?version=201807'
+    url += `&buttonId=bwc-${Math.floor(1e16 * Math.random()).toString(16)}`
+    url += `&origin=${encodeURIComponent(window.location.href)}`
+    url += referrer ? `&custom=${encodeURIComponent(referrer)}` : ''
+    open_iframe(url, 'coinbase-commerce')
   }
 
-  // TODO implement Coinbase modal
-  referrer
-
-  /*
-    <a
-      data-custom={`${referrer}`}
-      href='https://commerce.coinbase.com/checkout/0406db10-6b39-43fa-9662-3f973b2d4fc7'
-    >
-      Coinbase Commerce
-    </a>
-    <script src='https://commerce.coinbase.com/v1/checkout.js?version=201807'></script>
-  */
+  const handle_uniswap = () => {
+    const usdc = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
+    const atoms = '0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979'
+    open_iframe(`https://app.uniswap.org/#/swap?outputCurrency=${usdc}&recipient=${atoms}`, 'uniswap')
+  }
 
   return (
     <div class='contribute-modal'>
