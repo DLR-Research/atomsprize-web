@@ -2,7 +2,7 @@ import { Scientist, Donor } from './types'
 
 export const scientists: Scientist[] = [
   {
-    name: 'Katalin Kariko',
+    name: 'Katalin Karikó',
     tagline: 'Modified mRNA',
     headshot_url: '/headshots/kariko.jpg'
   },

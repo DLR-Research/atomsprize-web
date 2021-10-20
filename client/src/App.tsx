@@ -123,7 +123,7 @@ export default function App({ donor }: AppProps) {
             <h2>Contributor Gallery</h2>
             <p>Each contributor receives a unique medal as a token of appreciation.</p>
             <p>
-              View and share your medal to help recognize and reward the scientists involved in developing the COVID-19
+              Find and share your medal to help recognize and reward the scientists involved in developing the COVID-19
               mRNA vaccine.
             </p>
             <div id='leaderboard'>
