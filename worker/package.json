@@ -1,6 +1,6 @@
 {
-  "name": "fastprize-worker",
-  "description": "Cloudflare worker for https://fastprize.org",
+  "name": "atomsprize-worker",
+  "description": "Cloudflare worker for https://prize.atoms.org",
   "version": "1.0.0",
   "author": "DLR Research",
   "license": "MIT",

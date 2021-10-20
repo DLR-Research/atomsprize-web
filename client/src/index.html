@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fast Prize</title>
+    <title>Atoms Prize</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta
       name="description"
       content="a collective prize to recognize the top scientists who contributed to the COVID-19 mRNA vaccines"
     />
-    <meta name="twitter:title" content="Fast Prize" />
+    <meta name="twitter:title" content="Atoms Prize" />
     <meta
       name="twitter:description"
       content="a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines"
     />
-    <meta name="twitter:image" content="http://fastprize.org/icon.png" />
+    <meta name="twitter:image" content="http://prize.atoms.org/icon.png" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:title" content="Fast Prize" />
+    <meta property="og:title" content="Atoms Prize" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://fastprize.org/" />
-    <meta property="og:image" content="http://fastprize.org/icon.png" />
+    <meta property="og:url" content="http://prize.atoms.org/" />
+    <meta property="og:image" content="http://prize.atoms.org/icon.png" />
     <script>
       function replace_title() {
         const domain = window.location.hostname
-        let title = 'Fast Prize'
+        let title = 'Atoms Prize'
         if (domain.includes('fastprizes')) {
           title = 'Fast Prizes'
-        }
-        if (domain.includes('nobleprize')) {
+        } else if (domain.includes('fastprize')) {
+          title = 'Fast Prize'
+        } else if (domain.includes('nobleprize')) {
           title = 'Noble Prize'
         }
         document.title = title
@@ -36,7 +37,7 @@
       property="og:description"
       content="A collective prize to recognize the top scientists who contributed to the COVID-19 mRNA vaccines"
     />
-    <link rel="canonical" href="https://fastprize.org" />
+    <link rel="canonical" href="https://prize.atoms.org" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
     <link rel="preload" href="/fonts/Garamond Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/Garamond Bold.woff2" as="font" type="font/woff2" crossorigin />
@@ -59,7 +60,7 @@
   </head>
   <body onload="replace_title()">
     <header>
-      <h1 id="header-title">Fast Prize</h1>
+      <h1 id="header-title">Atoms Prize</h1>
       <p style="font-size: 1.2em">
         a collective prize to recognize the scientists who contributed to the COVID-19 mRNA vaccines
       </p>

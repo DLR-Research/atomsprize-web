@@ -1,16 +1,16 @@
 {
-    "name": "fastprize",
+    "name": "atomsprize",
     "private": true,
     "version": "1.0.0",
     "scripts": {
         "format": "prettier --write './{client,worker}/**/*.{ts,tsx,json,js,yaml,css,html}'",
-        "dev:client": "env FASTPRIZE_WORKER_PORT=6420 yarn workspace fastprize-client dev",
-        "dev:worker": "env FASTPRIZE_WORKER_PORT=6420 yarn workspace fastprize-worker dev",
+        "dev:client": "env FASTPRIZE_WORKER_PORT=6420 yarn workspace atomsprize-client dev",
+        "dev:worker": "env FASTPRIZE_WORKER_PORT=6420 yarn workspace atomsprize-worker dev",
         "dev": "npm-run-all --parallel dev:*",
-        "build:client": "yarn workspace fastprize-client build",
-        "build:worker": "yarn workspace fastprize-worker build",
-        "start:client": "yarn workspace fastprize-client start",
-        "deploy:worker": "yarn workspace fastprize-worker deploy"
+        "build:client": "yarn workspace atomsprize-client build",
+        "build:worker": "yarn workspace atomsprize-worker build",
+        "start:client": "yarn workspace atomsprize-client start",
+        "deploy:worker": "yarn workspace atomsprize-worker deploy"
     },
     "workspaces": {
         "packages": [

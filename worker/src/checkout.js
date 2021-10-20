@@ -19,7 +19,7 @@ const handleRequest = async request => {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Fast Prize'
+            name: 'Atoms Prize'
           },
           unit_amount: amount
         },
@@ -27,8 +27,8 @@ const handleRequest = async request => {
       }
     ],
     mode: 'payment',
-    success_url: 'https://fastprize.org/',
-    cancel_url: 'https://fastprize.org/'
+    success_url: 'https://prize.atoms.org/',
+    cancel_url: 'https://prize.atoms.org/'
   })
 
   return Response.redirect(session.url, 301)

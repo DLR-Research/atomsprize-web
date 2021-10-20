@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'prerender.js',
     globalObject: 'this',
-    library: 'prerender_fastprize',
+    library: 'prerender_atomsprize',
     libraryTarget: 'umd'
   },
   mode: 'production',

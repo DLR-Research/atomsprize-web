@@ -1,6 +1,6 @@
 {
-  "name": "fastprize-client",
-  "description": "client for https://fastprize.org",
+  "name": "atomsprize-client",
+  "description": "client for https://prize.atoms.org",
   "version": "1.0.0",
   "author": "DLR Research",
   "license": "MIT",

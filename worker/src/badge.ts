@@ -41,7 +41,7 @@ const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: n
     MONTHS[lm.getUTCMonth()]
   } ${lm.getUTCFullYear()} ${pad2(lm.getUTCHours())}:${pad2(lm.getUTCMinutes())}:${pad2(lm.getUTCSeconds())} GMT`
   const cache = await caches.open('campaign_badges')
-  const cache_hit = await cache.match(`https://fastprize.org/badge/${user_id}/${total_donated}`)
+  const cache_hit = await cache.match(`https://prize.atoms.org/badge/${user_id}/${total_donated}`)
   if (cache_hit) {
     return await resp_if_changed(headers, cache_hit, lmh)
   }
@@ -86,7 +86,7 @@ const get_badge = async ({ params: { id: user_id }, headers }: { params: { id: n
   })
   const resp_to_cache = new Response(resp.body, resp)
   resp_to_cache.headers.set('Cache-Control', 'max-age=31536000')
-  await cache.put(`https://fastprize.org/badge/${user_id}/${total_donated}`, resp_to_cache.clone())
+  await cache.put(`https://prize.atoms.org/badge/${user_id}/${total_donated}`, resp_to_cache.clone())
   return resp_if_changed(headers, resp_to_cache, lmh)
 }
 

@@ -1,5 +1,5 @@
-import template from 'fastprize-client/dist/template.html'
-import { prerender } from 'fastprize-client/dist/prerender'
+import template from 'atomsprize-client/dist/template.html'
+import { prerender } from 'atomsprize-client/dist/prerender'
 
 const MOCK_DONOR = {
   user_id: 0,
