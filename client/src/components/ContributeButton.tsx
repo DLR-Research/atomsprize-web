@@ -35,14 +35,15 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     set_amount(p)
   }
 
-  const open_iframe = (url: string, class_name: string) =>
+  const open_iframe = (url: string, style?: string) =>
     set_modal_state({
       open: true,
       content: (
-        <div className={class_name}>
+        <div class='iframe-container'>
           <iframe src={url} width='100%' height='100%' style='border: 0' allowTransparency frameBorder='no' />
         </div>
-      )
+      ),
+      style
     })
 
   const handle_coinbase = () => {
@@ -50,13 +51,13 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     url += `&buttonId=bwc-${Math.floor(1e16 * Math.random()).toString(16)}`
     url += `&origin=${encodeURIComponent(window.location.href)}`
     url += referrer ? `&custom=${encodeURIComponent(referrer)}` : ''
-    open_iframe(url, 'coinbase-commerce')
+    open_iframe(url, 'coinbase-commerce-modal')
   }
 
   const handle_uniswap = () => {
     const usdc = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'
     const atoms = '0x2Cc467b4c8c24C6E8A2E26B67734a9f1B4b91979'
-    open_iframe(`https://app.uniswap.org/#/swap?outputCurrency=${usdc}&recipient=${atoms}`, 'uniswap')
+    open_iframe(`https://app.uniswap.org/#/swap?outputCurrency=${usdc}&recipient=${atoms}`, 'uniswap-modal')
   }
 
   return (

@@ -44,7 +44,7 @@ export default function App({ donor }: AppProps) {
 
   const handle_esc = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      set_modal_state({ content: '', open: false })
+      set_modal_state(state => ({ ...state, open: false }))
     }
   }
 
@@ -61,7 +61,7 @@ export default function App({ donor }: AppProps) {
       })(event.origin) === 'https://commerce.coinbase.com:443' &&
       event.data.event === 'checkout_modal_closed'
     ) {
-      set_modal_state({ content: '', open: false })
+      set_modal_state(state => ({ ...state, open: false }))
     }
   }
 

@@ -345,7 +345,7 @@ input::-webkit-inner-spin-button {
 
 .modal-overlay {
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(75, 60, 0, 0.4);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -360,9 +360,20 @@ input::-webkit-inner-spin-button {
   z-index: 999;
 }
 
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-overlay:not(.open) {
+  pointer-events: none;
+}
+
 .modal {
   background: #fff;
   border-radius: 0.5rem;
+  border: 2px solid #967100;
+  box-shadow: 0 13px 27px -5px rgba(75, 60, 0, 0.25),0 8px 16px -8px rgba(0,0,0,0.3);
   max-height: 80vh;
   max-width: 40rem;
   overflow: auto;
@@ -371,13 +382,12 @@ input::-webkit-inner-spin-button {
   transition: 0.2s ease-out;
 }
 
-.modal-overlay.open {
-  opacity: 1;
-  visibility: visible;
-}
-
 .modal-container {
   position: relative;
+}
+
+.uniswap-modal .modal {
+  border: 0;
 }
 
 .row {
@@ -417,7 +427,7 @@ input::-webkit-inner-spin-button {
   line-height: 1;
 }
 
-.uniswap {
+.uniswap-modal .iframe-container {
   width: 80vw;
   max-width: 40rem;
   min-width: 20rem;
@@ -426,7 +436,17 @@ input::-webkit-inner-spin-button {
   margin: -3rem;
 }
 
-.coinbase-commerce {
+.coinbase-commerce-modal .iframe-container {
+  width: 80vw;
+  max-width: 600px; /* hardcoded in Coinbase Commerce iframe */
+  min-width: 20rem;
+  height: 80vh;
+  min-height: 40rem;
+  margin: -3rem;
+}
+
+/*
+.coinbase-commerce-modal .iframe-container {
   z-index: 9999;
   position: fixed;
   left: 0;
@@ -436,6 +456,7 @@ input::-webkit-inner-spin-button {
   width: 100vw;
   height: 100vh;
 }
+*/
 
 @media (max-width: 38rem), (max-height: 38rem) {
   .modal-gallery {
@@ -446,7 +467,7 @@ input::-webkit-inner-spin-button {
     padding: 2rem;
   }
 
-  .uniswap {
+  .uniswap-modal .iframe-container {
     margin: -2rem;
   }
 }

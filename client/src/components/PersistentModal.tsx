@@ -8,13 +8,14 @@ export type PersistentModalProps = {
 export type ModalState = {
   open: boolean
   content: preact.JSX.Element | string
+  style?: string
 }
 
 export type ModalStateSetter = StateUpdater<ModalState>
 
-export default function PersistentModal({ state: { open, content }, set_modal_state }: PersistentModalProps) {
+export default function PersistentModal({ state: { open, content, style }, set_modal_state }: PersistentModalProps) {
   const on_close = (e: MouseEvent) => {
-    set_modal_state({ open: false, content })
+    set_modal_state({ open: false, content, style })
     e.stopPropagation()
   }
 
@@ -27,7 +28,7 @@ export default function PersistentModal({ state: { open, content }, set_modal_st
   }, [open])
 
   return (
-    <div className={`modal-overlay ${open ? 'open' : ''}`} onClick={on_close}>
+    <div className={`modal-overlay ${open ? 'open' : ''} ${style || ''}`} onClick={on_close}>
       <div class='modal-container'>
         <div className='modal' onClick={e => e.stopPropagation()}>
           {content}
