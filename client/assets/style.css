@@ -196,17 +196,12 @@ input::placeholder {
   margin-left: 1rem;
 }
 
-#content {
-  transition: 0.2s ease-out;
-}
-
 #leaderboard .badge {
   border-radius: 4rem;
   height: 8rem;
   margin-bottom: 0.75rem;
   object-fit: cover;
   width: 8rem;
-
   transition: 0.2s;
 }
 
@@ -345,7 +340,7 @@ input::-webkit-inner-spin-button {
 
 .modal-overlay {
   align-items: center;
-  background: rgba(75, 60, 0, 0.4);
+  background: rgba(75, 60, 0, 0.5);
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -371,15 +366,14 @@ input::-webkit-inner-spin-button {
 
 .modal {
   background: #fff;
-  border-radius: 0.5rem;
-  border: 2px solid #967100;
+  border-radius: 3px;
+  border: 1px solid #967100;
   box-shadow: 0 13px 27px -5px rgba(75, 60, 0, 0.25),0 8px 16px -8px rgba(0,0,0,0.3);
   max-height: 80vh;
   max-width: 40rem;
   overflow: auto;
   padding: 3rem;
   position: relative;
-  transition: 0.2s ease-out;
 }
 
 .modal-container {
@@ -416,15 +410,30 @@ input::-webkit-inner-spin-button {
   background: rgba(150, 113, 0, 0.3);
 }
 
-.back-button svg {
+.back-button {
   z-index: 9;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4.5rem;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 100%;
   color: #fff;
   cursor: pointer;
-  height: 1.5rem;
-  position: absolute;
-  left: -2.5rem;
-  top: 0.5rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .3s;
+}
+
+.back-button svg {
+  height: 60%;
+  width: 60%;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .uniswap-modal .iframe-container {
@@ -445,18 +454,9 @@ input::-webkit-inner-spin-button {
   margin: -3rem;
 }
 
-/*
-.coinbase-commerce-modal .iframe-container {
-  z-index: 9999;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
+.coinbase-commerce-modal .back-button {
+  display: none;
 }
-*/
 
 @media (max-width: 38rem), (max-height: 38rem) {
   .modal-gallery {
@@ -469,6 +469,18 @@ input::-webkit-inner-spin-button {
 
   .uniswap-modal .iframe-container {
     margin: -2rem;
+  }
+
+  .coinbase-commerce-modal .modal {
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .coinbase-commerce-modal .iframe-container {
+    margin: 0;
   }
 }
 
