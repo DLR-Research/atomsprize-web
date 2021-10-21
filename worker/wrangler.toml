@@ -1,16 +1,9 @@
 name = "atomsprize"
 type = "javascript"
-routes = [
-  '*prize.atoms.org/checkout',
-  '*prize.atoms.org/share/*',
-  '*prize.atoms.org/stats*',
-  '*prize.atoms.org/badge/*'
-]
 account_id = 'd3934b9b324240bf989664e018097273'
-zone_id = 'd8995f50741ada14b01a2bd2bf86ba7e'
 usage_model = 'unbound'
 compatibility_flags = []
-workers_dev = false
+workers_dev = true
 compatibility_date = "2021-10-06"
 
 [build]
