@@ -81,7 +81,7 @@ type LeaderboardModalProps = {
 }
 
 function LeaderboardModal({ donor }: LeaderboardModalProps) {
-  const shareUrl = `https://${typeof window === 'undefined' ? 'prize.atoms.org' : window.location.hostname}}/share/${donor.user_id}`
+  const shareUrl = `https://${typeof window === 'undefined' ? 'prize.atoms.org' : window.location.hostname}/share/${donor.user_id}`
   return (
     <div class='leaderboard-modal'>
       <img class='modal-badge' src={`/badge/${donor.user_id}.png`} width={256} height={256} />
