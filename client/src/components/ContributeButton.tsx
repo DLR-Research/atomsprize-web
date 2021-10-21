@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks'
+import { useState, useRef, useEffect } from 'preact/hooks'
 import { ModalStateSetter } from './PersistentModal'
 import { IMaskInput } from 'react-imask'
 
@@ -28,6 +28,7 @@ type ContributeModalProps = {
 
 function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
   const [amount, set_amount] = useState<number | null>(null)
+  const input_ref = useRef<HTMLInputElement>(null)
 
   const on_change = (value: number) => {
     const p = value
@@ -60,6 +61,14 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     open_iframe(`https://app.uniswap.org/#/swap?outputCurrency=${usdc}&recipient=${atoms}`, 'uniswap-modal')
   }
 
+  useEffect(() => {
+    if (input_ref.current) {
+      input_ref.current.type = 'number'
+      input_ref.current.required = true
+      input_ref.current.min = '5'
+    }
+  }, [input_ref.current])
+
   return (
     <div class='contribute-modal'>
       <h1 class='center'>Contribute</h1>
@@ -78,6 +87,7 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
             placeholder='50.00'
             value={amount}
             onAccept={on_change}
+            inputRef={(el: HTMLInputElement) => input_ref.current = el}
           />
         </div>
         <button>Donate</button>
