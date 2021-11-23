@@ -29,13 +29,13 @@ export const scientists: Scientist[] = [
   {
     name: 'Kizzmekia Corbett',
     tagline: 'Spike protein design',
-    headshot_url: '/headshots/corbett.jpg',
-    break: true
+    headshot_url: '/headshots/corbett.jpg'
   },
   {
     name: 'Andrew Ward',
     tagline: 'Spike protein design',
-    headshot_url: '/headshots/ward.jpg'
+    headshot_url: '/headshots/ward.jpg',
+    break: true
   },
   {
     name: 'Jason McClellan',
@@ -93,7 +93,7 @@ const zhang_holmes_desc = () => (
       receiving it.
     </p>
     <p>
-      Their expediency and transparency led to rapid global research into SARS-CoV-2, which included structural analysis and design
+      Their expediency and transparency led to rapid global research into SARS-CoV-2, which enabled the analysis and design
       of the spike protein sequence used for the vaccines.
     </p>
     <p>
@@ -112,8 +112,8 @@ const spike_desc = () => (
       the virus.
     </p>
     <p>
-      Based on past work with other viruses, the team replaced two amino acids to help stabilize the SARS-CoV-2 spike
-      protein, which generated a stronger immune response.
+      Based on past work with <b>Andrew Ward</b> on other coronaviruses, the team replaced two amino acids in the SARS-CoV-2 spike
+      protein, which stabilized the protein to generate a stronger immune response.
     </p>
     <p>
       Read more about their work on the spike protein design in{' '}
@@ -132,7 +132,7 @@ const lipid_nanoparticles_desc = () => (
       <b>Pieter Cullis</b> and <b>Ian MacLachlan</b> developed techniques in the 1990s and 2000s to package fragile
       genetic material, such as messenger RNA, inside small envelopes of fat known as lipid nanoparticles (LNPs).
     </p>
-    <p>These LNPs ensure that the mRNA is protected and delivered effectively into cells after injection.</p>
+    <p>These LNPs ensure that the mRNA is protected and delivered effectively into cells.</p>
     <p>
       Read more about their work on LNPs in{' '}
       <a href='https://cen.acs.org/pharmaceuticals/drug-delivery/Without-lipid-shells-mRNA-vaccines/99/i8'>
@@ -141,26 +141,6 @@ const lipid_nanoparticles_desc = () => (
       and{' '}
       <a href='https://www.forbes.com/sites/nathanvardi/2021/08/17/covids-forgotten-hero-the-untold-story-of-the-scientist-whose-breakthrough-made-the-vaccines-possible/'>
         Forbes
-      </a>
-      .
-    </p>
-  </>
-)
-
-const darpa_desc = () => (
-  <>
-    <p>
-      <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA vaccine
-      technology in the early 2010s.
-    </p>
-    <p>
-      This funding accelerated the development of mRNA-based vaccines to prepare for pandemics where rapid response
-      technologies would be necessary.
-    </p>
-    <p>
-      Read more about this effort to fund new vaccines in{' '}
-      <a href='https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html'>
-        Washington Post
       </a>
       .
     </p>
