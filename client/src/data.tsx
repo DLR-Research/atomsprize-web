@@ -33,6 +33,11 @@ export const scientists: Scientist[] = [
     break: true
   },
   {
+    name: 'Andrew Ward',
+    tagline: 'Spike protein design',
+    headshot_url: '/headshots/ward.jpg'
+  },
+  {
     name: 'Jason McClellan',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/mcclellan.jpg'
@@ -56,23 +61,18 @@ export const scientists: Scientist[] = [
     name: 'Ian MacLachlan',
     tagline: 'Lipid nanoparticles',
     headshot_url: '/headshots/maclachlan.jpg'
-  },
-  {
-    name: 'Regina Dugan',
-    tagline: 'DARPA director',
-    headshot_url: '/headshots/dugan.jpg'
   }
 ]
 
 const kariko_weissman_desc = () => (
   <>
     <p>
-      <b>Katalin Kariko</b> and <b>Drew Weissman</b> discovered how to make messenger RNA technology safe and stable in
-      the early 2000s by modifying nucleosides, the building blocks of mRNA.
+      <b>Katalin Karikó</b> and <b>Drew Weissman</b> discovered how to make messenger RNA technology safe and stable in
+      the early 2000s by modifying the building blocks of mRNA known as nucleosides.
     </p>
     <p>
-      mRNA-based therapies are designed from genetic sequences, allowing the COVID-19 vaccines to be quickly developed
-      using the spike protein gene from SARS-CoV-2 as a blueprint.
+      mRNA-based therapies are designed from genetic sequences, which allowed the COVID-19 mRNA vaccines to be quickly developed
+      using the coronavirus spike protein gene as a blueprint.
     </p>
     <p>
       Read more about their work to modify mRNA in{' '}
@@ -87,13 +87,13 @@ const kariko_weissman_desc = () => (
 const zhang_holmes_desc = () => (
   <>
     <p>
-      <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of SARS-CoV-2 within 40 hours on January 5, 2020 and
+      <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of the SARS-CoV-2 virus within 40 hours on January 5, 2020 and
       sent it to colleague <b>Eddie Holmes</b>, who{' '}
       <a href='https://virological.org/t/novel-2019-coronavirus-genome/319'>released it publicly</a> 52 minutes after
       receiving it.
     </p>
     <p>
-      Their expediency and transparency led to rapid global research into SARS-CoV-2, including the analysis and design
+      Their expediency and transparency led to rapid global research into SARS-CoV-2, which included structural analysis and design
       of the spike protein sequence used for the vaccines.
     </p>
     <p>
