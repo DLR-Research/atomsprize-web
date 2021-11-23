@@ -168,7 +168,7 @@ const MOCK_USERS: UserMap = {
     user_id: 0,
     total_donated: 99,
     total_referred: 33,
-    name: "Ja'far ibn Yahya",
+    name: "Test Donor0",
     email: 'jafar@dlr',
     ens_address: 'jafar.eth',
     eth_address: '0xjafar'
@@ -177,7 +177,7 @@ const MOCK_USERS: UserMap = {
     user_id: 1,
     total_donated: 999,
     total_referred: 603,
-    name: 'Rudolph II',
+    name: 'Test Donor1',
     email: 'rudolph@dlr',
     ens_address: 'rudolph.eth',
     eth_address: '0xrudolph'
@@ -186,7 +186,7 @@ const MOCK_USERS: UserMap = {
     user_id: 2,
     total_donated: 9999,
     total_referred: 286,
-    name: 'Cosimo II de Medici',
+    name: 'Test Donor2',
     email: 'cosimo@dlr',
     ens_address: 'cosimo.eth',
     eth_address: '0xcosimo'
@@ -195,7 +195,7 @@ const MOCK_USERS: UserMap = {
     user_id: 3,
     total_donated: 999,
     total_referred: 286,
-    name: 'Joseph Banks',
+    name: 'Test Donor3',
     email: 'joseph@dlr',
     ens_address: 'joseph.eth',
     eth_address: '0xjoseph'
@@ -204,7 +204,7 @@ const MOCK_USERS: UserMap = {
     user_id: 4,
     total_donated: 9999,
     total_referred: 286,
-    name: 'Marie Meloney',
+    name: 'Test Donor4',
     email: 'marie@dlr',
     ens_address: 'marie.eth',
     eth_address: '0xmarie'
@@ -213,7 +213,7 @@ const MOCK_USERS: UserMap = {
     user_id: 5,
     total_donated: 9,
     total_referred: 286,
-    name: 'Henry Wellcome',
+    name: 'Test Donor5',
     email: 'henry@dlr',
     ens_address: 'henry.eth',
     eth_address: '0xhenry'
@@ -222,7 +222,7 @@ const MOCK_USERS: UserMap = {
     user_id: 6,
     total_donated: 9999,
     total_referred: 286,
-    name: 'Mary Lasker',
+    name: 'Test Donor6',
     email: 'mary@dlr',
     ens_address: 'mary.eth',
     eth_address: '0xmary'
@@ -231,7 +231,7 @@ const MOCK_USERS: UserMap = {
     user_id: 7,
     total_donated: 999,
     total_referred: 286,
-    name: 'Howard Hughes',
+    name: 'Test Donor7',
     email: 'howard@dlr',
     ens_address: 'howard.eth',
     eth_address: '0xhoward'
@@ -240,7 +240,7 @@ const MOCK_USERS: UserMap = {
     user_id: 8,
     total_donated: 99,
     total_referred: 286,
-    name: 'Paul Allen',
+    name: 'Test Donor8',
     email: 'paul@dlr',
     ens_address: 'paul.eth',
     eth_address: '0xpaul'
@@ -249,7 +249,7 @@ const MOCK_USERS: UserMap = {
     user_id: 9,
     total_donated: 99,
     total_referred: 286,
-    name: 'Melinda Gates',
+    name: 'Test Donor9',
     email: 'melinda@dlr',
     ens_address: 'melinda.eth',
     eth_address: '0xmelinda'
