@@ -147,26 +147,6 @@ const lipid_nanoparticles_desc = () => (
   </>
 )
 
-const darpa_desc = () => (
-  <>
-    <p>
-      <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA vaccine
-      technology in the early 2010s.
-    </p>
-    <p>
-      This funding accelerated the development of mRNA-based vaccines to prepare for pandemics where rapid response
-      technologies would be necessary.
-    </p>
-    <p>
-      Read more about this effort to fund new vaccines in{' '}
-      <a href='https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html'>
-        Washington Post
-      </a>
-      .
-    </p>
-  </>
-)
-
 export type ProjectDescriptionMap = {
   [k: string]: () => preact.JSX.Element
 }
@@ -175,8 +155,7 @@ export const project_descriptions = {
   'Modified mRNA': kariko_weissman_desc,
   'SARS-CoV-2 genome': zhang_holmes_desc,
   'Spike protein design': spike_desc,
-  'Lipid nanoparticles': lipid_nanoparticles_desc,
-  'DARPA director': darpa_desc
+  'Lipid nanoparticles': lipid_nanoparticles_desc
 } as ProjectDescriptionMap
 
 type UserMap = {
