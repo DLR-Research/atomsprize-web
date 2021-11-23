@@ -71,8 +71,8 @@ const kariko_weissman_desc = () => (
       the early 2000s by modifying the building blocks of mRNA known as nucleosides.
     </p>
     <p>
-      mRNA-based therapies are designed from genetic sequences, which allowed the COVID-19 mRNA vaccines to be quickly developed
-      using the coronavirus spike protein gene as a blueprint.
+      mRNA-based therapies are designed from genetic sequences, which allowed the COVID-19 mRNA vaccines to be quickly
+      developed using the coronavirus spike protein gene as a blueprint.
     </p>
     <p>
       Read more about their work to modify mRNA in{' '}
@@ -87,14 +87,14 @@ const kariko_weissman_desc = () => (
 const zhang_holmes_desc = () => (
   <>
     <p>
-      <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of the SARS-CoV-2 virus within 40 hours on January 5, 2020 and
-      sent it to colleague <b>Eddie Holmes</b>, who{' '}
+      <b>Yong-Zhen Zhang</b>’s team determined the genome sequence of the SARS-CoV-2 virus within 40 hours on January 5,
+      2020 and sent it to colleague <b>Eddie Holmes</b>, who{' '}
       <a href='https://virological.org/t/novel-2019-coronavirus-genome/319'>released it publicly</a> 52 minutes after
       receiving it.
     </p>
     <p>
-      Their expediency and transparency led to rapid global research into SARS-CoV-2, which enabled the analysis and design
-      of the spike protein sequence used for the vaccines.
+      Their expediency and transparency led to rapid global research into SARS-CoV-2, which enabled the analysis and
+      design of the spike protein sequence used for the vaccines.
     </p>
     <p>
       Read more about their work on the SARS-CoV-2 genome in{' '}
@@ -112,8 +112,8 @@ const spike_desc = () => (
       the virus.
     </p>
     <p>
-      Based on past work with <b>Andrew Ward</b> on other coronaviruses, the team replaced two amino acids in the SARS-CoV-2 spike
-      protein, which stabilized the protein to generate a stronger immune response.
+      Based on past work with <b>Andrew Ward</b> on other coronaviruses, the team replaced two amino acids in the
+      SARS-CoV-2 spike protein, which stabilized the protein to generate a stronger immune response.
     </p>
     <p>
       Read more about their work on the spike protein design in{' '}
@@ -147,6 +147,26 @@ const lipid_nanoparticles_desc = () => (
   </>
 )
 
+const darpa_desc = () => (
+  <>
+    <p>
+      <b>Regina Dugan</b> led the Defense Advanced Research Projects Agency (DARPA) and provided grants for mRNA vaccine
+      technology in the early 2010s.
+    </p>
+    <p>
+      This funding accelerated the development of mRNA-based vaccines to prepare for pandemics where rapid response
+      technologies would be necessary.
+    </p>
+    <p>
+      Read more about this effort to fund new vaccines in{' '}
+      <a href='https://www.washingtonpost.com/national-security/how-a-secretive-pentagon-agency-seeded-the-ground-for-a-rapid-coronavirus-cure/2020/07/30/ad1853c4-c778-11ea-a9d3-74640f25b953_story.html'>
+        Washington Post
+      </a>
+      .
+    </p>
+  </>
+)
+
 export type ProjectDescriptionMap = {
   [k: string]: () => preact.JSX.Element
 }
@@ -168,7 +188,7 @@ const MOCK_USERS: UserMap = {
     user_id: 0,
     total_donated: 99,
     total_referred: 33,
-    name: "Test Donor0",
+    name: 'Test Donor0',
     email: 'jafar@dlr',
     ens_address: 'jafar.eth',
     eth_address: '0xjafar'

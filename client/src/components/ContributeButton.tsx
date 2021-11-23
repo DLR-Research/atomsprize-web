@@ -87,7 +87,7 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
             placeholder='50.00'
             value={amount}
             onAccept={on_change}
-            inputRef={(el: HTMLInputElement) => input_ref.current = el}
+            inputRef={(el: HTMLInputElement) => (input_ref.current = el)}
           />
         </div>
         <button>Donate</button>
