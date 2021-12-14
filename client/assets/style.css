@@ -454,6 +454,14 @@ input::-webkit-inner-spin-button {
   margin: -3rem;
 }
 
+.hackbank-modal .iframe-container {
+  width: 80vw;
+  max-width: 512px;
+  min-width: 20rem;
+  height: 40rem;
+  margin: -3rem;
+}
+
 .coinbase-commerce-modal .back-button {
   display: none;
 }
