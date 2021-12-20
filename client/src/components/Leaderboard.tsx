@@ -5,7 +5,6 @@ import axios from 'axios'
 import { Donor } from '../types'
 import { ModalStateSetter } from './PersistentModal'
 import Badge from './Badge'
-import Twitter from '../icons/twitter.svg'
 import Facebook from '../icons/facebook.svg'
 import CopyLink from '../icons/copylink.svg'
 import GreenCheck from '../icons/greencheck.svg'
@@ -97,7 +96,7 @@ function LeaderboardModal({ donor }: LeaderboardModalProps) {
       </div>
       <div>
         <a href={`https://twitter.com/intent/tweet?url=${shareUrl}`} target='_blank'>
-          <img width={32} height={32} src={Twitter} />
+          <img width={32} height={32} src='/twitter.svg' />
         </a>
         <a
           href={`https://www.facebook.com/dialog/share?app_id=969850220278930&display=popup&href=${shareUrl}`}

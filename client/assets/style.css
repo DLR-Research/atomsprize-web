@@ -47,6 +47,11 @@ a:visited {
   color: #888;
 }
 
+footer a,
+.leaderboard-modal a {
+  text-decoration: none;
+}
+
 .no-kerning {
   font-kerning: none;
 }
@@ -87,8 +92,7 @@ button:hover {
   background: #967100;
 }
 
-header,
-footer {
+header {
   background: #967100;
   color: #fff;
   flex: 0;
@@ -96,8 +100,13 @@ footer {
   text-align: center;
 }
 
-main {
-  padding-bottom: 1rem;
+footer {
+  text-align: center;
+}
+
+footer {
+  border-top: 1px solid #967100;
+  padding: 1rem;
 }
 
 .row {
