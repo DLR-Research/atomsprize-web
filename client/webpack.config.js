@@ -61,7 +61,7 @@ module.exports = (_env, argv) => {
       },
       proxy: [
         {
-          context: ['/badge', '/share', '/stats', '/checkout'],
+          context: ['/badge', '/share', '/stats'],
           target: `http://localhost:${process.env.FASTPRIZE_WORKER_PORT || 8787}`
         }
       ],

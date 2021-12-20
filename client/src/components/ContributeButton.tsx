@@ -48,7 +48,6 @@ function ContributeModal({ referrer, set_modal_state }: ContributeModalProps) {
     open_iframe('https://bank.hackclub.com/donations/start/atoms-org', 'hackbank-modal')
   }
 
-  // TODO: delete /checkout, uniswap CSS
   return (
     <div class='contribute-modal'>
       <h1 class='center'>Contribute</h1>

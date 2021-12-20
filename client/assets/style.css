@@ -380,10 +380,6 @@ input::-webkit-inner-spin-button {
   position: relative;
 }
 
-.uniswap-modal .modal {
-  border: 0;
-}
-
 .row {
   display: flex;
   flex-direction: row;
@@ -436,15 +432,6 @@ input::-webkit-inner-spin-button {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.uniswap-modal .iframe-container {
-  width: 80vw;
-  max-width: 40rem;
-  min-width: 20rem;
-  height: 80vh;
-  min-height: 40rem;
-  margin: -3rem;
-}
-
 .coinbase-commerce-modal .iframe-container {
   width: 80vw;
   max-width: 600px; /* hardcoded in Coinbase Commerce iframe */
@@ -473,10 +460,6 @@ input::-webkit-inner-spin-button {
 
   .modal {
     padding: 2rem;
-  }
-
-  .uniswap-modal .iframe-container {
-    margin: -2rem;
   }
 
   .coinbase-commerce-modal .modal {
