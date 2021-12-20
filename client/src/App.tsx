@@ -148,8 +148,8 @@ export default function App({ donor }: AppProps) {
                 <a href='https://atoms.org' target='_blank'>
                   atoms.org
                 </a>{' '}
-                is an organization developing new tools for funding and publishing scientific research. We are supported
-                by grants from{' '}
+                is an organization developing new tools for funding and publishing open science. We are supported by
+                grants from{' '}
                 <a href='https://protocol.ai/' target='_blank'>
                   Protocol Labs
                 </a>{' '}
@@ -181,8 +181,14 @@ export default function App({ donor }: AppProps) {
                 . Larger and earlier donations result in badges that are more likely to be visually distinct.
               </p>
               <p>
-                If desired, donors can optionally claim their badge as a non-fungible token (NFT) on the xDai chain. The
-                xDai chain ensures near-zero environmental impact and transaction fees.{' '}
+                If desired, donors can optionally claim their badge on the xDai chain. The xDai chain ensures{' '}
+                <a
+                  href='https://www.xdaichain.com/about-xdai/news-and-information/xdai-energy-efficiency/green-nfts-on-xdai#moving-to-xdai'
+                  target='_blank'
+                >
+                  effectively zero environmental impact and transaction fees
+                </a>
+                .
               </p>
             </FaqAccordion>
           </div>
