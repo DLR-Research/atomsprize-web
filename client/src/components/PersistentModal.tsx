@@ -1,4 +1,10 @@
+import type { ComponentChildren, JSX } from 'preact'
 import { useEffect, StateUpdater } from 'preact/hooks'
+import Router, { route, RoutableProps } from 'preact-router'
+import Match from 'preact-router/match'
+
+import { scientists, project_descriptions } from '../data'
+import ScientistProfile from './ScientistProfile'
 
 export type PersistentModalProps = {
   state: ModalState
@@ -13,10 +19,16 @@ export type ModalState = {
 
 export type ModalStateSetter = StateUpdater<ModalState>
 
-export default function PersistentModal({ state: { open, content, style }, set_modal_state }: PersistentModalProps) {
+interface ModalProps {
+  open?: boolean
+  style?: string
+  children?: ComponentChildren
+}
+
+function Modal ({ open, style, children } : ModalProps) {
   const on_close = (e: MouseEvent) => {
-    set_modal_state({ open: false, content, style })
     e.stopPropagation()
+    route('/')
   }
 
   useEffect(() => {
@@ -31,7 +43,7 @@ export default function PersistentModal({ state: { open, content, style }, set_m
     <div className={`modal-overlay ${open ? 'open' : ''} ${style || ''}`} onClick={on_close}>
       <div class='modal-container'>
         <div className='modal' onClick={e => e.stopPropagation()}>
-          {content}
+          {children}
         </div>
         <a className='back-button' onClick={on_close}>
           <svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
@@ -40,5 +52,43 @@ export default function PersistentModal({ state: { open, content, style }, set_m
         </a>
       </div>
     </div>
+  )
+}
+
+interface ScientistModalProps {
+  short_name?: string
+}
+
+function ScientistModal({ short_name }: ScientistModalProps) {
+    const { tagline } = scientists.filter(s => s.short_name === short_name)[0]
+
+    const scientist_elements: JSX.Element[] = []
+    scientists.filter(s => s.tagline === tagline).forEach(s => {
+      scientist_elements.push(ScientistProfile({ scientist: s }))
+      if (s.break) {
+        scientist_elements.push(<br />)
+      }
+    })
+
+    return (
+      <Modal open>
+        <h1 className='center'>{tagline}</h1>
+        <div className='center modal-gallery'>{scientist_elements}</div>
+        <div className='project-description'>{project_descriptions[tagline]()}</div>
+      </Modal>
+    )
+}
+
+
+export default function PersistentModal() {
+  return (
+    <Router>
+      <Match path='/scientists/:id'>
+        {({ path }: RoutableProps) => <ScientistModal short_name={path?.split('/').slice(-1)[0]} />}
+      </Match>
+      <Match default>
+        {() => <Modal />}
+      </Match>
+    </Router>
   )
 }

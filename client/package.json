@@ -38,6 +38,7 @@
     "axios": "^0.22.0",
     "preact": "^10.5.14",
     "preact-render-to-string": "^5.1.19",
+    "preact-router": "^3.2.1",
     "react-imask": "^6.2.2",
     "tslib": "^2.3.1"
   }

@@ -359,7 +359,6 @@ input::-webkit-inner-spin-button {
   position: fixed;
   right: 0;
   top: 0;
-  transition: 0.2s ease-out;
   visibility: hidden;
   z-index: 999;
 }

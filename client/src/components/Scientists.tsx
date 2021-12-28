@@ -3,16 +3,14 @@ import ScientistProfile from './ScientistProfile'
 
 type ScientistsProps = {
   scientists: Scientist[]
-  open_project_modal: (tagline: string) => void
 }
 
-export default function Scientists({ scientists, open_project_modal }: ScientistsProps) {
-  const scientists_list = scientists.map(s => (
+export default function Scientists({ scientists }: ScientistsProps) {
+  const scientists_list = scientists.map((s, i) => (
     <ScientistProfile
-      key={s.name}
+      key={i}
       scientist={s}
       interactive={true}
-      open_project_modal={() => open_project_modal(s.tagline)}
     />
   ))
 

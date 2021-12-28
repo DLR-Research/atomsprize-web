@@ -1,47 +1,18 @@
 import { useState, useEffect } from 'preact/hooks'
 import PersistentModal, { ModalState } from './components/PersistentModal'
 import Scientists from './components/Scientists'
-import ScientistProfile from './components/ScientistProfile'
 import Leaderboard from './components/Leaderboard'
 import ContributeButton from './components/ContributeButton'
 import FaqAccordion from './components/FaqAccordion'
-import { scientists, project_descriptions } from './data'
-import { Donor } from './types'
+import { scientists } from './data'
 
-export type AppProps = {
-  donor?: Donor
-}
+export type AppProps = {}
 
-export default function App({ donor }: AppProps) {
-  const [modal_state, set_modal_state] = useState<ModalState>({
-    open: !!donor,
-    content: donor ? <h1>gm {donor.name || donor.user_id}!</h1> : ''
+export default function App() {
+  const [_, set_modal_state] = useState<ModalState>({
+    open: false,
+    content: ''
   })
-
-  const open_project_modal = (tagline: string) => {
-    const project_scientists = scientists.filter(s => s.tagline === tagline)
-
-    const scientist_elements = []
-
-    for (let i = 0; i < project_scientists.length; i++) {
-      const s = project_scientists[i]
-      scientist_elements.push(ScientistProfile({ scientist: s }))
-      if (s.break) {
-        scientist_elements.push(<br />)
-      }
-    }
-
-    set_modal_state({
-      open: true,
-      content: (
-        <>
-          <h1 className='center'>{tagline}</h1>
-          <div className='center modal-gallery'>{scientist_elements}</div>
-          <div className='project-description'>{project_descriptions[tagline]()}</div>
-        </>
-      )
-    })
-  }
 
   const handle_esc = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -77,11 +48,11 @@ export default function App({ donor }: AppProps) {
 
   return (
     <>
-      <PersistentModal state={modal_state} set_modal_state={set_modal_state} />
+      <PersistentModal />
       <div id='content'>
         <main>
           <div id='scientists' className='content-container'>
-            <Scientists scientists={scientists} open_project_modal={open_project_modal} />
+            <Scientists scientists={scientists} />
           </div>
           <div className='content-container contribute-container'>
             <h2>Contribute</h2>
