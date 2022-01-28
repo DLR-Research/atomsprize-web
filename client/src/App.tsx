@@ -115,7 +115,7 @@ export default function App({ donor }: AppProps) {
               </a>
               . Jonas Salk’s polio vaccine research was funded by the {' '}
               <a href='https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover'>
-              March of Dimes</a>{' '}, which raised $54 million from
+              March of Dimes</a>, which raised $54 million from
               over 80 million people in 1954.
             </p>
             <p>We hope to continue this legacy by funding and celebrating these scientific achievements together.</p>
@@ -136,17 +136,16 @@ export default function App({ donor }: AppProps) {
             <h2>FAQ</h2>
             <FaqAccordion question='Are donations tax-deductible?'>
               <p>
-                Yes! We are fiscally sponsored through a{' '}
-                <a href='https://hackclub.com/bank/' target='_blank'>
-                  501(c)(3)
+                Yes! We are fiscally sponsored through a 501(c)(3), the
+                {' '}
+                <a href='https://hackclub.com/bank/' target='_blank'>Hack Foundation (EIN: 81-2908499).
                 </a>
-                , the Hack Foundation (EIN: 81-2908499).
               </p>
             </FaqAccordion>
             <FaqAccordion question='Who are the organizers of this prize?'>
               <p>
                 <a href='https://atoms.org' target='_blank'>
-                  atoms.org
+                  Atoms.org
                 </a>{' '}
                 is an organization developing new tools for funding and publishing open science. We are supported by
                 grants from{' '}
@@ -165,7 +164,7 @@ export default function App({ donor }: AppProps) {
                 The prize will be split evenly among the recipient scientists named above. To cover the costs of credit
                 card processing fees, tax filing, and accounting, 7% goes to our nonprofit fiscal sponsor,{' '}
                 <a href='https://hackclub.com/bank/' target='_blank'>
-                  the Hack Foundation
+                  Hack Foundation
                 </a>
                 , which is dedicated to student coding education. Atoms.org will not be receiving any funds raised from
                 this prize.
