@@ -108,15 +108,15 @@ export default function App({ donor }: AppProps) {
               and <a href='https://twitter.com/goodwish916/status/1329234124394041345'>publishing</a> their research.
             </p>
             <p>
-              There is a distinguished history of collective science patronage. Over $150,000 was raised in 1921 from{' '}
+              There is a distinguished history of collective science patronage. Over $150,000 was raised in 1921 from
+              donations by American women for {' '}
               <a href='https://www.smithsonianmag.com/smart-news/when-women-crowdfunded-radium-marie-curie-180963305/'>
-                donations by American women for Marie Curie
+                Marie Curie
               </a>
-              . Jonas Salk’s polio vaccine research was funded by the March of Dimes, which raised $54 million from{' '}
+              . Jonas Salk’s polio vaccine research was funded by the {' '}
               <a href='https://www.google.com/books/edition/The_Greater_Good/CYzRLhCk-uEC?hl=en&gbpv=1&pg=PA117&printsec=frontcover'>
-                over 80 million people
-              </a>{' '}
-              in 1954.
+              March of Dimes</a>{' '}, which raised $54 million from
+              over 80 million people in 1954.
             </p>
             <p>We hope to continue this legacy by funding and celebrating these scientific achievements together.</p>
           </div>
