@@ -3,62 +3,74 @@ import { Scientist, Donor } from './types'
 export const scientists: Scientist[] = [
   {
     name: 'Katalin Karikó',
+    short_name: 'kariko',
     tagline: 'Modified mRNA',
     headshot_url: '/headshots/kariko.jpg'
   },
   {
     name: 'Drew Weissman',
+    short_name: 'weissman',
     tagline: 'Modified mRNA',
     headshot_url: '/headshots/weissman.jpg'
   },
   {
     name: 'Yong-Zhen Zhang',
+    short_name: 'zhang',
     tagline: 'SARS-CoV-2 genome',
     headshot_url: '/headshots/zhang.jpg'
   },
   {
     name: 'Eddie Holmes',
+    short_name: 'holmes',
     tagline: 'SARS-CoV-2 genome',
     headshot_url: '/headshots/holmes.jpg'
   },
   {
     name: 'Barney Graham',
+    short_name: 'graham',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/graham.jpg'
   },
   {
     name: 'Kizzmekia Corbett',
+    short_name: 'corbett',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/corbett.jpg'
   },
   {
     name: 'Andrew Ward',
+    short_name: 'ward',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/ward.jpg',
     break: true
   },
   {
     name: 'Jason McClellan',
+    short_name: 'mcclellan',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/mcclellan.jpg'
   },
   {
     name: 'Nianshuang Wang',
+    short_name: 'wang',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/wang.jpg'
   },
   {
     name: 'Daniel Wrapp',
+    short_name: 'wrapp',
     tagline: 'Spike protein design',
     headshot_url: '/headshots/wrapp.jpg'
   },
   {
     name: 'Pieter Cullis',
+    short_name: 'cullis',
     tagline: 'Lipid nanoparticles',
     headshot_url: '/headshots/cullis.jpg'
   },
   {
     name: 'Ian MacLachlan',
+    short_name: 'maclachlan',
     tagline: 'Lipid nanoparticles',
     headshot_url: '/headshots/maclachlan.jpg'
   }

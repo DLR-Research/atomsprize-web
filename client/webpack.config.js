@@ -46,7 +46,8 @@ module.exports = (_env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, 'dist/'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      publicPath: '/'
     },
     plugins: [
       !isProduction && new webpack.HotModuleReplacementPlugin(),
@@ -61,11 +62,12 @@ module.exports = (_env, argv) => {
       },
       proxy: [
         {
-          context: ['/badge', '/share', '/stats'],
+          context: ['/badge', '/stats'],
           target: `http://localhost:${process.env.FASTPRIZE_WORKER_PORT || 8787}`
         }
       ],
       compress: true,
+      historyApiFallback: true,
       hot: true
     }
   }

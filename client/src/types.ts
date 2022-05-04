@@ -1,5 +1,6 @@
 export type Scientist = {
   name: string
+  short_name: string
   tagline: string
   headshot_url: string
   break?: boolean
